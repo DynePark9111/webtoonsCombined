@@ -1,0 +1,9 @@
+@use "./global" as *;
+
+.Card {
+  color: $tx;
+  img {
+    width: 200px;
+    height: 280px;
+  }
+}

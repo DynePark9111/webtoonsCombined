@@ -1,0 +1,29 @@
+$blue: #3ea6ff;
+$grey: #d0d0d0;
+$bg: #202020;
+$bg_btn: #313131;
+$tx: #ffffff;
+$hover: #383838;
+$active: #4c4c4c;
+
+@mixin svg {
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@mixin hoverAndActive {
+  &:hover {
+    background-color: $hover;
+  }
+  &:active {
+    background-color: $active;
+  }
+}
+
+@mixin ellipse {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
