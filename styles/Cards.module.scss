@@ -2,6 +2,7 @@
 
 .Cards {
   margin: 2rem auto;
+  padding: 0 1rem;
   max-width: $max-width;
   padding-bottom: 2rem;
   border-bottom: 1px solid $hover;
@@ -26,6 +27,7 @@
   .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
   }

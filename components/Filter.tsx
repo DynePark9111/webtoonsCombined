@@ -5,12 +5,12 @@ const Filter: NextPage = () => {
   return (
     <div className={styles.Filter}>
       <button id={styles.selected}>전체</button>
-      <button>음악</button>
-      <button>실시간</button>
-      <button>정원 관리</button>
-      <button>자연</button>
-      <button>요리</button>
-      <button>최근에 업로드된 웹툰</button>
+      <button>로맨스</button>
+      <button>드라마</button>
+      <button>판타지</button>
+      <button>액션</button>
+      <button>무협</button>
+      <button>최신</button>
     </div>
   );
 };
