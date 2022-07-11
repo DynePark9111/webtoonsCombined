@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { ReactNode } from "react";
-import Filter from "./Filter";
 import Header from "./Header";
 import Navbar from "./Navbar";
 

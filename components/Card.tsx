@@ -1,17 +1,20 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import styles from "../styles/Card.module.scss";
+import { webtoons } from "../types/types";
 
-const Card: NextPage = () => {
+type props = {
+  webtoon: webtoons;
+};
+
+const Card: NextPage<props> = ({ webtoon }) => {
   return (
     <div className={styles.Card}>
-      <img
-        alt="img"
-        src="https://noonoo-images.studiouniversal.net/info/tv/197067/ojSRH9af35TQXBJtk8WedJScRDc.jpg"
-      />
-      <div className={styles.title}>대충 제목 들어가는곳</div>
-      <div className={styles.episode}>1화 : 에피소드 제목</div>
-      <div className={styles.platform}>플랫폼</div>
+      <a href={`https://comic.naver.com${webtoon.episodeLink}`}>
+        <img alt={webtoon.title} src={webtoon.image} />
+        <div className={styles.title}>{webtoon.title}</div>
+        <div className={styles.episode}>{webtoon.episodeTitle}</div>
+        {/* <div className={styles.platform}>{webtoon.platform}</div> */}
+      </a>
     </div>
   );
 };
