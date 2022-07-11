@@ -1,0 +1,24 @@
+@use "./global" as *;
+
+.Card {
+  color: $tx;
+  width: 200px;
+  height: 280px;
+  a {
+    width: 100%;
+
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .episode {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

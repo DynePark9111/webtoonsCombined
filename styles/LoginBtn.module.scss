@@ -1,0 +1,20 @@
+@use "./global" as *;
+
+.LoginBtn {
+  display: flex;
+  align-items: center;
+  border: 1px solid $blue;
+  border-radius: 2px;
+  color: $blue;
+  background: none;
+  padding: 5px 11px;
+  cursor: pointer;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  span {
+    font-size: 14px;
+    margin-left: 0.5rem;
+  }
+}
