@@ -18,7 +18,7 @@ import LoginBtn from "./LoginBtn";
 const Navbar: NextPage = () => {
   return (
     <>
-      <NavbarSmall />
+      {/* <NavbarSmall /> */}
       <NavbarBig />
     </>
   );

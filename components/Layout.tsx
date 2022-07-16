@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import { ReactNode } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
+import styles from "../styles/Layout.module.scss";
+import Ribbon from "./Ribbon";
 
 type T = {
   children: ReactNode;
@@ -9,11 +11,15 @@ type T = {
 
 const Layout: NextPage<T> = ({ children }) => {
   return (
-    <>
-      <Header />
-      <Navbar />
-      {children}
-    </>
+    <div className={styles.Layout}>
+      <div className={styles.top}>
+        <Header />
+      </div>
+      <div className={styles.main}>
+        <Navbar />
+        {children}
+      </div>
+    </div>
   );
 };
 
