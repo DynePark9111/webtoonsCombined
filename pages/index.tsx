@@ -10,7 +10,6 @@ type newToonsT = {
 };
 
 const Home: NextPage<newToonsT> = ({ newToons }) => {
-  console.log(newToons);
   return (
     <div className={styles.Home}>
       <Filter />
@@ -28,6 +27,5 @@ export default Home;
 export async function getServerSideProps() {
   const res = await axios.get("http://localhost:3000/api");
   const newToons = res.data.data;
-  console.log(newToons);
   return { props: { newToons } };
 }
