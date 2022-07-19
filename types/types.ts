@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type webtoons = {
+export type webtoon = {
   _id: string;
   title: string;
   image: string;
@@ -32,16 +32,21 @@ export type FilterProps = {
 };
 
 export type CardProps = {
-  webtoon: webtoons;
+  webtoon: webtoon;
 };
 
 export type CardsProps = {
   title: string;
-  webtoons: webtoons[];
+  webtoons: webtoon[];
 };
 
 export type RibbonProps = {
   line1: string;
   line2?: string;
   href?: string;
+};
+
+export type HomeProps = {
+  webtoons1: webtoon[];
+  webtoons2: webtoon[];
 };

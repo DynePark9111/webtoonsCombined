@@ -1,24 +1,46 @@
 @use "./global" as *;
 
 .Card {
-  color: $tx;
-  width: 200px;
-  height: 280px;
-  a {
+  border-radius: 6px;
+  max-width: 210px;
+  min-width: 100px;
+  max-height: 300px;
+  min-height: 100px;
+  overflow: hidden;
+  .wrapper {
     width: 100%;
-
+    color: $tx;
+    transition: transform 300ms;
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+  a {
+    .img_wrapper {
+      overflow: hidden;
+      border-radius: 6px;
+      aspect-ratio: 220 / 250;
+      object-fit: contain;
+      background-color: $bg;
+      img {
+        width: 100%;
+      }
+    }
     .title {
+      font-size: 14px;
+      font-weight: 500;
+      color: $tx;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      margin: 4px 0;
     }
     .episode {
+      font-size: 12px;
+      color: $tx2;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-    }
-    img {
-      width: 100%;
     }
   }
 }
