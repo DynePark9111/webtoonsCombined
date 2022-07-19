@@ -1,12 +1,8 @@
 import type { NextPage } from "next";
 import styles from "../styles/Card.module.scss";
-import { webtoons } from "../types/types";
+import { CardProps } from "../types/types";
 
-type props = {
-  webtoon: webtoons;
-};
-
-const Card: NextPage<props> = ({ webtoon }) => {
+const Card: NextPage<CardProps> = ({ webtoon }) => {
   return (
     <div className={styles.Card}>
       <a href={`https://comic.naver.com${webtoon.episodeLink}`}>

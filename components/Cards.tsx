@@ -1,13 +1,8 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import styles from "../styles/Cards.module.scss";
-import { webtoons } from "../types/types";
+import { CardsProps } from "../types/types";
 import Card from "./Card";
-
-type CardsProps = {
-  title: string;
-  webtoons: webtoons[];
-};
 
 const Cards: NextPage<CardsProps> = ({ title, webtoons }) => {
   return (

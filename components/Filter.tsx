@@ -1,17 +1,27 @@
 import type { NextPage } from "next";
 import styles from "../styles/Filter.module.scss";
+import { FilterProps } from "../types/types";
 
-const Filter: NextPage = () => {
+const Filter: NextPage<FilterProps> = ({ array, selected, setSelected }) => {
+  function toggleButton(item: number) {
+    selected.includes(item)
+      ? setSelected([...selected, item].filter((x) => x !== item))
+      : setSelected([...selected, item].filter((x) => x !== 0));
+  }
+  selected.length === 0 && setSelected([0]);
+
   return (
-    <div className={styles.Filter}>
-      <button id={styles.selected}>전체</button>
-      <button>로맨스</button>
-      <button>드라마</button>
-      <button>판타지</button>
-      <button>액션</button>
-      <button>무협</button>
-      <button>최신</button>
-    </div>
+    <ul className={styles.Filter}>
+      {array.map((item) => (
+        <li
+          key={item.id}
+          id={selected.includes(item.id) ? styles.selected : ""}
+          onClick={() => toggleButton(item.id)}
+        >
+          {item.name}
+        </li>
+      ))}
+    </ul>
   );
 };
 

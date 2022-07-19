@@ -18,8 +18,6 @@ import LoginBtn from "./LoginBtn";
 
 const Navbar: NextPage = () => {
   const { isNavOpen } = useContext(NavContext);
-  console.log(`isNavOpen ${isNavOpen}`);
-
   return <>{isNavOpen ? <NavbarSmall /> : <NavbarBig />}</>;
 };
 
