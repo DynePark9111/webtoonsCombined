@@ -3,10 +3,10 @@ import styles from "../styles/Filter.module.scss";
 import { FilterProps } from "../types/types";
 
 const Filter: NextPage<FilterProps> = ({ array, selected, setSelected }) => {
-  function toggleButton(item: number) {
+  function toggleButton(item: string) {
     selected.includes(item)
       ? setSelected([...selected, item].filter((x) => x !== item))
-      : setSelected([...selected, item].filter((x) => x !== 0));
+      : setSelected([...selected, item].filter((x) => x !== "전체"));
   }
   selected.length === 0 && setSelected([0]);
 
@@ -15,8 +15,8 @@ const Filter: NextPage<FilterProps> = ({ array, selected, setSelected }) => {
       {array.map((item) => (
         <li
           key={item.id}
-          id={selected.includes(item.id) ? styles.selected : ""}
-          onClick={() => toggleButton(item.id)}
+          id={selected.includes(item.name) ? styles.selected : ""}
+          onClick={() => toggleButton(item.name)}
         >
           {item.name}
         </li>

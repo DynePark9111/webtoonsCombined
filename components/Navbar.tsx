@@ -2,14 +2,15 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { ReactNode, useContext } from "react";
 import {
-  IoAddCircleOutline,
   IoBookmarkOutline,
   IoChatbubbleEllipsesOutline,
   IoCogSharp,
   IoCompassOutline,
   IoFlagOutline,
+  IoHeartOutline,
   IoHelpCircleOutline,
   IoHomeOutline,
+  IoTimeOutline,
   IoTimerOutline,
 } from "react-icons/io5";
 import { NavContext } from "../context/navContext";
@@ -24,6 +25,7 @@ const Navbar: NextPage = () => {
 const NavbarSmall: NextPage = () => {
   return (
     <aside className={styles.NavbarSmall}>
+      <div className={styles.empty} />
       <ul>
         <NavbarItem href="/" icon={<IoHomeOutline />} text="홈" />
         <NavbarItem href="/search" icon={<IoCompassOutline />} text="탐색" />
@@ -57,9 +59,18 @@ const NavbarBig: NextPage = () => {
           <NavbarItem
             href="/history"
             icon={<IoTimerOutline />}
-            text="시청기록"
+            text="시청 기록"
           />
-          <NavbarItem href="/settings" icon={<IoCogSharp />} text="설정" />
+          <NavbarItem
+            href="/watchlist?list=WL"
+            icon={<IoTimeOutline />}
+            text="나중에 볼 웹툰"
+          />
+          <NavbarItem
+            href="/watchlist?list=LL"
+            icon={<IoHeartOutline />}
+            text="좋아요 표시한 웹툰"
+          />
         </ul>
         <div className={styles.promo}>
           <div>
@@ -68,17 +79,13 @@ const NavbarBig: NextPage = () => {
           </div>
           <LoginBtn />
         </div>
-        <h4 className={styles.genre}>인기 장르</h4>
+        <h4 className={styles.genre}>웹툰</h4>
         <ul>
-          <NavbarItem href="/" text="액션" />
-          <NavbarItem href="/" text="로맨스" />
-          <NavbarItem href="/" text="드라마" />
-          <NavbarItem href="/" text="판타지" />
-          <NavbarItem href="/" text="성인" />
-          <NavbarItem href="/" text="BL/GL" />
-        </ul>
-        <ul>
-          <NavbarItem href="/" icon={<IoAddCircleOutline />} text="웹툰 탐색" />
+          <NavbarItem href="/new" text="최신웹툰" />
+          <NavbarItem href="/webtoons?category=ongoing" text="연재웹툰" />
+          <NavbarItem href="/webtoons?category=completed" text="완결웹툰" />
+          <NavbarItem href="/webtoons?category=adult" text="성인웹툰" />
+          <NavbarItem href="/webtoons?category=BL/GL" text="BL/GL" />
         </ul>
         <ul>
           <NavbarItem href="/settings" icon={<IoCogSharp />} text="설정" />

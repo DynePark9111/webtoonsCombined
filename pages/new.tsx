@@ -1,14 +1,18 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 import Filter from "../components/Filter";
-import { filterArray } from "../data/arrays";
+import { platformFilter } from "../data/arrays";
 import styles from "../styles/New.module.scss";
 
 const New: NextPage = () => {
-  const [filter, setFilter] = useState([0]);
+  const [platform, setplatform] = useState(["전체"]);
   return (
     <div className={styles.New}>
-      <Filter array={filterArray} selected={filter} setSelected={setFilter} />
+      <Filter
+        array={platformFilter}
+        selected={platform}
+        setSelected={setplatform}
+      />
     </div>
   );
 };

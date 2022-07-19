@@ -12,7 +12,7 @@ const Cards: NextPage<CardsProps> = ({ title, webtoons }) => {
         <Link href="/">전체보기</Link>
       </div>
       <div className={styles.cards}>
-        {webtoons.map((webtoon: any) => {
+        {webtoons?.map((webtoon: any) => {
           return <Card key={webtoon.title} webtoon={webtoon} />;
         })}
       </div>

@@ -11,6 +11,24 @@ export type webtoon = {
   updatedAt: TimeRanges;
 };
 
+export type webtoonDetail = {
+  author: string[];
+  category: string;
+  days: string[];
+  first_episode_url: string;
+  genre: string[];
+  hates: number;
+  likes: number;
+  image: string;
+  platform: string;
+  publisher: string;
+  synopsis: string;
+  title: string;
+  updated: Date;
+  url: string;
+  _id: string;
+};
+
 export type createNavContextType = {
   isNavOpen: boolean;
   toggleNav: () => void;
@@ -27,7 +45,7 @@ export type filter = {
 
 export type FilterProps = {
   array: filter[];
-  selected: number[];
+  selected: string[];
   setSelected: any;
 };
 
