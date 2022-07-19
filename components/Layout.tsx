@@ -9,14 +9,13 @@ type T = {
 };
 
 const Layout: NextPage<T> = ({ children }) => {
-  const [navOpen, isNavOpen] = useState(false);
   return (
     <div className={styles.Layout}>
       <div className={styles.top}>
-        <Header navOpen={navOpen} isNavOpen={isNavOpen} />
+        <Header />
       </div>
       <div className={styles.main}>
-        <Navbar navOpen={navOpen} />
+        <Navbar />
         {children}
       </div>
     </div>

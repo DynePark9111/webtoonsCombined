@@ -7,17 +7,16 @@ import {
   IoSearchOutline,
 } from "react-icons/io5";
 import LoginBtn from "./LoginBtn";
+import { useContext } from "react";
+import { NavContext } from "../context/navContext";
 
-type props = {
-  navOpen: boolean;
-  isNavOpen: (arg: boolean) => void;
-};
+const Header: NextPage = () => {
+  const { toggleNav } = useContext(NavContext);
 
-const Header: NextPage<props> = ({ navOpen, isNavOpen }) => {
   return (
     <div className={styles.Header}>
       <div className={styles.left}>
-        <div className={styles.bars} onClick={() => isNavOpen(!navOpen)}>
+        <div className={styles.bars} onClick={() => toggleNav()}>
           <IoMenuSharp />
         </div>
         <div className={styles.logo}>WebtoonsCombined</div>

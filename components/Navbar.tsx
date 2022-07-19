@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
 import {
   IoAddCircleOutline,
   IoBookmarkOutline,
@@ -12,15 +12,15 @@ import {
   IoHomeOutline,
   IoTimerOutline,
 } from "react-icons/io5";
+import { NavContext } from "../context/navContext";
 import styles from "../styles/Navbar.module.scss";
 import LoginBtn from "./LoginBtn";
 
-type props = {
-  navOpen: boolean;
-};
+const Navbar: NextPage = () => {
+  const { isNavOpen } = useContext(NavContext);
+  console.log(`isNavOpen ${isNavOpen}`);
 
-const Navbar: NextPage<props> = ({ navOpen }) => {
-  return <>{navOpen ? <NavbarSmall /> : <NavbarBig />}</>;
+  return <>{isNavOpen ? <NavbarSmall /> : <NavbarBig />}</>;
 };
 
 const NavbarSmall: NextPage = () => {
