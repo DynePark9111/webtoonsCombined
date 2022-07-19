@@ -8,11 +8,16 @@ import {
 } from "react-icons/io5";
 import LoginBtn from "./LoginBtn";
 
-const Header: NextPage = () => {
+type props = {
+  navOpen: boolean;
+  isNavOpen: (arg: boolean) => void;
+};
+
+const Header: NextPage<props> = ({ navOpen, isNavOpen }) => {
   return (
     <div className={styles.Header}>
       <div className={styles.left}>
-        <div className={styles.bars}>
+        <div className={styles.bars} onClick={() => isNavOpen(!navOpen)}>
           <IoMenuSharp />
         </div>
         <div className={styles.logo}>WebtoonsCombined</div>
