@@ -1,0 +1,10 @@
+@use "./global" as *;
+
+.ReportHistory {
+  section {
+    margin: 3rem auto;
+    color: $tx;
+    max-width: $max-width;
+    text-align: center;
+  }
+}

@@ -5,7 +5,7 @@ import styles from "../styles/Introduction.module.scss";
 type IntroductionProps = {
   title: string;
   subtitle: string;
-  src: string;
+  src?: string;
 };
 
 const Introduction: NextPage<IntroductionProps> = ({
@@ -20,7 +20,7 @@ const Introduction: NextPage<IntroductionProps> = ({
         <h2>{subtitle}</h2>
       </div>
       <div className={styles.icon}>
-        <Image src={src} alt={title} layout="fill" />
+        {src && <Image src={src} alt={title} layout="fill" />}
       </div>
     </div>
   );
