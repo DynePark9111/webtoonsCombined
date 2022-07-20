@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import styles from "../styles/Layout.module.scss";
-import Ribbon from "./Ribbon";
 
 type T = {
   children: ReactNode;

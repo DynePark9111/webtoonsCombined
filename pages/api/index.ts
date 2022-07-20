@@ -7,6 +7,6 @@ export default async function handler(
 ) {
   let { db } = await connectToDatabase();
 
-  const data = await db.collection("newwebtoons").find({}).limit(10).toArray();
+  const data = await db.collection("newwebtoons").find({}).limit(5).toArray();
   res.status(200).json({ data });
 }

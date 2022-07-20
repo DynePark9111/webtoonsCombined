@@ -1,34 +1,31 @@
 @use "./global" as *;
 
-.Cards {
-  margin: 2rem auto;
+.NewToons {
+  margin: 4rem auto;
   padding: 0 1rem;
   max-width: $max-width;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid $hover;
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    color: $tx;
     h2 {
-      color: $tx;
+      font-size: 1.25rem;
+      margin: 0;
     }
     a {
       cursor: pointer;
       border: none;
       background: none;
-      color: $tx;
       &::after {
         content: ">";
       }
     }
   }
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  .newToons {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
   }
 }

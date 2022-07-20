@@ -1,14 +1,9 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import styles from "../styles/Ribbon.module.scss";
+import { RibbonProps } from "../types/types";
 
-type props = {
-  line1: string;
-  line2?: string;
-  href?: string;
-};
-
-const Ribbon: NextPage<props> = ({ line1, line2, href }) => {
+const Ribbon: NextPage<RibbonProps> = ({ line1, line2, href }) => {
   return (
     <div className={styles.Ribbon}>
       <div className={styles.wrapper}>

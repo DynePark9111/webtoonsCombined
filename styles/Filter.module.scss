@@ -3,8 +3,8 @@
 $hv: #4d4d4d;
 
 .Filter {
-  border-top: 1px solid $hover;
-  border-bottom: 1px solid $hover;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 58px;
   background-color: $bg;
@@ -12,7 +12,10 @@ $hv: #4d4d4d;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  button {
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     white-space: nowrap;
     cursor: pointer;
     font-size: 14px;
@@ -22,6 +25,7 @@ $hv: #4d4d4d;
     height: 32px;
     color: #fff;
     background-color: #373737;
+    transition: background-color 200ms, color 200ms;
     &:hover {
       background-color: $hv;
     }

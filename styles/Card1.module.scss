@@ -1,18 +1,23 @@
 @use "./global" as *;
 
-.Card {
+.Card1 {
   color: $tx;
-  width: 200px;
-  height: 280px;
+  aspect-ratio: 200 / 280;
+  width: 120px;
   a {
     width: 100%;
-
     .title {
+      font-size: 14px;
+      font-weight: 500;
+      color: $tx;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      margin-bottom: 4px;
     }
     .episode {
+      font-size: 12px;
+      color: $tx2;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
