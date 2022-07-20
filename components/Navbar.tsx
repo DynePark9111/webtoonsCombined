@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { ReactNode, useContext } from "react";
 import {
   IoBookmarkOutline,
@@ -19,7 +20,7 @@ import LoginBtn from "./LoginBtn";
 
 const Navbar: NextPage = () => {
   const { isNavOpen } = useContext(NavContext);
-  return <>{isNavOpen ? <NavbarSmall /> : <NavbarBig />}</>;
+  return <>{isNavOpen ? <NavbarBig /> : <NavbarSmall />}</>;
 };
 
 const NavbarSmall: NextPage = () => {
@@ -90,17 +91,17 @@ const NavbarBig: NextPage = () => {
         <ul>
           <NavbarItem href="/settings" icon={<IoCogSharp />} text="설정" />
           <NavbarItem
-            href="/settings"
+            href="/reporthistory"
             icon={<IoFlagOutline />}
             text="신고 기록"
           />
           <NavbarItem
-            href="/settings"
+            href="/customerservice"
             icon={<IoHelpCircleOutline />}
             text="고객센터"
           />
           <NavbarItem
-            href="/settings"
+            href="/message"
             icon={<IoChatbubbleEllipsesOutline />}
             text="의견 보내기"
           />
@@ -141,9 +142,13 @@ type NavbarItemType = {
 };
 
 const NavbarItem: NextPage<NavbarItemType> = ({ href, icon, text }) => {
+  const { asPath } = useRouter();
   return (
     <Link href={href}>
-      <li className={styles.NavbarItem}>
+      <li
+        className={styles.NavbarItem}
+        id={href === asPath ? styles.selected : ""}
+      >
         {icon}
         <span>{text}</span>
       </li>
