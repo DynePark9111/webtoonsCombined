@@ -1,12 +1,18 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import styles from "../styles/Card1.module.scss";
-import { CardProps } from "../types/types";
+import { NewtoonProps } from "../types/types";
 
-const Card1: NextPage<CardProps> = ({ webtoon }) => {
+const Card1: NextPage<NewtoonProps> = ({ webtoon }) => {
   return (
     <div className={styles.Card1}>
       <a href={`https://comic.naver.com${webtoon.episodeLink}`}>
-        <img alt={webtoon.title} src={webtoon.image} />
+        <Image
+          width={100}
+          height={120}
+          alt={webtoon.title}
+          src={webtoon.image}
+        />
         <div className={styles.title} title={webtoon.title}>
           {webtoon.title}
         </div>

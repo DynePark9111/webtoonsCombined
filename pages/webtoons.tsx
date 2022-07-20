@@ -6,7 +6,6 @@ import { genreFilter, platformFilter } from "../data/arrays";
 import { capitalize } from "../lib/functions";
 import styles from "../styles/Webtoons.module.scss";
 import useFetchWebtoon from "../Hooks/useFetchWebtoon";
-import WebtoonList from "../components/WebtoonList";
 
 const Webtoons: NextPage = () => {
   const [platform, setplatform] = useState(["전체"]);
@@ -34,7 +33,6 @@ const Webtoons: NextPage = () => {
       />
       <Filter array={genreFilter} selected={genre} setSelected={setGenre} />
       <h2>{capitalize(category)} Webtoons</h2>
-      <WebtoonList webtoons={data.webtoons} />
     </div>
   );
 };
