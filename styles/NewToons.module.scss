@@ -1,6 +1,6 @@
 @use "./global" as *;
 
-.Cards {
+.NewToons {
   margin: 4rem auto;
   padding: 0 1rem;
   max-width: $max-width;
@@ -23,9 +23,9 @@
       }
     }
   }
-  .cards {
+  .newToons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
   }
 }

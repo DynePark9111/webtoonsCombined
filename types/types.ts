@@ -49,13 +49,13 @@ export type FilterProps = {
   setSelected: any;
 };
 
-export type CardProps = {
+export type NewtoonProps = {
   webtoon: webtoon;
 };
 
-export type CardsProps = {
+export type NewToonsProps = {
   title: string;
-  webtoons: webtoon[];
+  webtoons: any;
 };
 
 export type RibbonProps = {

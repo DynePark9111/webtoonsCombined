@@ -2,17 +2,17 @@ import axios from "axios";
 import { useState } from "react";
 import useDebounce from "./useDebounce";
 
-function useFetchWebtoon(category, page, platform, genre) {
+function useFetchNewToon(platform, page) {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  async function fetchWebtoon(category, page, platform, genre) {
+  async function fetchNewToon(platform, page) {
     setLoading(true);
     setError(false);
     try {
       const res = await axios.get(
-        `${URL}/webtoon?category=${category}&page=${page}&platform=${platform}&genre=${genre}`
+        `${URL}/new?platform=${platform}&page=${page}`
       );
       setData(res.data);
       setLoading(false);
@@ -22,14 +22,9 @@ function useFetchWebtoon(category, page, platform, genre) {
     }
   }
 
-  useDebounce(() => fetchWebtoon(category, page, platform, genre), 1000, [
-    category,
-    page,
-    platform,
-    genre,
-  ]);
+  useDebounce(() => fetchNewToon(platform, page), 1000, [platform]);
 
   return [data, loading, error];
 }
 
-export default useFetchWebtoon;
+export default useFetchNewToon;

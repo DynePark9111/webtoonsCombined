@@ -8,10 +8,16 @@ const Filter: NextPage<FilterProps> = ({ array, selected, setSelected }) => {
       ? setSelected([...selected, item].filter((x) => x !== item))
       : setSelected([...selected, item].filter((x) => x !== "전체"));
   }
-  selected.length === 0 && setSelected([0]);
+  selected.length === 0 && setSelected(["전체"]);
 
   return (
     <ul className={styles.Filter}>
+      <li
+        id={selected.includes("전체") ? styles.selected : ""}
+        onClick={() => setSelected(["전체"])}
+      >
+        전체
+      </li>
       {array.map((item) => (
         <li
           key={item.id}

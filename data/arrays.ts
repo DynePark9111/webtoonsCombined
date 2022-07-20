@@ -1,9 +1,5 @@
 export const platformFilter = [
   {
-    id: 0,
-    name: "전체",
-  },
-  {
     id: 1,
     name: "네이버",
   },
@@ -20,10 +16,6 @@ export const platformFilter = [
 export const genreFilter = [
   {
     id: 0,
-    name: "전체",
-  },
-  {
-    id: 9,
     name: "로맨스",
   },
   {
