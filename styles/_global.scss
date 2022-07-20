@@ -1,4 +1,4 @@
-$max-width: 1284px;
+$max-width: 1016px;
 
 $blue: #3ea6ff;
 $grey: #d0d0d0;
@@ -11,11 +11,30 @@ $tx2: #aaaaaa;
 $hover: #383838;
 $active: #4c4c4c;
 
+@mixin wrapper {
+  .wrapper {
+    margin: 4rem auto;
+    padding: 0 1rem;
+    max-width: $max-width;
+  }
+}
+
 @mixin svg {
   svg {
     width: 24px;
     height: 24px;
   }
+}
+
+@mixin btn {
+  display: flex;
+  align-items: center;
+  border: 1px solid $blue;
+  border-radius: 2px;
+  color: $blue;
+  background: none;
+  padding: 5px 11px;
+  cursor: pointer;
 }
 
 @mixin hoverAndActive {
