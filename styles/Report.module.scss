@@ -1,0 +1,46 @@
+@use "./global" as *;
+
+.Report {
+  background-color: $bg_dark;
+  color: $tx;
+  form {
+    max-width: $max-width;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: $hover;
+    input[type="text"],
+    input[type="email"] {
+      background-color: $bg_dark;
+      padding: 1rem;
+      border: 1px solid $hover;
+      color: $tx;
+    }
+    textarea {
+      align-items: flex-start;
+      min-height: 200px;
+      background-color: $bg_dark;
+      border: 1px solid $hover;
+      padding: 1rem;
+      color: $tx;
+      resize: vertical;
+    }
+    h5 {
+      color: $tx;
+      margin: 1rem 2px;
+      font-weight: 500;
+    }
+    .check {
+      display: flex;
+      label {
+        color: $tx;
+      }
+    }
+    input[type="submit"] {
+      align-self: flex-end;
+      @include btn;
+      @include hoverAndActive;
+    }
+  }
+}

@@ -26,6 +26,15 @@ $active: #4c4c4c;
   }
 }
 
+@mixin section {
+  section {
+    margin: 3rem auto;
+    color: $tx;
+    max-width: $max-width;
+    text-align: center;
+  }
+}
+
 @mixin btn {
   display: flex;
   align-items: center;

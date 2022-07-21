@@ -5,10 +5,10 @@ export type webtoon = {
   title: string;
   image: string;
   link: string;
-  platform: "naver";
+  platform: string;
   episodeTitle: string;
   episodeLink: string;
-  updatedAt: TimeRanges;
+  updatedAt: Date | string;
 };
 
 export type webtoonDetail = {

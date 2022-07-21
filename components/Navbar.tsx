@@ -101,34 +101,35 @@ const NavbarBig: NextPage = () => {
             text="고객센터"
           />
           <NavbarItem
-            href="/message"
+            href="/report"
             icon={<IoChatbubbleEllipsesOutline />}
             text="의견 보내기"
           />
         </ul>
         <div className={styles.links}>
-          <Link href="/">정보</Link>
-          <Link href="/">보도자료</Link>
-          <Link href="/">저작권</Link>
-          <Link href="/">문의하기</Link>
-          <Link href="/">크리에이터</Link>
-          <Link href="/">광고</Link>
-          <Link href="/">개발자</Link>
+          <Link href="/404">정보</Link>
+          <Link href="/404">보도자료</Link>
+          <Link href="/404">저작권</Link>
+          <Link href="/report">문의하기</Link>
+          <Link href="/404">크리에이터</Link>
+          <Link href="/404">광고</Link>
+          <Link href="/404">개발자</Link>
         </div>
         <div className={styles.links}>
-          <Link href="/">약관</Link>
-          <Link href="/">개인정보처리방침</Link>
-          <Link href="/">정책 및 안전</Link>
-          <Link href="/">사이트 작동의 원리</Link>
-          <Link href="/">새로운 기능 테스트하기</Link>
+          <Link href="/404">약관</Link>
+          <Link href="/404">개인정보처리방침</Link>
+          <Link href="/404">정책 및 안전</Link>
+          <Link href="/404">사이트 작동의 원리</Link>
+          <Link href="/404">새로운 기능 테스트하기</Link>
         </div>
         <div className={styles.copyright}>
-          <div>© 2022 Google LLC</div>
-          <div>CEO: 선다 피차이</div>
+          <div>© 2022 WebtoonsCombined LLC</div>
+          <div>CEO : Muhammad Bean Salmon Al Thaad</div>
           <div>
-            주소: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.
+            주소 : 1234 Conch St. Bikini Bottom, Mountain View, San Pedro 1234,
+            Paraguay.
           </div>
-          <div>전화: 080-822-1450(무료)</div>
+          <div>전화: 000-0000-0000(유료)</div>
         </div>
       </div>
     </aside>

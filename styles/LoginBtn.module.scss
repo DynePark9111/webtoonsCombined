@@ -9,10 +9,8 @@
   background: none;
   padding: 5px 11px;
   cursor: pointer;
-  svg {
-    width: 24px;
-    height: 24px;
-  }
+  @include hoverAndActive;
+  @include svg;
   span {
     font-size: 14px;
     margin-left: 0.5rem;

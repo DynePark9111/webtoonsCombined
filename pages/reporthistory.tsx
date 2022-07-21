@@ -8,7 +8,7 @@ const ReportHistory: NextPage = () => {
       <Introduction
         title="신고 내역"
         subtitle="신고해 주셔서 감사합니다"
-        src="/images/message.svg"
+        src="/images/defense.svg"
       />
       <section>제출한 신고가 없습니다.</section>
     </div>
