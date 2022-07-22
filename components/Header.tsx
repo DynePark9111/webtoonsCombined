@@ -11,6 +11,8 @@ import { useContext } from "react";
 import { NavContext } from "../context/navContext";
 
 const Header: NextPage = () => {
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+
   const { toggleNav } = useContext(NavContext);
 
   return (
@@ -19,7 +21,7 @@ const Header: NextPage = () => {
         <div className={styles.bars} onClick={() => toggleNav()}>
           <IoMenuSharp />
         </div>
-        <div className={styles.logo}>WebtoonsCombined</div>
+        <div className={styles.logo}>{COMPANY}</div>
       </div>
       <div className={styles.searchbar}>
         <form>

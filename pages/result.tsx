@@ -1,12 +1,10 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { capitalize } from "../lib/functions";
-import styles from "../styles/Webtoons.module.scss";
-import useFetchWebtoon from "../Hooks/useFetchWebtoon";
+import { useState } from "react";
 import Filter2 from "../components/Filter2";
+import styles from "../styles/Result.module.scss";
 
-const Webtoons: NextPage = () => {
+const Result: NextPage = () => {
   const [filterCategory, setFilterCategory] = useState({
     uploaded: "전체",
     platform: "전체",
@@ -16,22 +14,12 @@ const Webtoons: NextPage = () => {
     page: 1,
   });
   const router = useRouter();
-  const { category } = router.query;
+  const { search_query } = router.query;
   const [isOpen, setIsOpen] = useState(false);
 
-  // const [data, loading, error] = useFetchWebtoon(
-  //   category,
-  //   page,
-  //   platform,
-  //   genre
-  // );
-  // useEffect(() => {
-  //   setPage(1);
-  // }, [category, platform, genre]);
-
   return (
-    <div className={styles.Webtoons}>
-      <h2>{capitalize(category)} Webtoons</h2>
+    <div className={styles.Result}>
+      <h2>{search_query}에 대한 검색 결과.</h2>
       <Filter2
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -47,4 +35,4 @@ const Webtoons: NextPage = () => {
   );
 };
 
-export default Webtoons;
+export default Result;

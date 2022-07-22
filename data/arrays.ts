@@ -1,3 +1,5 @@
+const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+
 export const platformFilter = [
   {
     id: 1,
@@ -57,18 +59,17 @@ export const FaqArray = [
     id: 0,
     question: "불법 사이트 인가요?",
     answer:
-      "WebtoonsCombine은 최신 웹툰 정보와 리뷰를 위한 웹사이트 입니다. 모든 웹툰은 공식 홈페이지로 연결되어 있으며 불법적인 호스팅 하지 않습니다.",
+      "모든 웹툰은 공식 홈페이지로 연결되어 있으며 불법적인 호스팅 하지 않습니다.",
   },
   {
     id: 1,
-    question: "이 사이트를 만든 이유는?",
-    answer:
-      "여러 플랫폼에서 연재되는 웹툰에 대한 정보를 한 곳에서 볼 수 있으면 좋겠다고 생각했습니다.",
+    question: "사이트의 목적은?",
+    answer: `${COMPANY}은 최신 웹툰 정보와 리뷰를 위한 웹사이트 입니다.`,
   },
   {
     id: 2,
     question: "광고 받나요?",
-    answer: "WebtoonsCombine은 비영리 웹사이트 입니다.",
+    answer: `${COMPANY}은 비영리 웹사이트 입니다.`,
   },
   {
     id: 3,
@@ -78,8 +79,8 @@ export const FaqArray = [
   },
   {
     id: 4,
-    question: "비밀번호 안전함?",
-    answer: "Salt 치고 Hash해서 비밀번호 일어버리면 저도 몰라요.",
+    question: "비밀번호를 잊어버렸습니다",
+    answer: "가입된 이메일을 이용하여 초기화 해야 합니다.",
   },
   {
     id: 6,
@@ -195,3 +196,196 @@ export const sampleWebtoonDetail = {
   url: "https://comic.naver.com/webtoon/list?titleId=769209&weekday=wed",
   _id: "999",
 };
+
+export const Filter2Array = [
+  {
+    id: 0,
+    title: "업로드 날짜",
+    category: "uploaded",
+    options: ["전체", "지난 1시간", "오늘", "이번 주", "이번 달", "올해"],
+    initial: "전체",
+  },
+  {
+    id: 1,
+    title: "플랫폼",
+    category: "platform",
+    options: ["전체", "네이버", "카카오", "카카오페이지", "기타"],
+    initial: "전체",
+  },
+  {
+    id: 2,
+    title: "장르",
+    category: "genre",
+    options: ["전체", "로맨스", "액션", "판타치", "무협", "일상", "기타"],
+    initial: "전체",
+  },
+  {
+    id: 3,
+    title: "연재 요일",
+    category: "day",
+    options: [
+      "전체",
+      "월요일",
+      "화요일",
+      "수요일",
+      "목요일",
+      "금요일",
+      "토요일",
+      "일요일",
+    ],
+    initial: "전체",
+  },
+  {
+    id: 4,
+    title: "정렬기준",
+    category: "orderBy",
+    options: ["관련성", "업로드 날짜", "조회수", "평점", "댓글 수"],
+    initial: "관련성",
+  },
+];
+
+export const ExploreCards = [
+  {
+    id: 0,
+    title: "최신",
+    icon: "/images/hot.png",
+    link: "/new",
+  },
+  {
+    id: 1,
+    title: "연재",
+    icon: "/images/music.png",
+    link: "/webtoons?category=ongoing",
+  },
+  {
+    id: 2,
+    title: "완결",
+    icon: "/images/trophy.png",
+    link: "/webtoons?category=completed",
+  },
+  {
+    id: 3,
+    title: "랜덤",
+    icon: "/images/bulb.png",
+    link: "/404",
+  },
+  {
+    id: 4,
+    title: "성인",
+    icon: "/images/game.png",
+    link: "/webtoons?category=adult",
+  },
+  {
+    id: 5,
+    title: "BL/GL",
+    link: "/webtoons?category=BL/GL",
+  },
+];
+
+export const OfficialPlatforms = [
+  {
+    id: 0,
+    name: "네이버",
+    icon: "/platform/Naver.png",
+    link: "https://comic.naver.com/webtoon/weekday",
+  },
+  {
+    id: 1,
+    name: "카카오",
+    icon: "/platform/Kakao.png",
+    link: "https://webtoon.kakao.com/",
+  },
+  {
+    id: 2,
+    name: "카카오페이지",
+    icon: "/platform/Kakaopage.png",
+    link: "https://page.kakao.com/",
+  },
+  {
+    id: 3,
+    name: "레진코믹스",
+    icon: "/platform/Lezhin.jpeg",
+    link: "https://www.lezhin.com/ko",
+  },
+  {
+    id: 4,
+    name: "탑툰",
+    icon: "/platform/Toptoon.jpg",
+    link: "https://toptoon.com/",
+  },
+  {
+    id: 5,
+    name: "투믹스",
+    icon: "/platform/Toomics.jpeg",
+    link: "https://www.toomics.com/",
+  },
+  {
+    id: 6,
+    name: "봄툰",
+    icon: "/platform/Bomtoon.jpeg",
+    link: "https://www.bomtoon.com/",
+  },
+  {
+    id: 7,
+    name: "코미코",
+    icon: "/platform/Comico.jpeg",
+    link: "https://www.comico.kr/",
+  },
+  {
+    id: 8,
+    name: "미스터블루",
+    icon: "/platform/MrBlue.jpeg",
+    link: "https://www.mrblue.com/",
+  },
+  {
+    id: 9,
+    name: "피너툰",
+    icon: "/platform/Peanutoon.png",
+    link: "https://www.peanutoon.com/ko",
+  },
+  {
+    id: 10,
+    name: "버프툰",
+    icon: "/platform/Bufftoon.png",
+    link: "https://bufftoon.plaync.com/",
+  },
+  {
+    id: 11,
+    name: "무툰",
+    icon: "/platform/Mootoon.png",
+    link: "https://www.mootoon.co.kr/",
+  },
+];
+
+export const adsArray = [
+  {
+    id: 0,
+    name: "카카오페이지",
+    src: "/ads/kakaopage_ad.jpg",
+    link: "https://www.youtube.com/channel/UCKLyF1Y9Eq5dWIW_M2rBJew",
+  },
+  {
+    id: 1,
+    name: "레진코믹스",
+    src: "/ads/lezhin_ad.jpg",
+    link: "https://www.youtube.com/c/Lezhin",
+  },
+  {
+    id: 2,
+    name: "카카오",
+    src: "/ads/kakao_ad.jpg",
+    link: "https://www.youtube.com/channel/UCZ18NRAYFTXMnmsgAFnSHrQ",
+  },
+  {
+    id: 3,
+    name: "네이버",
+    src: "/ads/naver_ad.jpg",
+    link: "https://www.youtube.com/channel/UCK4WxhNsloFrA8iUaO92r5g",
+  },
+  {
+    id: 4,
+    name: "탑툰",
+    src: "/ads/toptoon_ad.jpg",
+    link: "https://www.youtube.com/user/toptoonkr",
+  },
+];

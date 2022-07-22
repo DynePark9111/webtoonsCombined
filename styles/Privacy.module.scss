@@ -1,0 +1,91 @@
+@use "./global" as *;
+
+$padding: 5em;
+
+.Privacy {
+  background-color: $bg_dark;
+  font-size: 12px;
+  .wrapper {
+    position: relative;
+    max-width: $max-width;
+    margin: 0 auto $padding;
+    color: $tx;
+    button {
+      position: absolute;
+      top: $padding;
+      right: 0;
+      @include btn;
+      @include hoverAndActive;
+    }
+    h2 {
+      padding: $padding 0 1em;
+      text-align: center;
+    }
+    h3 {
+      font-size: 1em;
+      margin-top: 1.875em;
+      margin-bottom: 0.375em;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+    h4 {
+      font-size: 13px;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 70px 100px;
+      background-color: $bg_dark;
+      border: solid 1px $hover;
+
+      ul {
+        padding-left: 1em;
+        margin-top: 0.5em;
+        li {
+          list-style: inside;
+          line-height: 1.6;
+          overflow-wrap: break-word;
+        }
+      }
+      ol {
+        padding-left: 2em;
+        margin-top: 0.5em;
+        li {
+          list-style: decimal;
+          line-height: 1.6;
+          overflow-wrap: break-word;
+        }
+      }
+      .lawBox {
+        margin: 1.25em 0;
+        padding: 1.25em 1.875em;
+        border: solid 1px $hover;
+      }
+      .lawTable {
+        min-width: 640px;
+        border-collapse: collapse;
+        margin: 1em auto;
+        border: 1px solid $hover;
+        font-size: 13px;
+        overflow: scroll;
+        th {
+          border-collapse: collapse;
+          min-width: 160px;
+          padding: 0.5em;
+          border: 1px solid $hover;
+          background-color: $bg;
+        }
+        td {
+          min-width: 160px;
+          padding: 0.5em;
+          border: 1px solid $hover;
+        }
+      }
+      .lawNoWrap {
+        white-space: nowrap;
+      }
+    }
+  }
+}

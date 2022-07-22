@@ -22,7 +22,10 @@ const New: NextPage = () => {
         selected={platform}
         setSelected={setplatform}
       />
-      <Cards title="New Webtoons" webtoons={data} />
+      <section>
+        <h2>최신웹툰</h2>
+      </section>
+      {/* <Cards title="New Webtoons" webtoons={data} /> */}
     </div>
   );
 };

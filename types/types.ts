@@ -68,3 +68,12 @@ export type HomeProps = {
   webtoons1: webtoon[];
   webtoons2: webtoon[];
 };
+
+export type CardProps = {
+  card: {
+    id: number;
+    title: string;
+    link: string;
+    icon?: string;
+  };
+};
