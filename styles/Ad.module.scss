@@ -1,72 +1,16 @@
 @use "./global" as *;
 
 .Ad {
+  background-color: none;
   overflow: hidden;
-  position: relative;
-  &:hover .buttons button,
-  &:hover .progress {
-    opacity: 1;
-  }
-  .banner {
-    aspect-ratio: 2048 / 339;
-    position: relative;
-    white-space: nowrap;
-    transition: transform 300ms;
-    cursor: pointer;
-  }
-  .buttons {
-    pointer-events: none;
-    z-index: 0;
+  .wrapper {
     display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    button {
-      padding: 0;
-      opacity: 0.5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      pointer-events: all;
-      z-index: 1;
-      font-size: 2rem;
-      border: none;
-      background: none;
-      color: $hover;
-      cursor: pointer;
-      transition: color 200ms, opacity 200ms;
-      &:hover {
-        color: $active;
-      }
-    }
-  }
-  .progress {
-    opacity: 0.5;
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    z-index: 2;
-    bottom: 16px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    transition: opacity 200ms;
-    .dots {
-      cursor: pointer;
-      width: 16px;
-      height: 6px;
-      margin: 0 4px;
-      border-radius: 8px;
-      background-color: $hover;
-      opacity: 0.5;
-      transition: opacity 300ms;
-      @include hoverAndActive;
-    }
-    #active {
-      opacity: 0.95;
-    }
+    align-items: center;
+  }
+  .wrapper2 {
+    background-color: $bg_darkest;
+    color: $tx;
+    padding: 1rem 0 1rem;
   }
 }

@@ -1,5 +1,9 @@
 @use "./global" as *;
 
 .Home {
+  @include section;
+  section {
+    width: 90%;
+  }
   background-color: $bg_dark;
 }

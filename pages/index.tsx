@@ -1,4 +1,3 @@
-import axios from "axios";
 import type { NextPage } from "next";
 import NewToons from "../components/NewToons";
 import Ribbon from "../components/Ribbon";
