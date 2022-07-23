@@ -8,7 +8,11 @@ const Dev: NextPage = () => {
 
   return (
     <div className={styles.Dev}>
-      <Introduction title="개발자" subtitle={`${COMPANY} Dev Log`} />
+      <Introduction
+        title="개발자"
+        subtitle={`${COMPANY} Dev Log`}
+        subtitle2="last updated: 2022-07-22"
+      />
       <section>
         <h2>Prototype</h2>
         <div className={styles.diagram1}>
@@ -17,7 +21,6 @@ const Dev: NextPage = () => {
       </section>
       <section>
         <h2>Current</h2>
-        <div>last updated: 2022-07-22</div>
         <div className={styles.diagram2}>
           <Image src="/diagram/type2.png" layout="fill" alt="chart1" />
         </div>

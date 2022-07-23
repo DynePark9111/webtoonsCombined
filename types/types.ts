@@ -77,3 +77,23 @@ export type CardProps = {
     icon?: string;
   };
 };
+
+export type FilterSlideStyleProps = {
+  array: { id: number; name: string }[];
+  selected: number;
+  setSelected: any;
+};
+
+//new
+export type SampleWebtoon = {
+  title: string;
+  episode: string;
+  genre: string[];
+};
+
+export type SampleNewProps = {
+  webtoons: SampleWebtoon[];
+};
+export type SampleCardProps = {
+  webtoon: SampleWebtoon;
+};

@@ -58,6 +58,7 @@ type PlatformProps = {
     name: string;
     icon: string;
     link: string;
+    background: string;
   };
 };
 
@@ -65,7 +66,17 @@ const Officials: NextPage = () => {
   return (
     <div className={styles.Officials}>
       {OfficialPlatforms.map((platform) => (
-        <Platform key={platform.id} platform={platform} />
+        <a
+          key={platform.id}
+          className={styles.link}
+          title={platform.name}
+          href={platform.link}
+          style={{ backgroundColor: platform.background }}
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Platform platform={platform} />
+        </a>
       ))}
     </div>
   );
@@ -73,14 +84,14 @@ const Officials: NextPage = () => {
 
 const Platform: NextPage<PlatformProps> = ({ platform }) => {
   return (
-    <a
-      className={styles.Platform}
-      title={platform.name}
-      href={platform.link}
-      rel="noreferrer noopener"
-      target="_blank"
-    >
-      <Image width={92} height={92} src={platform.icon} alt={platform.name} />
-    </a>
+    <div className={styles.Platform}>
+      <Image
+        width={300}
+        height={300}
+        src={platform.icon}
+        alt={platform.name}
+        className={styles.image}
+      />
+    </div>
   );
 };

@@ -2,50 +2,65 @@
 
 .Explore {
   color: $tx;
-  margin: auto;
+  margin: 2rem auto;
   padding: 0 1rem;
   max-width: 1320px;
-  .Cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    .Card {
-      width: 210px;
-      height: 116px;
-      color: $tx;
-      background-color: $bg;
-      border-radius: 0.5rem;
-      @include hoverAndActive;
-      .icon {
-        margin: 20px 20px 4px 20px;
-      }
-      .title {
-        margin: 4px 20px 0px 20px;
-      }
-      .empty {
-        width: 32px;
-        height: 32px;
-        margin: 20px 20px 4px 20px;
-      }
-      &:last-child {
-        background: linear-gradient(80deg, #956dcd, #b83aa8, #ef4a34, #f76a23, #ea9031, #c9bb36);
-        &:hover {
-          filter: brightness(1.1);
-        }
-      }
+}
+
+.Cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.Card {
+  width: 210px;
+  height: 116px;
+  color: $tx;
+  background-color: $bg;
+  border-radius: 0.5rem;
+  @include hoverAndActive;
+  .icon {
+    margin: 20px 20px 4px 20px;
+  }
+  .title {
+    margin: 4px 20px 0px 20px;
+  }
+  .empty {
+    width: 32px;
+    height: 32px;
+    margin: 20px 20px 4px 20px;
+  }
+  &:last-child {
+    background: linear-gradient(80deg, #956dcd, #b83aa8, #ef4a34, #f76a23, #ea9031, #c9bb36);
+    &:hover {
+      filter: brightness(1.1);
     }
   }
-  .Officials {
+}
+
+.Officials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  .link {
+    width: 210px;
+    height: 116px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    .Platform {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      border-radius: 100%;
-      @include hoverAndActive;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    &:hover .Platform img {
+      transform: translateY(-0.5rem);
     }
+  }
+}
+
+.Platform {
+  width: 50%;
+  img {
+    transition: transform 300ms;
+    transform: translateY(0);
   }
 }

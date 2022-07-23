@@ -6,7 +6,7 @@ import { adsArray } from "../data/arrays";
 import styles from "../styles/Ad.module.scss";
 
 const Ad: NextPage = () => {
-  const [slide, setSlide] = useState(1);
+  const [slide, setSlide] = useState(0);
   const slideRef = useRef(0);
   const timeRef = useRef<null | NodeJS.Timeout>(null);
 
@@ -17,7 +17,7 @@ const Ad: NextPage = () => {
         : (slideRef.current = slideRef.current + 1);
       timeRef.current = timeout;
       setSlide(slideRef.current);
-    }, 5000);
+    }, 4000);
     return () => clearTimeout(timeout);
   }, []);
 

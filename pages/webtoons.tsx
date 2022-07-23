@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { capitalize } from "../lib/functions";
 import styles from "../styles/Webtoons.module.scss";
 import useFetchWebtoon from "../Hooks/useFetchWebtoon";
-import Filter2 from "../components/Filter2";
+import FilterYoutubeStyle from "../components/FilterYoutubeStyle";
 
 const Webtoons: NextPage = () => {
   const [filterCategory, setFilterCategory] = useState({
@@ -32,14 +32,13 @@ const Webtoons: NextPage = () => {
   return (
     <div className={styles.Webtoons}>
       <h2>{capitalize(category)} Webtoons</h2>
-      <Filter2
+      <FilterYoutubeStyle
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         filterCategory={filterCategory}
         setFilterCategory={setFilterCategory}
       />
       <section id={isOpen ? styles.open : ""}>
-        <div>hi</div>
         <div className={styles.noMore}>결과가 더 이상 없습니다.</div>
         <button>+8개 더보기</button>
       </section>

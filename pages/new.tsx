@@ -1,13 +1,59 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import Cards from "../components/NewToons";
-import Filter from "../components/Filter";
 import { platformFilter } from "../data/arrays";
 import styles from "../styles/New.module.scss";
 import useFetchNewToon from "../Hooks/useFetchNewToon";
+import FilterSlideStyle from "../components/FilterSlideStyle";
+import Ribbon from "../components/Ribbon";
+import NewNaver from "../components/New/NewNaver";
+import NewKakao from "../components/New/NewKakao";
+import NewKakaopage from "../components/New/NewKakaopage";
 
 const New: NextPage = () => {
-  const [platform, setplatform] = useState(["전체"]);
+  const webtoons = [
+    {
+      title: "전지적인 독자가 대충 어떻게 됬다는 내용",
+      episode: "전지적인 독자가 대충 어떻게 됬다는 내용",
+      genre: ["로맨스", "코메디"],
+    },
+    {
+      title: "Title2",
+      episode: "episode1",
+      genre: ["로맨스", "코메디"],
+    },
+    {
+      title: "Title3",
+      episode: "episode1",
+      genre: ["로맨스", "코메디"],
+    },
+    {
+      title: "Title123",
+      episode: "episode1",
+      genre: ["로맨스", "코메디"],
+    },
+    {
+      title: "전지적인 독자가 대충 어떻게 됬다는 내용123",
+      episode: "전지적인 독자가 대충 어떻게 됬다는 내용",
+      genre: ["로맨스", "코메디"],
+    },
+    {
+      title: "Title212341",
+      episode: "episode1",
+      genre: ["로맨스", "코메디"],
+    },
+    {
+      title: "Title3141",
+      episode: "episode1",
+      genre: ["로맨스", "코메디"],
+    },
+    {
+      title: "Title52125",
+      episode: "episode1",
+      genre: ["로맨스", "코메디"],
+    },
+  ];
+
+  const [platform, setPlatform] = useState(0);
   const [page, setPage] = useState(1);
   const [data, loading, error] = useFetchNewToon(platform, page);
 
@@ -17,15 +63,26 @@ const New: NextPage = () => {
 
   return (
     <div className={styles.New}>
-      <Filter
-        array={platformFilter}
-        selected={platform}
-        setSelected={setplatform}
+      <Ribbon
+        line1="모든 웹툰은 공식 홈페이지와 연결되어 있습니다."
+        line2="공식 페이지로"
+        href="/explore"
       />
-      <section>
+      <div className={styles.wrapper}>
         <h2>최신웹툰</h2>
-      </section>
-      {/* <Cards title="New Webtoons" webtoons={data} /> */}
+        <FilterSlideStyle
+          array={platformFilter}
+          selected={platform}
+          setSelected={setPlatform}
+        />
+        {platform === 0 && <NewNaver webtoons={webtoons} />}
+        {platform === 1 && <NewKakao webtoons={webtoons} />}
+        {platform === 2 && <NewKakaopage webtoons={webtoons} />}
+        <section>
+          <button>+8개 더보기</button>
+          <div className={styles.noMore}>결과가 더 이상 없습니다.</div>
+        </section>
+      </div>
     </div>
   );
 };

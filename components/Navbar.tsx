@@ -109,17 +109,23 @@ const NavbarBig: NextPage = () => {
           />
         </ul>
         <div className={styles.links}>
-          <Link href="/404">정보*</Link>
-          <Link href="/404">보도자료*</Link>
-          <Link href="/404">저작권*</Link>
+          <Link href="/about">정보</Link>
           <Link href="/report">문의하기</Link>
-          <Link href="/ads">광고*</Link>
+          <Link href="/ad">광고</Link>
           <Link href="/dev">개발자</Link>
+          <Link href="/test">실험실</Link>
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href={`http://admin.dynedyne.com/`}
+          >
+            관리자
+          </a>
         </div>
         <div className={styles.links}>
           <Link href="/policy/terms">약관</Link>
           <Link href="/policy/privacy">개인정보처리방침</Link>
-          <Link href="/policy/teenager">청소년 보호정책</Link>
+          <Link href="/policy/teenager">청소년보호정책</Link>
         </div>
         <div className={styles.copyright}>
           <div>© 2022 {COMPANY} LLC</div>

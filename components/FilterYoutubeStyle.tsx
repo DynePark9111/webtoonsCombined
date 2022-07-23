@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { IoFilterOutline } from "react-icons/io5";
 import { Filter2Array } from "../data/arrays";
-import styles from "../styles/Filter2.module.scss";
+import styles from "../styles/FilterYoutubeStyle.module.scss";
 
 type filterCategoryT = {
   uploaded: string;
@@ -12,21 +12,21 @@ type filterCategoryT = {
   page: number;
 };
 
-type Filter2Props = {
+type FilterYoutubeStyleProps = {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
   filterCategory: filterCategoryT;
   setFilterCategory: (arg: filterCategoryT) => void;
 };
 
-const Filter2: NextPage<Filter2Props> = ({
+const FilterYoutubeStyle: NextPage<FilterYoutubeStyleProps> = ({
   isOpen,
   setIsOpen,
   filterCategory,
   setFilterCategory,
 }) => {
   return (
-    <div className={styles.Filter2}>
+    <div className={styles.FilterYoutubeStyle}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         title={isOpen ? "검색 필터 닫기" : "검색 필터 열기"}
@@ -50,7 +50,7 @@ const Filter2: NextPage<Filter2Props> = ({
   );
 };
 
-export default Filter2;
+export default FilterYoutubeStyle;
 
 type FilterGroupProps = {
   title: string;

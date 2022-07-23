@@ -3,6 +3,10 @@
 .Ad {
   overflow: hidden;
   position: relative;
+  &:hover .buttons button,
+  &:hover .progress {
+    opacity: 1;
+  }
   .banner {
     aspect-ratio: 2048 / 339;
     position: relative;
@@ -21,6 +25,8 @@
     position: absolute;
     top: 0;
     button {
+      padding: 0;
+      opacity: 0.5;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,13 +37,14 @@
       background: none;
       color: $hover;
       cursor: pointer;
-      padding: 0;
+      transition: color 200ms, opacity 200ms;
       &:hover {
         color: $active;
       }
     }
   }
   .progress {
+    opacity: 0.5;
     width: 100%;
     height: 10px;
     position: absolute;
@@ -46,6 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 200ms;
     .dots {
       cursor: pointer;
       width: 16px;

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Filter2 from "../components/Filter2";
+import FilterYoutubeStyle from "../components/FilterYoutubeStyle";
 import styles from "../styles/Result.module.scss";
 
 const Result: NextPage = () => {
@@ -20,7 +20,7 @@ const Result: NextPage = () => {
   return (
     <div className={styles.Result}>
       <h2>{search_query}에 대한 검색 결과.</h2>
-      <Filter2
+      <FilterYoutubeStyle
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         filterCategory={filterCategory}
