@@ -18,7 +18,7 @@ $wd_image: 5.25em;
   position: relative;
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  background-color: $bg_darkest;
+  background-color: var(--bg_dark);
   border-radius: 1.25em;
   .image {
     margin: auto;
@@ -49,7 +49,7 @@ $wd_image: 5.25em;
         z-index: 100;
         font-size: 0.75em;
         padding: 0.5em 0.25em 0.5em 2em;
-        color: $tx2;
+        color: var(--tx2);
         .popup {
           padding: 1px;
           margin: 1px;
@@ -67,7 +67,7 @@ $wd_image: 5.25em;
       text-overflow: ellipsis;
       font-size: 1em;
       font-weight: 600;
-      color: $tx;
+      color: var(--tx);
     }
     .episode,
     .genre {
@@ -75,7 +75,7 @@ $wd_image: 5.25em;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      color: $tx2;
+      color: var(--tx2);
       font-size: 0.75em;
     }
   }

@@ -8,7 +8,7 @@ $padding: 5em;
     position: relative;
     max-width: $max_width;
     margin: 0 auto $padding;
-    color: $tx;
+    color: var(--tx);
     h2 {
       padding: $padding 0 1em;
       text-align: center;
@@ -22,7 +22,7 @@ $padding: 5em;
     }
     .content {
       padding: $padding 7em;
-      border: solid 1px $hover;
+      border: solid 1px var(--hover);
       h3 {
         margin-top: 3em;
         margin-bottom: 1em;

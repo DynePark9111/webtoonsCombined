@@ -3,6 +3,7 @@
 .Layout {
   display: flex;
   flex-direction: column;
+  background-color: var(--bg_dark);
   .top {
     display: flex;
     flex-direction: column;
@@ -13,6 +14,7 @@
   }
   .main {
     display: flex;
+    position: relative;
     > :last-child {
       flex: 1;
     }

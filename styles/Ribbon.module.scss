@@ -1,7 +1,7 @@
 @use "./global" as *;
 
 // $bg_ribbon: #f5f5f7;
-$bg_ribbon: $bg_darkest;
+$bg_ribbon: var(--bg_darkest);
 
 .Ribbon {
   width: 100%;

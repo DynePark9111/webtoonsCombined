@@ -13,21 +13,6 @@ $searchBtnWidth: 64px;
   @include svg;
 }
 
-@mixin iconSmall {
-  color: $bg;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0 10px;
-  height: 40px;
-  border: 1px solid $bg;
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
 .Searchbox {
   max-height: 40px;
   flex: 1;
@@ -43,8 +28,8 @@ $searchBtnWidth: 64px;
     &:focus-within .searchIcon {
       border: 1px solid $blue;
       border-right: none;
-      background: $bg_dark;
-      color: $tx;
+      background: var(--bg_dark);
+      color: var(--tx);
     }
     &:focus-within .closeIcon {
       border: 1px solid $blue;
@@ -68,12 +53,12 @@ $searchBtnWidth: 64px;
       padding-left: 6px;
       width: 100%;
       height: 40px;
-      color: $grey;
+      color: var(--tx2);
       background: none;
-      border: 1px solid $hover;
+      border: 1px solid var(--hover);
       border-right: none;
       font-size: 14px;
-      background: $bg_dark;
+      background: var(--bg_dark);
       &:focus {
         outline: none;
         border-color: $blue;
@@ -81,12 +66,12 @@ $searchBtnWidth: 64px;
         padding-left: 8px;
       }
       &[value=""] ~ .closeIcon {
-        color: $bg;
+        color: var(--bg);
         pointer-events: none;
       }
     }
     .closeIcon {
-      border: 1px solid $hover;
+      border: 1px solid var(--hover);
       border-left: none;
       opacity: 1;
       height: 40px;
@@ -95,7 +80,7 @@ $searchBtnWidth: 64px;
       align-items: center;
       margin: 0;
       padding: 8px;
-      background: $bg_dark;
+      background: var(--bg_dark);
       cursor: pointer;
     }
   }
@@ -103,9 +88,10 @@ $searchBtnWidth: 64px;
     @include icon;
     width: 64px;
     height: 40px;
-    border: none;
-    background-color: $bg_btn;
-    color: $tx;
+    border: 1px solid var(--hover);
+    border-left: none;
+    background-color: var(--bg_btn);
+    color: var(--tx);
     border-radius: 0 2px 2px 0;
   }
 }

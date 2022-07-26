@@ -9,8 +9,8 @@
     align-items: center;
   }
   .wrapper2 {
-    background-color: $bg_darkest;
-    color: $tx;
+    background-color: var(--bg_darkest);
+    color: var(--tx);
     padding: 1rem 0 1rem;
   }
 }

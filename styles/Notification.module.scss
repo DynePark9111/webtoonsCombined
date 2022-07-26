@@ -4,7 +4,7 @@ $width: 300px;
 
 .Notification {
   min-width: calc($width + 2rem);
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 0;
   bottom: 0;

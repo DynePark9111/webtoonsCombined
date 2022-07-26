@@ -6,7 +6,7 @@
   height: clamp(100px, 100%, 300px);
   overflow: hidden;
   a {
-    color: $tx;
+    color: var(--tx);
     transition: transform 300ms;
     &:hover {
       transform: translateY(-8px);
@@ -16,12 +16,12 @@
       overflow: hidden;
       border-radius: 6px;
       aspect-ratio: 83 / 90;
-      background-color: $bg_darkest;
+      background-color: var(--bg_darkest);
     }
     .title {
       font-size: 14px;
       font-weight: 500;
-      color: $tx;
+      color: var(--tx);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -29,7 +29,7 @@
     }
     .episode {
       font-size: 12px;
-      color: $tx2;
+      color: var(--tx2);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

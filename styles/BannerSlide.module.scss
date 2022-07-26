@@ -35,7 +35,7 @@
       font-size: 2rem;
       border: none;
       background: none;
-      color: $hover;
+      color: var(--hover);
       cursor: pointer;
       transition: color 200ms, opacity 200ms;
       &:hover {
@@ -60,7 +60,7 @@
       height: 6px;
       margin: 0 4px;
       border-radius: 8px;
-      background-color: $hover;
+      background-color: var(--hover);
       opacity: 0.5;
       transition: opacity 300ms;
       @include hoverAndActive;

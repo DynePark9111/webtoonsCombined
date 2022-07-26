@@ -1,7 +1,7 @@
 @use "./global" as *;
 
 .Dev {
-  background-color: $bg_dark;
+  background-color: var(--bg_dark);
   @include section;
   section {
     text-align: start;

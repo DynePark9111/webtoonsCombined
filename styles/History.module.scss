@@ -1,7 +1,7 @@
 @use "./global" as *;
 
 .History {
-  background-color: $bg_dark;
+  background-color: var(--bg_dark);
   @include section;
   .Watched {
     margin: 1rem;
