@@ -35,7 +35,7 @@ $clear_dark: #000000cc;
 @mixin section {
   section {
     margin: 3rem auto;
-    color: $tx;
+    color: var(--tx);
     max-width: $max-width;
     text-align: center;
   }
@@ -55,10 +55,10 @@ $clear_dark: #000000cc;
 @mixin hoverAndActive {
   cursor: pointer;
   &:hover {
-    background-color: $hover;
+    background-color: var(--hover);
   }
   &:active {
-    background-color: $active;
+    background-color: var(--active);
   }
 }
 

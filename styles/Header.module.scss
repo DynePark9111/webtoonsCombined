@@ -12,13 +12,13 @@
 
 .Header {
   width: 100%;
-  background-color: $bg;
+  background-color: var(--bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 56px;
   padding: 0 16px;
-  color: $tx;
+  color: var(--tx);
   .left {
     display: flex;
     align-items: center;

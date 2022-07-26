@@ -3,13 +3,13 @@
 $padding: 5em;
 
 .Privacy {
-  background-color: $bg_dark;
+  background-color: var(--bg_dark);
   font-size: 12px;
   .wrapper {
     position: relative;
     max-width: $max-width;
     margin: 0 auto $padding;
-    color: $tx;
+    color: var(--tx);
     button {
       position: absolute;
       top: $padding;
@@ -37,8 +37,8 @@ $padding: 5em;
 
     .content {
       padding: 70px 100px;
-      background-color: $bg_dark;
-      border: solid 1px $hover;
+      background-color: var(--bg_dark);
+      border: solid 1px var(--hover);
 
       ul {
         padding-left: 1em;
@@ -61,26 +61,26 @@ $padding: 5em;
       .lawBox {
         margin: 1.25em 0;
         padding: 1.25em 1.875em;
-        border: solid 1px $hover;
+        border: solid 1px var(--hover);
       }
       .lawTable {
         min-width: 640px;
         border-collapse: collapse;
         margin: 1em auto;
-        border: 1px solid $hover;
+        border: 1px solid var(--hover);
         font-size: 13px;
         overflow: scroll;
         th {
           border-collapse: collapse;
           min-width: 160px;
           padding: 0.5em;
-          border: 1px solid $hover;
-          background-color: $bg;
+          border: 1px solid var(--hover);
+          background-color: var(--bg);
         }
         td {
           min-width: 160px;
           padding: 0.5em;
-          border: 1px solid $hover;
+          border: 1px solid var(--hover);
         }
       }
       .lawNoWrap {

@@ -26,13 +26,13 @@
         width: 190px;
         border-radius: 1rem;
         overflow: hidden;
-        background-color: $bg;
+        background-color: var(--bg);
         filter: grayscale(1);
         transition: all 300ms;
         &:hover {
           // transform: scale(1.05);
           filter: none;
-          background-color: $bg_darkest;
+          background-color: var(--bg_darkest);
         }
         &:hover {
           .titleContainer .genre {
@@ -60,7 +60,7 @@
             text-overflow: ellipsis;
           }
           .title {
-            color: $tx;
+            color: var(--tx);
             font-weight: bold;
             font-size: 1.5rem;
             padding: 0 1rem 1rem;

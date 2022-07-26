@@ -2,16 +2,16 @@
 
 .Result {
   padding: 1rem;
-  background-color: $bg_dark;
+  background-color: var(--bg_dark);
   margin: auto;
-  color: $tx;
+  color: var(--tx);
   max-width: $max-width;
   section {
-    border: 1px solid $hover;
+    border: 1px solid var(--hover);
     border-left: none;
     border-right: none;
     padding: 1rem 0;
-    background-color: $bg_dark;
+    background-color: var(--bg_dark);
     min-height: 320px;
     transition: transform 300ms;
     transform: translateY(-320px);
@@ -21,7 +21,7 @@
     button {
       font-size: 0.75rem;
       align-items: center;
-      color: $tx2;
+      color: var(--tx2);
       background: none;
       border: none;
       margin: 1rem auto;

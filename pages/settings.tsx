@@ -1,14 +1,16 @@
 import type { NextPage } from "next";
 import { useContext } from "react";
 import Introduction from "../components/Introduction";
+import SlideSwitch from "../components/SlideSwitch";
 import { AlertContext } from "../context/alertContext";
-import { randomID } from "../lib/functions";
+import { darkmodeContext } from "../context/darkmodeContext";
 import LocalStorage from "../lib/localStorage";
 import styles from "../styles/Settings.module.scss";
 
 const Settings: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
   const { addAlert } = useContext(AlertContext);
+  const { isDark, toggleDarkmode } = useContext(darkmodeContext);
 
   return (
     <div className={styles.Settings}>
@@ -49,6 +51,10 @@ const Settings: NextPage = () => {
         >
           지우기
         </button>
+      </section>
+      <section>
+        <div>다크모드</div>
+        <SlideSwitch isChecked={isDark} toggle={toggleDarkmode} />
       </section>
     </div>
   );

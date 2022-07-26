@@ -1,8 +1,8 @@
 @use "./global" as *;
 
 .Settings {
-  background-color: $bg_dark;
-  color: $tx;
+  background-color: var(--bg_dark);
+  color: var(--tx);
   section {
     padding: 1.25rem 0;
     max-width: $max-width;

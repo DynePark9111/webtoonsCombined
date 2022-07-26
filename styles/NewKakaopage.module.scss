@@ -11,7 +11,6 @@
 
 $pd_card: 2rem;
 $wd_card: 240px;
-$bg_nav: #000000cc;
 
 .CardKP {
   width: $wd_card;
@@ -20,7 +19,7 @@ $bg_nav: #000000cc;
   position: relative;
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  background-color: $bg;
+  background-color: var(--bg);
   border-radius: 1.25rem;
   .image {
     width: $wd_card;
@@ -31,7 +30,7 @@ $bg_nav: #000000cc;
     padding: 0 0 0.25rem 0.5rem;
     position: absolute;
     bottom: 0;
-    background-color: $bg_nav;
+    background-color: var(--bg_clear);
     .top {
       display: flex;
       justify-content: space-between;
@@ -44,7 +43,7 @@ $bg_nav: #000000cc;
         z-index: 100;
         font-size: 0.75rem;
         padding: 0.25rem 0.5rem;
-        color: $tx;
+        color: var(--tx);
         .popup {
           padding: 1px;
           margin: 1px;
@@ -61,7 +60,7 @@ $bg_nav: #000000cc;
       text-overflow: ellipsis;
       font-size: 1rem;
       font-weight: 600;
-      color: $tx;
+      color: var(--tx);
     }
     .episode,
     .genre {
@@ -69,7 +68,7 @@ $bg_nav: #000000cc;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      color: $tx2;
+      color: var(--tx2);
       font-size: 0.75rem;
     }
   }

@@ -1,7 +1,7 @@
 @use "./global" as *;
 
 .FilterYoutubeStyle {
-  background-color: $bg_dark;
+  background-color: var(--bg_dark);
   button {
     span {
       margin-left: 6px;
@@ -22,7 +22,7 @@
         margin: 0.25rem 0;
         padding: 1rem 0;
         font-size: 0.875rem;
-        border-bottom: 1px solid $hover;
+        border-bottom: 1px solid var(--hover);
       }
       ul {
         list-style: none;
@@ -33,12 +33,12 @@
         align-items: flex-start;
         gap: 0.75rem;
         li {
-          color: $tx2;
+          color: var(--tx2);
           font-size: 0.875rem;
           cursor: pointer;
           padding: 2px 8px 0px 0;
           &#selected {
-            color: $tx;
+            color: var(--tx);
           }
         }
       }

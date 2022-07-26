@@ -16,7 +16,7 @@ $time: 500ms;
     width: 100%;
     display: flex;
     list-style: none;
-    background-color: $hover;
+    background-color: var(--hover);
     border-radius: 2em;
     li {
       cursor: pointer;
@@ -30,7 +30,7 @@ $time: 500ms;
       height: 100%;
       background: none;
       transition: color $time;
-      color: $tx;
+      color: var(--tx);
       font-weight: 600;
       &:first-child {
         border-radius: 2em 0 0 2em;
@@ -40,7 +40,7 @@ $time: 500ms;
       }
     }
     #selected {
-      color: $bg_darkest;
+      color: white;
     }
   }
   div {
@@ -54,6 +54,6 @@ $time: 500ms;
     border-radius: 2em;
     width: $wd_btn;
     height: $ht_btn;
-    background-color: $tx;
+    background-color: var(--tx);
   }
 }

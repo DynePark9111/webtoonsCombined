@@ -1,18 +1,19 @@
 @use "./global" as *;
 
 .New {
+  background-color: var;
   .wrapper {
     padding: 1rem;
-    background-color: $bg_dark;
+    background-color: var(--bg_dark);
     margin: auto;
-    color: $tx;
+    color: var(--tx);
     max-width: $max-width;
     section {
       margin-top: 3rem;
       button {
         font-size: 0.875rem;
         align-items: center;
-        color: $tx2;
+        color: var(--tx2);
         background: none;
         border: none;
         margin: 1rem auto;

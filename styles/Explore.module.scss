@@ -1,9 +1,10 @@
 @use "./global" as *;
 
 .Explore {
-  color: $tx;
+  background-color: var(--bg_dark);
+  color: var(--tx);
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 1rem;
   max-width: 1320px;
 }
 
@@ -16,8 +17,8 @@
 .Card {
   width: 210px;
   height: 116px;
-  color: $tx;
-  background-color: $bg;
+  color: var(--tx);
+  background-color: var(--bg);
   border-radius: 0.5rem;
   @include hoverAndActive;
   .icon {
