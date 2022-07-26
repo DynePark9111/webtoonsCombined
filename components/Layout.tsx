@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import styles from "../styles/Layout.module.scss";
+import Notification from "./Notification";
 
 type T = {
   children: ReactNode;
@@ -18,6 +19,7 @@ const Layout: NextPage<T> = ({ children }) => {
         <Navbar />
         {children}
       </div>
+      <Notification />
     </div>
   );
 };

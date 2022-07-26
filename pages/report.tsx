@@ -1,11 +1,13 @@
 import axios from "axios";
 import type { NextPage } from "next";
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import Introduction from "../components/Introduction";
+import { AlertContext } from "../context/alertContext";
 import styles from "../styles/Report.module.scss";
 
 const Report: NextPage = () => {
   const URL = process.env.NEXT_PUBLIC_URL;
+  const { addAlert } = useContext(AlertContext);
   const [value, setValue] = useState({
     name: "",
     email: "",
@@ -15,12 +17,13 @@ const Report: NextPage = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    addAlert("문의 점수중...", "normal");
     try {
       const res = await axios.post(`${URL as string}/report`, value);
       console.log(res);
-      alert("정상적으로 접수되었습니다.");
+      addAlert("정상적으로 접수되었습니다.", "success");
     } catch (err) {
-      alert("문의 접수가 실패하였습니다.");
+      addAlert("문의 접수가 실패했습니다.", "error");
       console.error(err);
     }
   };

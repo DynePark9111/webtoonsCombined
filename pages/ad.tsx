@@ -11,13 +11,13 @@ const Ad: NextPage = () => {
   return (
     <div className={styles.Ad}>
       <BannerSlide />
-      <div className={styles.wrapper}>
-        <PromoBox />
-        <PromoBox />
-      </div>
       <div className={styles.wrapper2}>
         <PromoSlide play={play} />
         <PlayBtn isActive={play} setIsActive={setPlay} />
+      </div>
+      <div className={styles.wrapper}>
+        <PromoBox />
+        {/* <PromoBox /> */}
       </div>
     </div>
   );

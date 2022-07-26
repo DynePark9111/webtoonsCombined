@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { Dispatch, ReactNode } from "react";
 
 export type webtoon = {
   _id: string;
@@ -32,6 +32,11 @@ export type webtoonDetail = {
 export type createNavContextType = {
   isNavOpen: boolean;
   toggleNav: () => void;
+};
+
+export type createAlertContextType = {
+  alert: {};
+  setAlert: any;
 };
 
 export type childrenProps = {
@@ -96,4 +101,12 @@ export type SampleNewProps = {
 };
 export type SampleCardProps = {
   webtoon: SampleWebtoon;
+};
+
+export type MessageProps = {
+  message: {
+    id: string;
+    message: string;
+    status: "normal" | "success" | "warning" | "error";
+  };
 };

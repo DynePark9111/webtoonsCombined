@@ -1,10 +1,14 @@
 import type { NextPage } from "next";
+import { useContext } from "react";
 import Introduction from "../components/Introduction";
+import { AlertContext } from "../context/alertContext";
+import { randomID } from "../lib/functions";
 import LocalStorage from "../lib/localStorage";
 import styles from "../styles/Settings.module.scss";
 
 const Settings: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const { addAlert } = useContext(AlertContext);
 
   return (
     <div className={styles.Settings}>
@@ -18,7 +22,7 @@ const Settings: NextPage = () => {
         <button
           onClick={() => {
             LocalStorage.clearItem();
-            alert("삭제되었습니다.");
+            addAlert("삭제 실패!", "error");
           }}
         >
           지우기
@@ -29,7 +33,7 @@ const Settings: NextPage = () => {
         <button
           onClick={() => {
             LocalStorage.removeItem("history");
-            alert("삭제되었습니다.");
+            addAlert("로그인이 필요한 서비스입니다", "warning");
           }}
         >
           지우기
@@ -40,7 +44,7 @@ const Settings: NextPage = () => {
         <button
           onClick={() => {
             LocalStorage.removeItem("liked");
-            alert("삭제되었습니다.");
+            addAlert("삭제완료", "success");
           }}
         >
           지우기
