@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IoEllipsisVerticalSharp } from "react-icons/io5";
-import useClickOutside from "../../hooks/useClickOutside";
+import useClickOutside from "../../Hooks/useClickOutside";
 import styles from "../../styles/NewNaver.module.scss";
 import { SampleCardProps, SampleNewProps } from "../../types/types";
 import EllipsisPopup from "../EllipsisPopup";
@@ -24,9 +24,11 @@ export default NewNaver;
 
 const CardNaver: NextPage<SampleCardProps> = ({ webtoon }) => {
   const [show, setShow] = useState(false);
-  const domNode: any = useClickOutside(() => {
+  const ellipsisRef = useRef<HTMLDivElement>(null);
+  const clickOutsidehandler = () => {
     setShow(false);
-  });
+  };
+  useClickOutside(ellipsisRef, clickOutsidehandler);
   return (
     <div className={styles.CardNaver}>
       <div className={styles.image}>
@@ -43,7 +45,7 @@ const CardNaver: NextPage<SampleCardProps> = ({ webtoon }) => {
           <div
             className={styles.ellipsis}
             onClick={() => setShow((prev) => !prev)}
-            ref={domNode}
+            ref={ellipsisRef}
           >
             <IoEllipsisVerticalSharp id={styles.selected} title="더보기" />
             <div className={styles.popup}>{show && <EllipsisPopup />}</div>
