@@ -1,0 +1,12 @@
+@use "./global" as *;
+
+.CustomerService {
+  @include section;
+  a {
+    @include btn;
+    display: block;
+    max-width: 160px;
+    margin: auto;
+    @include hoverAndActive;
+  }
+}

@@ -7,10 +7,12 @@ const Ribbon: NextPage<RibbonProps> = ({ line1, line2, href }) => {
   return (
     <div className={styles.Ribbon}>
       <div className={styles.wrapper}>
-        <span className={styles.title}>{line1}</span>
+        <div className={styles.title}>{line1}</div>
         {href && (
           <Link href={href} className={styles.link}>
-            {line2}
+            <div className={styles.link} title="바로가기">
+              {line2}
+            </div>
           </Link>
         )}
       </div>

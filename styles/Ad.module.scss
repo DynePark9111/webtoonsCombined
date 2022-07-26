@@ -1,0 +1,16 @@
+@use "./global" as *;
+
+.Ad {
+  background-color: none;
+  overflow: hidden;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper2 {
+    background-color: $bg_darkest;
+    color: $tx;
+    padding: 1rem 0 1rem;
+  }
+}

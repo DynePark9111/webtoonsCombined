@@ -29,7 +29,7 @@ const NavbarSmall: NextPage = () => {
       <div className={styles.empty} />
       <ul>
         <NavbarItem href="/" icon={<IoHomeOutline />} text="홈" />
-        <NavbarItem href="/search" icon={<IoCompassOutline />} text="탐색" />
+        <NavbarItem href="/explore" icon={<IoCompassOutline />} text="탐색" />
         <NavbarItem
           href="/bookmark"
           icon={<IoBookmarkOutline />}
@@ -43,13 +43,15 @@ const NavbarSmall: NextPage = () => {
 };
 
 const NavbarBig: NextPage = () => {
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+
   return (
     <aside className={styles.NavbarBig}>
       <div className={styles.empty} />
       <div className={styles.wrapper}>
         <ul>
           <NavbarItem href="/" icon={<IoHomeOutline />} text="홈" />
-          <NavbarItem href="/search" icon={<IoCompassOutline />} text="탐색" />
+          <NavbarItem href="/explore" icon={<IoCompassOutline />} text="탐색" />
           <NavbarItem
             href="/bookmark"
             icon={<IoBookmarkOutline />}
@@ -101,34 +103,38 @@ const NavbarBig: NextPage = () => {
             text="고객센터"
           />
           <NavbarItem
-            href="/message"
+            href="/report"
             icon={<IoChatbubbleEllipsesOutline />}
             text="의견 보내기"
           />
         </ul>
         <div className={styles.links}>
-          <Link href="/">정보</Link>
-          <Link href="/">보도자료</Link>
-          <Link href="/">저작권</Link>
-          <Link href="/">문의하기</Link>
-          <Link href="/">크리에이터</Link>
-          <Link href="/">광고</Link>
-          <Link href="/">개발자</Link>
+          <Link href="/about">정보</Link>
+          <Link href="/report">문의하기</Link>
+          <Link href="/ad">광고</Link>
+          <Link href="/dev">개발자</Link>
+          <Link href="/test">실험실</Link>
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href={`http://admin.dynedyne.com/`}
+          >
+            관리자
+          </a>
         </div>
         <div className={styles.links}>
-          <Link href="/">약관</Link>
-          <Link href="/">개인정보처리방침</Link>
-          <Link href="/">정책 및 안전</Link>
-          <Link href="/">사이트 작동의 원리</Link>
-          <Link href="/">새로운 기능 테스트하기</Link>
+          <Link href="/policy/terms">약관</Link>
+          <Link href="/policy/privacy">개인정보처리방침</Link>
+          <Link href="/policy/teenager">청소년보호정책</Link>
         </div>
         <div className={styles.copyright}>
-          <div>© 2022 Google LLC</div>
-          <div>CEO: 선다 피차이</div>
+          <div>© 2022 {COMPANY} LLC</div>
+          <div>CEO : Muhammad Bean Salmon Al Thaad</div>
           <div>
-            주소: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.
+            주소 : 1234 Conch St. Bikini Bottom, Mountain View, San Pedro 1234,
+            Paraguay.
           </div>
-          <div>전화: 080-822-1450(무료)</div>
+          <div>전화: 000-0000-0000(유료)</div>
         </div>
       </div>
     </aside>

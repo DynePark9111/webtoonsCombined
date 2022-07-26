@@ -1,6 +1,10 @@
-$max-width: 1284px;
+// $max-width: 1016px;
+$max-width: 1320px;
 
+$red: #cf1322;
 $blue: #3ea6ff;
+$yellow: #d4b206;
+$green: #389e0d;
 $grey: #d0d0d0;
 $bg: #202020;
 $bg_dark: #181818;
@@ -10,6 +14,16 @@ $tx: #ffffff;
 $tx2: #aaaaaa;
 $hover: #383838;
 $active: #4c4c4c;
+$clear: #00000000;
+$clear_dark: #000000cc;
+
+@mixin wrapper {
+  .wrapper {
+    margin: 4rem auto;
+    padding: 0 1rem;
+    max-width: $max-width;
+  }
+}
 
 @mixin svg {
   svg {
@@ -18,7 +32,28 @@ $active: #4c4c4c;
   }
 }
 
+@mixin section {
+  section {
+    margin: 3rem auto;
+    color: $tx;
+    max-width: $max-width;
+    text-align: center;
+  }
+}
+
+@mixin btn {
+  display: flex;
+  align-items: center;
+  border: 1px solid $blue;
+  border-radius: 2px;
+  color: $blue;
+  background: none;
+  padding: 5px 11px;
+  cursor: pointer;
+}
+
 @mixin hoverAndActive {
+  cursor: pointer;
   &:hover {
     background-color: $hover;
   }

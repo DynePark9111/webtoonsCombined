@@ -1,0 +1,54 @@
+@use "./global" as *;
+
+$padding: 5em;
+
+.Terms {
+  font-size: 12px;
+  .wrapper {
+    position: relative;
+    max-width: $max_width;
+    margin: 0 auto $padding;
+    color: $tx;
+    h2 {
+      padding: $padding 0 1em;
+      text-align: center;
+    }
+    button {
+      position: absolute;
+      top: $padding;
+      right: 0;
+      @include btn;
+      @include hoverAndActive;
+    }
+    .content {
+      padding: $padding 7em;
+      border: solid 1px $hover;
+      h3 {
+        margin-top: 3em;
+        margin-bottom: 1em;
+      }
+      h4 {
+        margin-top: 2em;
+        margin-bottom: 0.75em;
+      }
+      p {
+        margin: 1em 0;
+        strong {
+          color: $red;
+        }
+      }
+      li {
+        list-style: auto;
+        margin-left: 2em;
+        strong {
+          color: $red;
+        }
+      }
+      .stronger {
+        ::marker {
+          color: $red;
+        }
+      }
+    }
+  }
+}

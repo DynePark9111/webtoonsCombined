@@ -1,0 +1,47 @@
+@use "./global" as *;
+
+.FilterYoutubeStyle {
+  background-color: $bg_dark;
+  button {
+    span {
+      margin-left: 6px;
+    }
+    @include btn;
+    @include hoverAndActive;
+  }
+  .filterGroups {
+    display: flex;
+    justify-content: space-between;
+    .FilterGroup {
+      flex: 1;
+      padding-right: 2rem;
+      &:last-child {
+        padding-right: 0;
+      }
+      h4 {
+        margin: 0.25rem 0;
+        padding: 1rem 0;
+        font-size: 0.875rem;
+        border-bottom: 1px solid $hover;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        li {
+          color: $tx2;
+          font-size: 0.875rem;
+          cursor: pointer;
+          padding: 2px 8px 0px 0;
+          &#selected {
+            color: $tx;
+          }
+        }
+      }
+    }
+  }
+}

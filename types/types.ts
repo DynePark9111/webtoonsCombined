@@ -1,14 +1,14 @@
-import { ReactNode } from "react";
+import { Dispatch, ReactNode } from "react";
 
 export type webtoon = {
   _id: string;
   title: string;
   image: string;
   link: string;
-  platform: "naver";
+  platform: string;
   episodeTitle: string;
   episodeLink: string;
-  updatedAt: TimeRanges;
+  updatedAt: Date | string;
 };
 
 export type webtoonDetail = {
@@ -32,6 +32,11 @@ export type webtoonDetail = {
 export type createNavContextType = {
   isNavOpen: boolean;
   toggleNav: () => void;
+};
+
+export type createAlertContextType = {
+  alert: {};
+  setAlert: any;
 };
 
 export type childrenProps = {
@@ -67,4 +72,41 @@ export type RibbonProps = {
 export type HomeProps = {
   webtoons1: webtoon[];
   webtoons2: webtoon[];
+};
+
+export type CardProps = {
+  card: {
+    id: number;
+    title: string;
+    link: string;
+    icon?: string;
+  };
+};
+
+export type FilterSlideStyleProps = {
+  array: { id: number; name: string }[];
+  selected: number;
+  setSelected: any;
+};
+
+//new
+export type SampleWebtoon = {
+  title: string;
+  episode: string;
+  genre: string[];
+};
+
+export type SampleNewProps = {
+  webtoons: SampleWebtoon[];
+};
+export type SampleCardProps = {
+  webtoon: SampleWebtoon;
+};
+
+export type MessageProps = {
+  message: {
+    id: string;
+    message: string;
+    status: "normal" | "success" | "warning" | "error";
+  };
 };

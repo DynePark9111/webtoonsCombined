@@ -1,12 +1,26 @@
-import type { NextPage } from "next";
-import Ribbon from "../components/Ribbon";
+import { NextPage } from "next";
+import { useState } from "react";
+import Filter from "../components/Filter";
+import FilterSlideStyle from "../components/FilterSlideStyle";
+import { platformFilter } from "../data/arrays";
 
-const test: NextPage = () => {
+const Test: NextPage = () => {
+  const [platform, setPlatform] = useState(["전체"]);
+  const [platform2, setPlatform2] = useState(1);
   return (
-    <div className={"Test"}>
-      <Ribbon line1="모든 웹툰은 공식 웹사이트로 연결되어 있습니다" />
+    <div>
+      <Filter
+        array={platformFilter}
+        selected={platform}
+        setSelected={setPlatform}
+      />
+      <FilterSlideStyle
+        array={platformFilter}
+        selected={platform2}
+        setSelected={setPlatform2}
+      />
     </div>
   );
 };
 
-export default test;
+export default Test;

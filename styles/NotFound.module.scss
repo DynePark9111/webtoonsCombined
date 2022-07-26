@@ -1,0 +1,21 @@
+@use "./global" as *;
+
+.NotFound {
+  color: $tx;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .link {
+    color: $blue;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      padding-top: 4px;
+    }
+  }
+}

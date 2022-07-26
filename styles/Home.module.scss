@@ -1,6 +1,9 @@
 @use "./global" as *;
 
 .Home {
-  // border-top: 1px solid $hover;
+  @include section;
+  section {
+    width: 90%;
+  }
   background-color: $bg_dark;
 }

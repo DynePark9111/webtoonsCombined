@@ -2,15 +2,18 @@ import type { NextPage } from "next";
 import styles from "../styles/Header.module.scss";
 import {
   IoAppsOutline,
+  IoCloseSharp,
   IoEllipsisVerticalSharp,
   IoMenuSharp,
   IoSearchOutline,
 } from "react-icons/io5";
 import LoginBtn from "./LoginBtn";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavContext } from "../context/navContext";
+import Searchbox from "./Searchbox";
 
 const Header: NextPage = () => {
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
   const { toggleNav } = useContext(NavContext);
 
   return (
@@ -19,20 +22,10 @@ const Header: NextPage = () => {
         <div className={styles.bars} onClick={() => toggleNav()}>
           <IoMenuSharp />
         </div>
-        <div className={styles.logo}>WebtoonsCombined</div>
+        <div className={styles.logo}>{COMPANY}</div>
       </div>
-      <div className={styles.searchbar}>
-        <form>
-          <div className={styles.searchIcon}>
-            <IoSearchOutline />
-          </div>
-          <input type="text" placeholder="검색" />
-        </form>
-        <button className={styles.searchBtn}>
-          <IoSearchOutline />
-        </button>
-      </div>
-      <ul className={styles.icons}>
+      <Searchbox />
+      <ul className={styles.right}>
         <li className={styles.icon}>
           <IoAppsOutline />
         </li>
