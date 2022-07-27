@@ -40,7 +40,7 @@ $time: 500ms;
       }
     }
     #selected {
-      color: white;
+      color: var(--bg);
     }
   }
   div {
@@ -50,7 +50,6 @@ $time: 500ms;
     position: absolute;
     left: 0;
     top: 0;
-    content: "";
     border-radius: 2em;
     width: $wd_btn;
     height: $ht_btn;

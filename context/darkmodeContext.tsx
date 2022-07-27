@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { childrenProps } from "../types/types";
 import LocalStorage from "../lib/localStorage";
 
@@ -10,27 +10,39 @@ type darkmodeContextType = {
 export const darkmodeContext = createContext({} as darkmodeContextType);
 
 export const DarkmodeContextProvider = ({ children }: childrenProps) => {
+  const [isDark, setIsDark] = useState(true);
+  const didMountRef = useRef(false);
+
+  const toggleDarkmode = () => {
+    setIsDark((pre: boolean) => !pre);
+  };
+
   const detectMode = () => {
     if (typeof window !== "undefined") {
       let matched = window.matchMedia("(prefers-color-scheme: dark)").matches;
       return matched ? true : false;
     }
+    return true;
   };
-
-  const getLocal = () => {
-    const local = LocalStorage.getItem("isDark");
-    console.log(local);
-    return local ? JSON.parse(local) : detectMode();
-  };
-
-  const [isDark, setIsDark] = useState(getLocal());
-
-  function toggleDarkmode() {
-    setIsDark((pre: boolean) => !pre);
-  }
 
   useEffect(() => {
-    LocalStorage.setItem("isDark", JSON.stringify(isDark));
+    const local = LocalStorage.getItem("isDark");
+    if (local === null) {
+      const detect = detectMode();
+      LocalStorage.setItem("isDark", JSON.stringify(detect));
+      setIsDark(detect);
+    } else {
+      const isDark = LocalStorage.getItem("isDark") === "true";
+      LocalStorage.setItem("isDark", JSON.stringify(isDark));
+      setIsDark(isDark);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (didMountRef.current) {
+      LocalStorage.setItem("isDark", JSON.stringify(isDark));
+    }
+    didMountRef.current = true;
   }, [isDark]);
 
   return (
