@@ -12,7 +12,6 @@ type T = {
 
 const Layout: NextPage<T> = ({ children }) => {
   const { isDark } = useContext(darkmodeContext);
-
   return (
     <div className={styles.Layout} data-theme={isDark ? "dark" : "light"}>
       <div className={styles.top}>

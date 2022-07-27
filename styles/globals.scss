@@ -24,6 +24,7 @@ a {
 }
 
 * {
+  transition: background-color 400ms, color 100ms;
   box-sizing: border-box;
 }
 
@@ -68,6 +69,7 @@ li {
   --bg_darkest: #313132;
   --bg_btn: #f8f8f8;
   --bg_clear: #ffffffcc;
+  --bg_clear2: #000000cc;
   --hover: #e5e5e5;
   --border: #e0e0e0;
   --active: #c1c1c1;
@@ -81,6 +83,7 @@ li {
   --bg_darkest: #060606;
   --bg_btn: #313131;
   --bg_clear: #000000cc;
+  --bg_clear2: #ffffffcc;
   --hover: #383838;
   --border: #383838;
   --active: #4c4c4c;
