@@ -3,6 +3,8 @@
 $width: 220px;
 
 .NavbarSmall {
+  position: relative;
+  z-index: 100;
   .empty {
     width: 72px;
   }
@@ -36,6 +38,8 @@ $width: 220px;
 }
 
 .NavbarBig {
+  position: relative;
+  z-index: 100;
   .empty {
     width: 240px;
   }
