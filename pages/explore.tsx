@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ExploreCards, OfficialPlatforms } from "../data/arrays";
-import styles from "../styles/Explore.module.scss";
+import styles from "../styles/Pages/Explore.module.scss";
 import { CardProps } from "../types/types";
 
 const Explore: NextPage = () => {

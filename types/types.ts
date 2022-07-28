@@ -110,3 +110,26 @@ export type MessageProps = {
     status: "normal" | "success" | "warning" | "error";
   };
 };
+
+export type webtoonP = {
+  webtoon: {
+    id: number;
+    title: string;
+    category: string;
+    platform: string;
+    author: string[];
+    genre: string[];
+    image: string;
+    url: string;
+    age: string;
+    synopsis: string;
+    days: string[];
+    like: number;
+    dislike: number;
+    bookmark: number;
+    view: number;
+    firstEpisode: string;
+    rating: number;
+    publisher: string;
+  };
+};

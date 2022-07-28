@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
-import styles from "../../styles/ReplyForm.module.scss";
+import styles from "../../styles/Comments/ReplyForm.module.scss";
 
 type ReplyFormProps = {
   parentId: number;
@@ -48,7 +48,13 @@ const ReplyForm: NextPage<ReplyFormProps> = ({ parentId, isTopLevel }) => {
           <div className={styles.line} />
           <div className={styles.ripple} />
         </div>
-        <div className={styles.formButtons}>
+        <div
+          className={styles.formButtons}
+          onClick={(e) => {
+            e.preventDefault();
+            setMessage("");
+          }}
+        >
           <button className={styles.cancel} title="삭제">
             취소
           </button>

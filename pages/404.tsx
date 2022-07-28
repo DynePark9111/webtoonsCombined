@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { IoChevronForwardSharp } from "react-icons/io5";
-import styles from "../styles/NotFound.module.scss";
+import styles from "../styles/Pages/NotFound.module.scss";
 
 const NotFound: NextPage = () => {
   return (

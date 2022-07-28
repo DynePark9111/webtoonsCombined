@@ -17,6 +17,11 @@ $active: #4c4c4c;
 $clear: #00000000;
 $clear_dark: #000000cc;
 
+//webtoon2
+$bg2: #191b2a;
+$br: 0.25rem;
+$mw: 630px;
+
 @mixin wrapper {
   .wrapper {
     margin: 4rem auto;

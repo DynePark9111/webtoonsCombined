@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { capitalize } from "../lib/functions";
-import styles from "../styles/Webtoons.module.scss";
-import useFetchWebtoon from "../Hooks/useFetchWebtoon";
+import styles from "../styles/Pages/Webtoons.module.scss";
 import FilterYoutubeStyle from "../components/FilterYoutubeStyle";
 
 const Webtoons: NextPage = () => {

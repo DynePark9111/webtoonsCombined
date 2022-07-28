@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import NewToons from "../components/NewToons";
+import NewToons from "../components/New/NewToons";
 import Ribbon from "../components/Ribbon";
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/Pages/Home.module.scss";
 import { HomeProps } from "../types/types";
 
 const Home: NextPage<HomeProps> = ({ webtoons1, webtoons2 }) => {

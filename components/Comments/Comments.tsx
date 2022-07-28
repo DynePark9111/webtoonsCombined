@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Comments.module.scss";
+import styles from "../../styles/Comments/Comments.module.scss";
 import Comment from "./Comment";
 import ShowReply from "./ShowReply";
 

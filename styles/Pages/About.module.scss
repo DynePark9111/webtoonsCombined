@@ -1,0 +1,17 @@
+@use "../global" as *;
+
+.About {
+  background-color: var(--bg);
+  .content {
+    padding: 0 2.25rem;
+    color: var(--tx);
+    h1 {
+      margin: 4rem auto 0;
+      font-size: 3.75rem;
+    }
+    p {
+      margin: 4rem auto;
+      font-size: 2.25rem;
+    }
+  }
+}

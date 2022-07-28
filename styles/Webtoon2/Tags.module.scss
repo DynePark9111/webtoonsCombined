@@ -1,0 +1,25 @@
+@use "../global" as *;
+
+.Tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  li {
+    word-break: keep-all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    background: #32334a;
+    border-radius: $br;
+    color: #a797ff;
+    font-weight: bold;
+    font-size: 0.875rem;
+    &::before {
+      content: "#";
+    }
+  }
+}

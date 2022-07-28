@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import { FormEvent, useContext, useState } from "react";
 import Introduction from "../components/Introduction";
 import { AlertContext } from "../context/alertContext";
-import styles from "../styles/Report.module.scss";
+import styles from "../styles/Pages/Report.module.scss";
 
 const Report: NextPage = () => {
   const URL = process.env.NEXT_PUBLIC_URL;

@@ -5,7 +5,7 @@ import SlideSwitch from "../components/SlideSwitch";
 import { AlertContext } from "../context/alertContext";
 import { darkmodeContext } from "../context/darkmodeContext";
 import LocalStorage from "../lib/localStorage";
-import styles from "../styles/Settings.module.scss";
+import styles from "../styles/Pages/Settings.module.scss";
 
 const Settings: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";

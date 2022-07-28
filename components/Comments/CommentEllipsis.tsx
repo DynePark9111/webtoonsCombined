@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useContext } from "react";
 import { IoFlagOutline } from "react-icons/io5";
 import { AlertContext } from "../../context/alertContext";
-import styles from "../../styles/CommentEllipsis.module.scss";
+import styles from "../../styles/Comments/CommentEllipsis.module.scss";
 
 const CommentEllipsis: NextPage = () => {
   const { addAlert } = useContext(AlertContext);

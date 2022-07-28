@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { platformFilter } from "../data/arrays";
-import styles from "../styles/New.module.scss";
+import styles from "../styles/Pages/New.module.scss";
 import useFetchNewToon from "../Hooks/useFetchNewToon";
 import FilterSlideStyle from "../components/FilterSlideStyle";
 import Ribbon from "../components/Ribbon";

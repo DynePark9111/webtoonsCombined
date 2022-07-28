@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Privacy.module.scss";
+import styles from "../../styles/Pages/policy/Privacy.module.scss";
 
 const Privacy: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";

@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { IoEllipsisVerticalSharp } from "react-icons/io5";
 import useClickOutside from "../../Hooks/useClickOutside";
-import styles from "../../styles/NewKakao.module.scss";
+import styles from "../../styles/New/NewKakao.module.scss";
 import { SampleCardProps, SampleNewProps } from "../../types/types";
-import EllipsisPopup from "../EllipsisPopup";
+import EllipsisPopup from "../Common/EllipsisPopup";
 
 const NewKakao: NextPage<SampleNewProps> = ({ webtoons }) => {
   return (

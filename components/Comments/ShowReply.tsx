@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
-import styles from "../../styles/ShowReply.module.scss";
+import styles from "../../styles/Comments/ShowReply.module.scss";
 import Comments from "./Comments";
 
 type ShowReplyP = {

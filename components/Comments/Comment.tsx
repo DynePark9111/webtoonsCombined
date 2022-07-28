@@ -9,7 +9,7 @@ import {
   IoThumbsUpOutline,
 } from "react-icons/io5";
 import useClickOutside from "../../Hooks/useClickOutside";
-import styles from "../../styles/Comment.module.scss";
+import styles from "../../styles/Comments/Comment.module.scss";
 import CommentEllipsis from "./CommentEllipsis";
 import ReplyForm from "./ReplyForm";
 

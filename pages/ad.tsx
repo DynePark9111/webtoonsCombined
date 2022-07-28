@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import { useState } from "react";
-import BannerSlide from "../components/BannerSlide";
-import PlayBtn from "../components/PlayBtn";
-import PromoBox from "../components/PromoBox";
-import PromoSlide from "../components/PromoSlide";
-import styles from "../styles/Ad.module.scss";
+import BannerSlide from "../components/Ad/BannerSlide";
+import PlayBtn from "../components/Ad/PlayBtn";
+import PromoBox from "../components/Ad/PromoBox";
+import PromoSlide from "../components/Ad/PromoSlide";
+import styles from "../styles/Pages/Ad.module.scss";
 
 const Ad: NextPage = () => {
   const [play, setPlay] = useState(true);

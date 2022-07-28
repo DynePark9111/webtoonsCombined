@@ -9,9 +9,9 @@ import {
   IoHeartOutline,
   IoTrashOutline,
 } from "react-icons/io5";
-import EllipsisPopup from "../../components/EllipsisPopup";
+import EllipsisPopup from "../../components/Common/EllipsisPopup";
 import useClickOutside from "../../Hooks/useClickOutside";
-import styles from "../../styles/Webtoon.module.scss";
+import styles from "../../styles/Pages/Webtoon.module.scss";
 
 const Webtoon: NextPage = () => {
   const router = useRouter();

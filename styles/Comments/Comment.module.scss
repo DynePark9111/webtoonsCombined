@@ -1,0 +1,113 @@
+@use "../global" as *;
+//Comment2
+.Comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: var(--bg);
+  position: relative;
+  &:hover .ellipsis {
+    opacity: 1;
+  }
+  .profileImage {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  .commentBox {
+    flex: 1;
+    color: var(--tx);
+    //UsernameAndDate
+    //CommentText
+  }
+  .ellipsis {
+    padding: 0.5rem;
+    display: inline;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--tx);
+    .popup {
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+    }
+  }
+}
+
+.UserAndDate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  .authorName {
+    font-size: 0.8125rem;
+    font-weight: bold;
+  }
+  .createdAt,
+  .updatedAt {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+  }
+}
+
+.CommentText {
+  font-size: 0.875rem;
+  width: 100%;
+  .message {
+    width: 100%;
+    max-width: 50rem;
+    max-height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    //
+
+    &#showMore {
+      -webkit-line-clamp: unset;
+      max-height: none;
+    }
+  }
+  .more {
+    display: inline-block;
+    margin-top: 0.25rem;
+    cursor: pointer;
+    color: #aaaaaa;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.Buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  .likeIcon,
+  .dislikeIcon {
+    cursor: pointer;
+    color: var(--tx);
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  .likeCount,
+  .dislikeCount {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    margin-right: 1rem;
+  }
+  .reply {
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    color: #aaaaaa;
+  }
+}

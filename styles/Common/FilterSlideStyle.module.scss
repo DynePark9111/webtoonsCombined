@@ -1,0 +1,58 @@
+@use "../global" as *;
+
+$wd_btn: 8rem;
+// wd_btn === width (FilterSlideStyle.tsx)
+$ht_btn: 32px;
+$time: 500ms;
+
+.FilterSlideStyle {
+  margin: auto;
+  position: relative;
+  height: $ht_btn;
+  .wrapper {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    background-color: var(--hover);
+    border-radius: 2em;
+    li {
+      cursor: pointer;
+      width: $wd_btn;
+      flex: 1 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 5px;
+      z-index: 1;
+      height: 100%;
+      background: none;
+      transition: color $time;
+      color: var(--tx);
+      font-weight: 600;
+      &:first-child {
+        border-radius: 2em 0 0 2em;
+      }
+      &:last-child {
+        border-radius: 0 2em 2em 0;
+      }
+    }
+    #selected {
+      color: var(--bg);
+    }
+  }
+  div {
+    transition: transform $time;
+    cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 2em;
+    width: $wd_btn;
+    height: $ht_btn;
+    background-color: var(--tx);
+  }
+}
