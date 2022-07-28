@@ -1,0 +1,80 @@
+@use "./global" as *;
+
+.ReplyForm {
+  display: flex;
+  gap: 1rem;
+  .profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  .replyForm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    input {
+      width: 100%;
+      color: var(--tx);
+      background: none;
+      border: none;
+      padding-bottom: 0.25rem;
+      outline: none;
+      &:focus + .replyUnderline .ripple {
+        animation: ripple 300ms forwards;
+      }
+    }
+    .replyUnderline {
+      width: 100%;
+      height: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      .line {
+        position: absolute;
+        top: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #aaaaaa;
+      }
+      .ripple {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+        background-color: #fff;
+      }
+    }
+    .formButtons {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 1rem;
+      button {
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        padding: 0.625rem 1.125rem;
+        border: none;
+      }
+      .cancel {
+        background: none;
+        color: #aaaaaa;
+      }
+      .submit {
+        background: $blue;
+        color: #030303;
+      }
+    }
+  }
+}
+
+@keyframes ripple {
+  to {
+    opacity: 1;
+    transform: scale(1000);
+  }
+}

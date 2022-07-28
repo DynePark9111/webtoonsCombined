@@ -32,7 +32,7 @@ const EllipsisPopup: NextPage = () => {
         <IoTrashOutline />
         <span>웹툰 추천 안함</span>
       </li>
-      <li onClick={() => addAlert("신고 접수", "success")}>
+      <li onClick={() => addAlert("신고 접수 완료", "success")}>
         <IoFlagOutline />
         <span>신고</span>
       </li>

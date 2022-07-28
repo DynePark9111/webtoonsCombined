@@ -6,20 +6,19 @@ import { useRef, useState } from "react";
 import {
   IoArrowBackOutline,
   IoArrowRedoOutline,
-  IoBookmarkOutline,
   IoEllipsisVerticalSharp,
-  IoEyeOutline,
-  IoHeartOutline,
   IoPlayCircle,
-  IoPlayCircleOutline,
   IoStarSharp,
 } from "react-icons/io5";
+import Comments from "../../components/Comments/Comments";
+import ReplyForm from "../../components/Comments/ReplyForm";
 import EllipsisPopup from "../../components/EllipsisPopup";
 import useClickOutside from "../../Hooks/useClickOutside";
 import styles from "../../styles/Webtoon2.module.scss";
 
 type TableProps = {
   webtoon: {
+    id: number;
     title: string;
     category: string;
     platform: string;
@@ -44,9 +43,9 @@ const Webtoon2: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const [tab, setTab] = useState("평점");
-  const tabArray = ["평점", "비슷한 작품"];
 
   const webtoon = {
+    id: 1,
     title: "왕의 딸로 태어났다고 합니다",
     category: "ongoing",
     platform: "Kakaopage",
@@ -77,24 +76,12 @@ const Webtoon2: NextPage = () => {
           <div className={styles.about}>
             <Header webtoon={webtoon} />
             <Detail webtoon={webtoon} />
-            <Tags webtoon={webtoon} />
           </div>
         </div>
         <div className={styles.bottom}>
-          <div className={styles.tabs}>
-            {tabArray.map((i) => (
-              <div
-                className={styles.tab}
-                key={i}
-                id={tab === i ? styles.selected : ""}
-                onClick={() => setTab(i)}
-              >
-                {i}
-              </div>
-            ))}
-          </div>
-          {tab === "평점" && <h1>`평점` 개발중</h1>}
-          {tab === "비슷한 작품" && <h1>`비슷한` 작품 개발중</h1>}
+          <Tabs tab={tab} setTab={setTab} />
+          {tab === "평점" && <Rating webtoon={webtoon} />}
+          {tab === "비슷한 작품" && <Reccomendation webtoon={webtoon} />}
         </div>
       </div>
     </div>
@@ -102,6 +89,7 @@ const Webtoon2: NextPage = () => {
 };
 
 export default Webtoon2;
+
 type ImageProps = {
   image: string;
 };
@@ -191,7 +179,10 @@ const Detail: NextPage<TableProps> = ({ webtoon }) => {
         </a>
       </div>
       <div className={styles.section}>
-        <div className={styles.synopsis}>{webtoon.synopsis}</div>
+        <div className={styles.left}>
+          <div className={styles.synopsis}>{webtoon.synopsis}</div>
+          <Tags webtoon={webtoon} />
+        </div>
         <aside className={styles.aside}>
           <ul>
             <li>
@@ -213,6 +204,28 @@ const Detail: NextPage<TableProps> = ({ webtoon }) => {
   );
 };
 
+type TabsP = {
+  tab: string;
+  setTab: (arg: string) => void;
+};
+
+const Tabs: NextPage<TabsP> = ({ tab, setTab }) => {
+  const tabArray = ["평점", "비슷한 작품"];
+  return (
+    <div className={styles.Tabs}>
+      {tabArray.map((i) => (
+        <div
+          className={styles.tab}
+          key={i}
+          id={tab === i ? styles.selected : ""}
+          onClick={() => setTab(i)}
+        >
+          {i}
+        </div>
+      ))}
+    </div>
+  );
+};
 const Tags: NextPage<TableProps> = ({ webtoon }) => {
   return (
     <ul className={styles.Tags}>
@@ -233,5 +246,78 @@ const Tags: NextPage<TableProps> = ({ webtoon }) => {
         </Link>
       ))}
     </ul>
+  );
+};
+
+const Reccomendation: NextPage<TableProps> = ({ webtoon }) => {
+  return (
+    <div className={styles.Reccomendation}>
+      <Link href={`/webtoon/${webtoon.title}`}>
+        <div className={styles.webtoon} title="보러가기">
+          <div className={styles.webtoonWrap}>
+            <Image
+              layout="fill"
+              src={webtoon.image}
+              alt="오버로드 3기_thumbnail"
+            />
+          </div>
+          <div className={styles.title} title={webtoon.title}>
+            {webtoon.title}
+          </div>
+        </div>
+      </Link>
+      <Link href={`/webtoon/${webtoon.title}`}>
+        <div className={styles.webtoon} title="보러가기">
+          <div className={styles.webtoonWrap}>
+            <Image
+              layout="fill"
+              src={webtoon.image}
+              alt="오버로드 3기_thumbnail"
+            />
+          </div>
+          <div className={styles.title} title={webtoon.title}>
+            {webtoon.title}
+          </div>
+        </div>
+      </Link>
+      <Link href={`/webtoon/${webtoon.title}`}>
+        <div className={styles.webtoon} title="보러가기">
+          <div className={styles.webtoonWrap}>
+            <Image
+              layout="fill"
+              src={webtoon.image}
+              alt="오버로드 3기_thumbnail"
+            />
+          </div>
+          <div className={styles.title} title={webtoon.title}>
+            {webtoon.title}
+          </div>
+        </div>
+      </Link>
+      <Link href={`/webtoon/${webtoon.title}`}>
+        <div className={styles.webtoon} title="보러가기">
+          <div className={styles.webtoonWrap}>
+            <Image
+              layout="fill"
+              src={webtoon.image}
+              alt="오버로드 3기_thumbnail"
+            />
+          </div>
+          <div className={styles.title} title={webtoon.title}>
+            {webtoon.title}
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+};
+
+const Rating: NextPage<TableProps> = ({ webtoon }) => {
+  return (
+    <div className={styles.Rating}>
+      {/* <Comment /> */}
+      <ReplyForm parentId={webtoon.id} isTopLevel={true} />
+      <Comments isTopLevel={true} />
+    </div>
   );
 };
