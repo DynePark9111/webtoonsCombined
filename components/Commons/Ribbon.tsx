@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import styles from "../../styles/Common/Ribbon.module.scss";
+import styles from "../../styles/Commons/Ribbon.module.scss";
 import { RibbonProps } from "../../types/types";
 
 const Ribbon: NextPage<RibbonProps> = ({ line1, line2, href }) => {

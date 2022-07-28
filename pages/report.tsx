@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { NextPage } from "next";
 import { FormEvent, useContext, useState } from "react";
-import Introduction from "../components/Introduction";
+import Introduction from "../components/Commons/Introduction";
 import { AlertContext } from "../context/alertContext";
 import styles from "../styles/Pages/Report.module.scss";
 

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useContext } from "react";
-import Introduction from "../components/Introduction";
-import SlideSwitch from "../components/SlideSwitch";
+import Introduction from "../components/Commons/Introduction";
+import SlideSwitch from "../components/Commons/SlideSwitch";
 import { AlertContext } from "../context/alertContext";
 import { darkmodeContext } from "../context/darkmodeContext";
 import LocalStorage from "../lib/localStorage";

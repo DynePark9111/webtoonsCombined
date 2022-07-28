@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { platformFilter } from "../data/arrays";
 import styles from "../styles/Pages/New.module.scss";
 import useFetchNewToon from "../Hooks/useFetchNewToon";
-import FilterSlideStyle from "../components/FilterSlideStyle";
-import Ribbon from "../components/Ribbon";
 import NewNaver from "../components/New/NewNaver";
 import NewKakao from "../components/New/NewKakao";
 import NewKakaopage from "../components/New/NewKakaopage";
+import Ribbon from "../components/Commons/Ribbon";
+import FilterSlideStyle from "../components/Commons/FilterSlideStyle";
 
 const New: NextPage = () => {
   const webtoons = [

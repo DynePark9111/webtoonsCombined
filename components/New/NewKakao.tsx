@@ -5,7 +5,7 @@ import { IoEllipsisVerticalSharp } from "react-icons/io5";
 import useClickOutside from "../../Hooks/useClickOutside";
 import styles from "../../styles/New/NewKakao.module.scss";
 import { SampleCardProps, SampleNewProps } from "../../types/types";
-import EllipsisPopup from "../Common/EllipsisPopup";
+import EllipsisPopup from "../Commons/EllipsisPopup";
 
 const NewKakao: NextPage<SampleNewProps> = ({ webtoons }) => {
   return (

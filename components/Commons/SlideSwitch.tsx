@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Common/SlideSwitch.module.scss";
+import styles from "../../styles/Commons/SlideSwitch.module.scss";
 
 type SlideSwitchProps = {
   isChecked: boolean;

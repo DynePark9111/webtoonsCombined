@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
+import Ribbon from "../components/Commons/Ribbon";
 import NewToons from "../components/New/NewToons";
-import Ribbon from "../components/Ribbon";
 import styles from "../styles/Pages/Home.module.scss";
 import { HomeProps } from "../types/types";
 

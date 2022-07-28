@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import styles from "../../styles/Common/Introduction.module.scss";
+import styles from "../../styles/Commons/Introduction.module.scss";
 
 type IntroductionProps = {
   title: string;

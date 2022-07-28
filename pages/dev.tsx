@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Introduction from "../components/Introduction";
+import Introduction from "../components/Commons/Introduction";
 import styles from "../styles/Pages/Dev.module.scss";
 
 const Dev: NextPage = () => {

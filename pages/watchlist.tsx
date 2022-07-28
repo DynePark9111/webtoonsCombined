@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import Introduction from "../components/Introduction";
+import Introduction from "../components/Commons/Introduction";
 import styles from "../styles/Pages/Watchlist.module.scss";
 
 const Watchlist: NextPage = () => {

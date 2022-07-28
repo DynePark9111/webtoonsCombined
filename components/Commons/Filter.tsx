@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Common/Filter.module.scss";
+import styles from "../../styles/Commons/Filter.module.scss";
 import { FilterProps } from "../../types/types";
 
 const Filter: NextPage<FilterProps> = ({ array, selected, setSelected }) => {

@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { useState } from "react";
-import Filter from "../components/Filter";
-import FilterSlideStyle from "../components/FilterSlideStyle";
+import Filter from "../components/Commons/Filter";
+import FilterSlideStyle from "../components/Commons/FilterSlideStyle";
 import { platformFilter } from "../data/arrays";
 
 const Test: NextPage = () => {

@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import FilterYoutubeStyle from "../components/Commons/FilterYoutubeStyle";
 import { capitalize } from "../lib/functions";
 import styles from "../styles/Pages/Webtoons.module.scss";
-import FilterYoutubeStyle from "../components/FilterYoutubeStyle";
 
 const Webtoons: NextPage = () => {
   const [filterCategory, setFilterCategory] = useState({

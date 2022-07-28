@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Introduction from "../components/Introduction";
+import Introduction from "../components/Commons/Introduction";
 import styles from "../styles/Pages/ReportHistory.module.scss";
 
 const ReportHistory: NextPage = () => {

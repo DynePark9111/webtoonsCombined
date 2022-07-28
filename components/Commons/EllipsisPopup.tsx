@@ -8,7 +8,7 @@ import {
   IoTrashOutline,
 } from "react-icons/io5";
 import { AlertContext } from "../../context/alertContext";
-import styles from "../../styles/Common/EllipsisPopup.module.scss";
+import styles from "../../styles/Commons/EllipsisPopup.module.scss";
 
 const EllipsisPopup: NextPage = () => {
   const { addAlert } = useContext(AlertContext);

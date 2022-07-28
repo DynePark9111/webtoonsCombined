@@ -9,7 +9,7 @@ import {
   IoHeartOutline,
   IoTrashOutline,
 } from "react-icons/io5";
-import EllipsisPopup from "../../components/Common/EllipsisPopup";
+import EllipsisPopup from "../../components/Commons/EllipsisPopup";
 import useClickOutside from "../../Hooks/useClickOutside";
 import styles from "../../styles/Pages/Webtoon.module.scss";
 

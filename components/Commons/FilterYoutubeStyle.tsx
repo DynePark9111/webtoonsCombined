@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { IoFilterOutline } from "react-icons/io5";
 import { Filter2Array } from "../../data/arrays";
-import styles from "../../styles/Common/styles/FilterYoutubeStyle.module.scss";
+import styles from "../../styles/Commons/FilterYoutubeStyle.module.scss";
 
 type filterCategoryT = {
   uploaded: string;

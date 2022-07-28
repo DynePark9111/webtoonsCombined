@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
-import Introduction from "../components/Common/Introduction";
+import Introduction from "../components/Commons/Introduction";
 import { FaqArray } from "../data/arrays";
 import styles from "../styles/Pages/CustomerService.module.scss";
 

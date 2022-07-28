@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Common/FilterSlideStyle.module.scss";
+import styles from "../../styles/Commons/FilterSlideStyle.module.scss";
 import { FilterSlideStyleProps } from "../../types/types";
 
 const FilterSlideStyle: NextPage<FilterSlideStyleProps> = ({
