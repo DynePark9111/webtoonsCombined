@@ -1,0 +1,6 @@
+@use "../global" as *;
+
+.Watchlist {
+  background-color: var(--bg_dark);
+  @include section;
+}

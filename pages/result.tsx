@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import FilterYoutubeStyle from "../components/FilterYoutubeStyle";
-import styles from "../styles/Result.module.scss";
+import FilterYoutubeStyle from "../components/Commons/FilterYoutubeStyle";
+import styles from "../styles/Pages/Result.module.scss";
 
 const Result: NextPage = () => {
   const [filterCategory, setFilterCategory] = useState({

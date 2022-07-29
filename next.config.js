@@ -6,6 +6,7 @@ const nextConfig = {
       "shared-comic.pstatic.net",
       "kr-a.kakaopagecdn.com",
       "static-page.kakao.com",
+      "dn-img-page.kakao.com",
     ],
   },
 };

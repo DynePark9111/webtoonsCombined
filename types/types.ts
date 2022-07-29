@@ -1,4 +1,6 @@
-import { Dispatch, ReactNode } from "react";
+import { ObjectId } from "mongodb";
+import { ParsedUrlQuery } from "querystring";
+import { ReactNode } from "react";
 
 export type webtoon = {
   _id: string;
@@ -70,8 +72,7 @@ export type RibbonProps = {
 };
 
 export type HomeProps = {
-  webtoons1: webtoon[];
-  webtoons2: webtoon[];
+  webtoons: webtoon[];
 };
 
 export type CardProps = {
@@ -110,3 +111,34 @@ export type MessageProps = {
     status: "normal" | "success" | "warning" | "error";
   };
 };
+
+export type webtoonP = {
+  webtoon: {
+    _id: string;
+    title: string;
+    category: string;
+    image: string;
+    url: string;
+    platform: string;
+    author: string[];
+    genre: string[];
+    days: string[];
+    synopsis: string;
+    age: string;
+    first_episode_url: string;
+    updated: Date;
+
+    likes?: number;
+    hates?: number;
+    publisher?: string;
+
+    bookmark?: number;
+    view?: number;
+    rating?: number;
+  };
+};
+
+//Interface
+export interface IParams extends ParsedUrlQuery {
+  id: string;
+}

@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import { useContext } from "react";
-import Introduction from "../components/Introduction";
-import SlideSwitch from "../components/SlideSwitch";
+import Introduction from "../components/Commons/Introduction";
+import SlideSwitch from "../components/Commons/SlideSwitch";
 import { AlertContext } from "../context/alertContext";
 import { darkmodeContext } from "../context/darkmodeContext";
 import LocalStorage from "../lib/localStorage";
-import styles from "../styles/Settings.module.scss";
+import styles from "../styles/Pages/Settings.module.scss";
 
 const Settings: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";

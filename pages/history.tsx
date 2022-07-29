@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Introduction from "../components/Introduction";
+import Introduction from "../components/Commons/Introduction";
 import { sampleWebtoons } from "../data/arrays";
-import styles from "../styles/History.module.scss";
+import styles from "../styles/Pages/History.module.scss";
 import { NewtoonProps } from "../types/types";
 
 const History: NextPage = () => {

@@ -1,0 +1,44 @@
+@use "../global" as *;
+
+.Header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0 4rem;
+  .badges {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.25rem 0.5rem;
+      border-radius: $br;
+      background-color: #32334a;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .rating {
+      color: white;
+    }
+    .category {
+      color: #ffda00;
+    }
+  }
+  .title {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  .tags {
+    color: #d0d0d0;
+    font-size: 0.825rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

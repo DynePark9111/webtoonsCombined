@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Teenager.module.scss";
+import styles from "../../styles/Pages/policy/Teenager.module.scss";
 
 const Teenager: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";

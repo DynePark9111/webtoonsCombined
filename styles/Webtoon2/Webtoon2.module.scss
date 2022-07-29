@@ -1,0 +1,41 @@
+@use "../global" as *;
+
+.Webtoon2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .wrapper {
+    width: 100%;
+    max-width: 1080px;
+    max-height: calc(100vh - 6rem);
+    color: white;
+    border-radius: $br;
+    margin: 1rem auto;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .top {
+      width: 100%;
+      background-color: $bg2;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border-radius: $br;
+      // Images
+      // Icons
+      .about {
+        padding: 3rem 2rem;
+        //Header
+        //Deatil
+      }
+    }
+    .bottom {
+      color: black;
+      padding: 3rem 2rem;
+      background-color: white;
+      background-color: var(--bg);
+      //Tabs
+    }
+  }
+}

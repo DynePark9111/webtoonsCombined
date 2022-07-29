@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Terms.module.scss";
+import styles from "../../styles/Pages/policy/Terms.module.scss";
 
 const Terms: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";

@@ -1,0 +1,77 @@
+@use "../global" as *;
+
+.CustomerService {
+  @include section;
+  a {
+    @include btn;
+    display: block;
+    max-width: 160px;
+    margin: auto;
+    @include hoverAndActive;
+  }
+}
+
+.Faq {
+  background-color: var(--bg_dark);
+  font-size: 16px;
+  padding: 0;
+  max-width: $max-width;
+  border: solid 1px var(--hover);
+  border-bottom: 1px solid var(--hover);
+  li {
+    list-style: none;
+    font-size: 1em;
+    color: var(--tx);
+    //Question
+    //Answer
+  }
+}
+
+.Question {
+  font-weight: bold;
+  border-top: 1px solid var(--hover);
+  padding: 2em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  .text {
+    flex: 1;
+    text-align: start;
+  }
+  #down {
+    transition: transform 300ms;
+    transform: rotateX(180deg);
+  }
+}
+
+.Answer {
+  font-size: 14px;
+  display: flex;
+  word-break: keep-all;
+  height: 0;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  padding: 0 1em;
+  border-top: 1px solid var(--hover);
+  position: relative;
+  background-color: var(--bg);
+  transition: opacity 200ms, padding 300ms;
+  text-align: left;
+  &#show {
+    height: auto;
+    padding: 2em 1em;
+    opacity: 1;
+  }
+  .letterA {
+    margin-left: 1rem;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .Faq {
+    font-size: 12px;
+  }
+}

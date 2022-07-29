@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Introduction from "../components/Introduction";
-import styles from "../styles/Dev.module.scss";
+import Introduction from "../components/Commons/Introduction";
+import styles from "../styles/Pages/Dev.module.scss";
 
 const Dev: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";

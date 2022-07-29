@@ -1,0 +1,31 @@
+@use "../global" as *;
+
+.NewToons {
+  margin: 4rem auto;
+  padding: 0 1rem;
+  max-width: $max-width;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--tx);
+    h2 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    a {
+      cursor: pointer;
+      border: none;
+      background: none;
+      &::after {
+        content: ">";
+      }
+    }
+  }
+  .newToons {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+  }
+}

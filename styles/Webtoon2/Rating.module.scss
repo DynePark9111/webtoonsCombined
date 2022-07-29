@@ -1,0 +1,9 @@
+@use "../global" as *;
+
+.Rating {
+  margin-top: 2rem;
+  color: var(--tx);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
