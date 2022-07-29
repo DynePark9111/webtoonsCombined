@@ -13,10 +13,10 @@ const Home: NextPage<HomeProps> = ({ webtoons }) => {
         line2="공식 페이지로"
         href="/explore"
       />
-      <NewToons webtoons={webtoons} title="방금 업로드된 웹툰" />
+      {/* <NewToons webtoons={webtoons} title="방금 업로드된 웹툰" />
       <NewToons webtoons={webtoons} title="연재중 웹툰" />
       <NewToons webtoons={webtoons} title="추천하는 웹툰" />
-      <NewToons webtoons={webtoons} title="지금 인기 웹툰" />
+      <NewToons webtoons={webtoons} title="지금 인기 웹툰" /> */}
     </div>
   );
 };
@@ -33,12 +33,12 @@ export default Home;
 //   return { props: { webtoons1, webtoons2 } };
 // }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const URL = process.env.NEXT_PUBLIC_URL;
-  const { data } = await axios.get(`${URL}/new`);
-  return {
-    props: {
-      webtoon: data,
-    },
-  };
-};
+// export const getStaticProps: GetStaticProps = async (context) => {
+//   const URL = process.env.NEXT_PUBLIC_URL;
+//   const { data } = await axios.get(`${URL}/new`);
+//   return {
+//     props: {
+//       webtoon: data,
+//     },
+//   };
+// };
