@@ -5,7 +5,7 @@ import { FormEvent, useState } from "react";
 import styles from "../../styles/Comments/ReplyForm.module.scss";
 
 type ReplyFormProps = {
-  parentId: ObjectId;
+  parentId: string;
   isTopLevel: boolean;
 };
 

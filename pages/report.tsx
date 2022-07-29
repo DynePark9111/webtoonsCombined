@@ -20,7 +20,6 @@ const Report: NextPage = () => {
     addAlert("문의 점수중...", "normal");
     try {
       const res = await axios.post(`${URL as string}/report`, value);
-      console.log(res);
       addAlert("정상적으로 접수되었습니다.", "success");
     } catch (err) {
       addAlert("문의 접수가 실패했습니다.", "error");

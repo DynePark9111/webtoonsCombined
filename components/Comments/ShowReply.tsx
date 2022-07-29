@@ -6,7 +6,7 @@ import styles from "../../styles/Comments/ShowReply.module.scss";
 import Comments from "./Comments";
 
 type ShowReplyP = {
-  commentId: ObjectId;
+  commentId: string;
   replyCount: number;
 };
 

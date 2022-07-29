@@ -114,7 +114,7 @@ export type MessageProps = {
 
 export type webtoonP = {
   webtoon: {
-    _id: ObjectId;
+    _id: string;
     title: string;
     category: string;
     image: string;

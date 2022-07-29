@@ -15,7 +15,7 @@ import CommentEllipsis from "./CommentEllipsis";
 import ReplyForm from "./ReplyForm";
 
 type c = {
-  id: ObjectId;
+  id: string;
   image: string;
   authorId: string;
   authorEmail: string;
