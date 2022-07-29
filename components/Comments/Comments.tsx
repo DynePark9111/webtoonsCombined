@@ -1,10 +1,11 @@
+import { ObjectId } from "mongodb";
 import type { NextPage } from "next";
 import styles from "../../styles/Comments/Comments.module.scss";
 import Comment from "./Comment";
 import ShowReply from "./ShowReply";
 
 type c = {
-  id: number;
+  id: ObjectId;
   image: string;
   authorId: string;
   authorEmail: string;
@@ -25,7 +26,7 @@ type CommentsP = {
 const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
   const data = [
     {
-      id: 1,
+      id: new ObjectId("507f191e810c19729de860ea"),
       image:
         "https://shared-comic.pstatic.net/thumb/webtoon/783054/thumbnail/thumbnail_IMAG10_6917f3d9-c5bb-4bfd-aa04-a288f7b252af.jpg",
       authorId: "5d6ede6a0ba62570afcedd3a",
@@ -41,7 +42,7 @@ const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
       webtoonId: 123123,
     },
     {
-      id: 2,
+      id: new ObjectId("507f191e810c19729de860eb"),
       image:
         "https://shared-comic.pstatic.net/thumb/webtoon/783054/thumbnail/thumbnail_IMAG10_6917f3d9-c5bb-4bfd-aa04-a288f7b252af.jpg",
       authorId: "5d6ede6a0ba62570afcedd3a",
@@ -67,7 +68,7 @@ const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
     <div className={styles.Comments}>
       {data.map((comment) => (
         <>
-          <Comment key={comment.id} c={comment} />
+          <Comment key={comment.createdAt} c={comment} />
           {isTopLevel && comment.childrenId?.length && (
             <ShowReply
               commentId={comment.id}

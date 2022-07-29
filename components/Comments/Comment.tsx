@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -14,7 +15,7 @@ import CommentEllipsis from "./CommentEllipsis";
 import ReplyForm from "./ReplyForm";
 
 type c = {
-  id: number;
+  id: ObjectId;
   image: string;
   authorId: string;
   authorEmail: string;

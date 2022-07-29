@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
 import { ParsedUrlQuery } from "querystring";
-import { Dispatch, ReactNode } from "react";
+import { ReactNode } from "react";
 
 export type webtoon = {
   _id: string;
