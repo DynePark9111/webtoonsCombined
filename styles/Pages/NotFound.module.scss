@@ -1,20 +1,23 @@
 @use "../global" as *;
 
 .NotFound {
+  padding: 4rem 1rem;
   background-color: var(--bg_dark);
   color: var(--tx);
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  .link {
+  gap: 0.5rem;
+  text-align: center;
+  word-break: keep-all;
+  h1 {
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+    font-weight: normal;
     color: $blue;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     svg {
       padding-top: 4px;
     }

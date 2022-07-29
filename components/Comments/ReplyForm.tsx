@@ -1,10 +1,11 @@
+import { ObjectId } from "mongodb";
 import type { NextPage } from "next";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
 import styles from "../../styles/Comments/ReplyForm.module.scss";
 
 type ReplyFormProps = {
-  parentId: number;
+  parentId: ObjectId;
   isTopLevel: boolean;
 };
 

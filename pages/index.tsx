@@ -1,10 +1,11 @@
-import type { NextPage } from "next";
+import axios from "axios";
+import type { GetStaticProps, NextPage } from "next";
 import Ribbon from "../components/Commons/Ribbon";
 import NewToons from "../components/New/NewToons";
 import styles from "../styles/Pages/Home.module.scss";
 import { HomeProps } from "../types/types";
 
-const Home: NextPage<HomeProps> = ({ webtoons1, webtoons2 }) => {
+const Home: NextPage<HomeProps> = ({ webtoons }) => {
   return (
     <div className={styles.Home}>
       <Ribbon
@@ -12,10 +13,10 @@ const Home: NextPage<HomeProps> = ({ webtoons1, webtoons2 }) => {
         line2="공식 페이지로"
         href="/explore"
       />
-      <NewToons webtoons={webtoons1} title="방금 업로드된 웹툰" />
-      <NewToons webtoons={webtoons2} title="연재중 웹툰" />
-      <NewToons webtoons={webtoons1} title="추천하는 웹툰" />
-      <NewToons webtoons={webtoons2} title="지금 인기 웹툰" />
+      <NewToons webtoons={webtoons} title="방금 업로드된 웹툰" />
+      <NewToons webtoons={webtoons} title="연재중 웹툰" />
+      <NewToons webtoons={webtoons} title="추천하는 웹툰" />
+      <NewToons webtoons={webtoons} title="지금 인기 웹툰" />
     </div>
   );
 };
@@ -31,3 +32,13 @@ export default Home;
 //   const webtoons2 = resKakao.data.splice(0, 5);
 //   return { props: { webtoons1, webtoons2 } };
 // }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const URL = process.env.NEXT_PUBLIC_URL;
+  const { data } = await axios.get(`${URL}/new`);
+  return {
+    props: {
+      webtoon: data,
+    },
+  };
+};

@@ -9,7 +9,7 @@ const Header: NextPage<webtoonP> = ({ webtoon }) => {
       <ul className={styles.badges}>
         <li className={styles.rating}>
           <IoStarSharp />
-          <span>{webtoon.rating || "-"}</span>
+          <span>{webtoon?.rating || ""}</span>
         </li>
         <li className={styles.category}>{webtoon.category}</li>
       </ul>

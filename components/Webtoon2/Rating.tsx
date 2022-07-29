@@ -8,7 +8,7 @@ const Rating: NextPage<webtoonP> = ({ webtoon }) => {
   return (
     <div className={styles.Rating}>
       {/* <Comment /> */}
-      <ReplyForm parentId={webtoon.id} isTopLevel={true} />
+      <ReplyForm parentId={webtoon._id} isTopLevel={true} />
       <Comments isTopLevel={true} />
     </div>
   );

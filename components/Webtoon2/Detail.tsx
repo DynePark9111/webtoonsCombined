@@ -12,7 +12,7 @@ const Detail: NextPage<webtoonP> = ({ webtoon }) => {
           <IoPlayCircle />
           <span>무료보기</span>
         </a>
-        <a className={styles.firstEpisode} href={webtoon.firstEpisode}>
+        <a className={styles.firstEpisode} href={webtoon.first_episode_url}>
           <IoArrowRedoOutline />
           <span>1화보기</span>
         </a>
@@ -26,7 +26,7 @@ const Detail: NextPage<webtoonP> = ({ webtoon }) => {
           <ul>
             <li>
               <h6>제작</h6>
-              <span>{webtoon.publisher}</span>
+              <span>{webtoon.publisher || "-"}</span>
             </li>
             <li>
               <h6>작가</h6>
