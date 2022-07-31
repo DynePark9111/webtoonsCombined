@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { IoStarSharp } from "react-icons/io5";
 import { webtoonP } from "../../types/types";
-import styles from "../../styles/Webtoon2/Header.module.scss";
+import styles from "../../styles/Webtoon/Header.module.scss";
 
 const Header: NextPage<webtoonP> = ({ webtoon }) => {
   return (

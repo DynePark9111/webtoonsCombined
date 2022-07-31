@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Webtoon2/Rating.module.scss";
+import styles from "../../styles/Webtoon/Rating.module.scss";
 import { webtoonP } from "../../types/types";
 import Comments from "../Comments/Comments";
 import ReplyForm from "../Comments/ReplyForm";

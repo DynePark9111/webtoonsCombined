@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { IoArrowBackOutline, IoEllipsisVerticalSharp } from "react-icons/io5";
 import useClickOutside from "../../Hooks/useClickOutside";
-import styles from "../../styles/Webtoon2/Icons.module.scss";
+import styles from "../../styles/Webtoon/Icons.module.scss";
 import EllipsisPopup from "../Commons/EllipsisPopup";
 
 const Icons: NextPage = () => {

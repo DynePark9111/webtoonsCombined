@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../../styles/Webtoon2/Reccomendation.module.scss";
+import styles from "../../styles/Webtoon/Reccomendation.module.scss";
 import { webtoonP } from "../../types/types";
 
 const Reccomendation: NextPage<webtoonP> = ({ webtoon }) => {

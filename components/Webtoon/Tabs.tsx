@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Webtoon2/Tabs.module.scss";
+import styles from "../../styles/Webtoon/Tabs.module.scss";
 
 type TabsP = {
   tab: string;
