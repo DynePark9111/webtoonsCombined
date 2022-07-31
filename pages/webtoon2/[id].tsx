@@ -2,6 +2,7 @@ import axios from "axios";
 import type { GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import SkeletonWebtoon from "../../components/Skeletons/SkeletonWebtoon";
 import Detail from "../../components/Webtoon2/Detail";
 import Header from "../../components/Webtoon2/Header";
 import Icons from "../../components/Webtoon2/Icons";
@@ -17,7 +18,7 @@ const Webtoon2: NextPage<webtoonP> = ({ webtoon }) => {
   const [tab, setTab] = useState("평점");
 
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <SkeletonWebtoon />;
   }
   return (
     <div className={styles.Webtoon2}>

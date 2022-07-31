@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import styles from "../../styles/Comments/Comments.module.scss";
+import SkeletonComment from "../Skeletons/SkeletonComment";
 import Comment from "./Comment";
 import ShowReply from "./ShowReply";
 
@@ -76,6 +77,8 @@ const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
           )}
         </>
       ))}
+      <SkeletonComment />
+      <SkeletonComment />
     </div>
   );
 };
