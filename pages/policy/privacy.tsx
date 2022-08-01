@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import styles from "../../styles/Pages/policy/Privacy.module.scss";
 
 const Privacy: NextPage = () => {
@@ -582,7 +583,7 @@ const Privacy: NextPage = () => {
           <h3>이전 개인정보 처리방침</h3>
           <ul>
             <li>
-              <a href="/empty">시행일자: 2022년 06월 22일</a>
+              <Link href="/empty">시행일자: 2022년 06월 22일</Link>
             </li>
           </ul>
         </div>

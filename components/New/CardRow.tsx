@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
-import { sampleWebtoons } from "../../data/arrays";
 import styles from "../../styles/New/CardRow.module.scss";
+import { HomeProps } from "../../types/types";
 import SkeletonCard from "../Skeletons/SkeletonCard";
 import Card from "./Card";
 
-const CardRow: NextPage = () => {
-  const webtoons = sampleWebtoons;
+const CardRow: NextPage<HomeProps> = ({ webtoons }) => {
   return (
     <div className={styles.CardRow}>
       {webtoons.map((webtoon) => (

@@ -3,11 +3,17 @@
 .Card {
   width: 100%;
   min-width: 180px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
+  &#bookmark {
+    box-shadow: 0 0 0.5rem $blue;
+  }
+  &#trash {
+    display: none;
+  }
+
   .image {
-    border-radius: 0.75rem;
+    cursor: pointer;
     overflow: hidden;
     position: relative;
     width: 100%;

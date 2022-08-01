@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { GetStaticProps, NextPage } from "next";
 import Ribbon from "../components/Commons/Ribbon";
-import NewToons from "../components/New/NewToons";
+import CardRow from "../components/New/CardRow";
 import styles from "../styles/Pages/Home.module.scss";
 import { HomeProps } from "../types/types";
 
@@ -13,6 +13,8 @@ const Home: NextPage<HomeProps> = ({ webtoons }) => {
         line2="공식 페이지로"
         href="/explore"
       />
+
+      <CardRow webtoons={webtoons} />
       {/* <NewToons webtoons={webtoons} title="방금 업로드된 웹툰" />
       <NewToons webtoons={webtoons} title="연재중 웹툰" />
       <NewToons webtoons={webtoons} title="추천하는 웹툰" />
@@ -23,22 +25,20 @@ const Home: NextPage<HomeProps> = ({ webtoons }) => {
 
 export default Home;
 
-// export async function getServerSideProps() {
-//   const URL = process.env.URL;
-//   const resNaver = await axios.get(`${URL}/new`);
-//   const resKakao = await axios.get(`${URL}/new`);
-
-//   const webtoons1 = resNaver.data.splice(0, 5);
-//   const webtoons2 = resKakao.data.splice(0, 5);
-//   return { props: { webtoons1, webtoons2 } };
-// }
-
-// export const getStaticProps: GetStaticProps = async (context) => {
-//   const URL = process.env.NEXT_PUBLIC_URL;
-//   const { data } = await axios.get(`${URL}/new`);
-//   return {
-//     props: {
-//       webtoon: data,
-//     },
-//   };
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  const URL = process.env.NEXT_PUBLIC_URL;
+  const revalidateTime = 60 * 60;
+  try {
+    const { data } = await axios.get(`${URL}/new`);
+    return {
+      props: {
+        webtoons: data,
+      },
+      revalidate: revalidateTime,
+    };
+  } catch {
+    return {
+      notFound: true,
+    };
+  }
+};

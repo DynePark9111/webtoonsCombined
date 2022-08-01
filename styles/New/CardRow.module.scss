@@ -9,9 +9,11 @@
 }
 
 .CardRow {
-  margin: 1rem;
+  max-width: $max-width;
+  margin: auto;
+  padding: 1rem;
   display: grid;
-  gap: 0.5rem;
+  gap: 2rem 1rem;
 }
 
 $mediaWidth: 368px;
@@ -24,14 +26,14 @@ $mediaMaxWidth: 2100px;
   @include mediaScreenGrid(2, 1fr);
 }
 @media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *3)) {
-  @include mediaScreenGrid(3, 1fr);
-}
-@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *2)) {
   @include mediaScreenGrid(4, 1fr);
 }
-@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *1)) {
+@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *2)) {
   @include mediaScreenGrid(5, 1fr);
 }
-@media screen and (min-width: $mediaMaxWidth) {
+@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *1)) {
   @include mediaScreenGrid(6, 1fr);
+}
+@media screen and (min-width: $mediaMaxWidth) {
+  @include mediaScreenGrid(8, 1fr);
 }
