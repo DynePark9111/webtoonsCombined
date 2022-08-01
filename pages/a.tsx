@@ -5,7 +5,7 @@ import SkeletonWebtoon from "../components/Skeletons/SkeletonWebtoon";
 const a = () => {
   return (
     <div>
-      <CardRow />
+      {/* <CardRow /> */}
       {/* <SkeletonWebtoon /> */}
     </div>
   );
