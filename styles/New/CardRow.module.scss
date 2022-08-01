@@ -1,0 +1,37 @@
+@use "../global" as *;
+
+@mixin mediaScreenGrid($n, $fr) {
+  .CardRow {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat($n, $fr);
+  }
+}
+
+.CardRow {
+  margin: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+$mediaWidth: 368px;
+$mediaMaxWidth: 2100px;
+
+@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *5)) {
+  @include mediaScreenGrid(1, 1fr);
+}
+@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *4)) {
+  @include mediaScreenGrid(2, 1fr);
+}
+@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *3)) {
+  @include mediaScreenGrid(3, 1fr);
+}
+@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *2)) {
+  @include mediaScreenGrid(4, 1fr);
+}
+@media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *1)) {
+  @include mediaScreenGrid(5, 1fr);
+}
+@media screen and (min-width: $mediaMaxWidth) {
+  @include mediaScreenGrid(6, 1fr);
+}

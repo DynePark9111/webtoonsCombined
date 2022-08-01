@@ -38,19 +38,6 @@
         font-size: 1rem;
         color: $blue;
       }
-      .ellipsis {
-        position: relative;
-        z-index: 100;
-        font-size: 0.75rem;
-        color: var(--tx);
-        .popup {
-          padding: 1px;
-          margin: 1px;
-          position: absolute;
-          top: 30px;
-          left: 15px;
-        }
-      }
     }
     .title {
       width: 100%;

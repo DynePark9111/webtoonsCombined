@@ -7,22 +7,9 @@
   gap: 0.5rem;
   color: white;
   padding: 1rem;
-  .ellipsis {
-    position: relative;
+  svg {
     cursor: pointer;
-    @include svg;
-    .popup {
-      padding: 1px;
-      margin: 1px;
-      position: absolute;
-      top: 40px;
-      left: -220px;
-      z-index: 10;
-    }
-  }
-  .backArrow {
+    font-size: 1.5rem;
     position: relative;
-    cursor: pointer;
-    @include svg;
   }
 }
