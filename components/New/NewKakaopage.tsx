@@ -1,11 +1,8 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { useRef, useState } from "react";
-import { IoEllipsisVerticalSharp } from "react-icons/io5";
-import useClickOutside from "../../Hooks/useClickOutside";
 import styles from "../../styles/New/NewKakaopage.module.scss";
 import { SampleCardProps, SampleNewProps } from "../../types/types";
-import EllipsisPopup from "../Commons/EllipsisPopup";
+import EllipsisButton from "../Commons/EllipsisButton";
 
 const NewKakaopage: NextPage<SampleNewProps> = ({ webtoons }) => {
   return (
@@ -24,13 +21,6 @@ const NewKakaopage: NextPage<SampleNewProps> = ({ webtoons }) => {
 export default NewKakaopage;
 
 const CardKakaopage: NextPage<SampleCardProps> = ({ webtoon }) => {
-  const [show, setShow] = useState(false);
-  const ellipsisRef = useRef<HTMLDivElement>(null);
-  const clickOutsidehandler = () => {
-    setShow(false);
-  };
-  useClickOutside(ellipsisRef, clickOutsidehandler);
-
   return (
     <div className={styles.CardKP}>
       <div className={styles.image}>
@@ -44,14 +34,7 @@ const CardKakaopage: NextPage<SampleCardProps> = ({ webtoon }) => {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.new}>new</div>
-          <div
-            className={styles.ellipsis}
-            onClick={() => setShow((prev) => !prev)}
-            ref={ellipsisRef}
-          >
-            <IoEllipsisVerticalSharp id={styles.selected} title="더보기" />
-            <div className={styles.popup}>{show && <EllipsisPopup />}</div>
-          </div>
+          <EllipsisButton />
         </div>
         <div className={styles.title} title={webtoon.title}>
           {webtoon.title}

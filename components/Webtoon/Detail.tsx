@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { IoArrowRedoOutline, IoPlayCircle } from "react-icons/io5";
-import styles from "../../styles/Webtoon2/Detail.module.scss";
+import styles from "../../styles/Webtoon/Detail.module.scss";
 import { webtoonP } from "../../types/types";
 import Tags from "./Tags";
 

@@ -44,21 +44,6 @@ $wd_image: 5.25em;
         font-size: 1em;
         color: $blue;
       }
-      .ellipsis {
-        position: relative;
-        z-index: 100;
-        font-size: 0.75em;
-        padding: 0.5em 0.25em 0.5em 2em;
-        color: var(--tx2);
-        .popup {
-          padding: 1px;
-          margin: 1px;
-          position: absolute;
-          top: 30px;
-          left: 15px;
-          z-index: 100;
-        }
-      }
     }
     .title {
       width: 100%;

@@ -34,23 +34,11 @@ $wd_card: 240px;
     .top {
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
+      font-size: 1rem;
       .new {
         font-size: 1rem;
         color: $blue;
-      }
-      .ellipsis {
-        position: relative;
-        z-index: 100;
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
-        color: var(--tx);
-        .popup {
-          padding: 1px;
-          margin: 1px;
-          position: absolute;
-          top: 30px;
-          left: -8px;
-        }
       }
     }
     .title {

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { webtoonP } from "../../types/types";
-import styles from "../../styles/Webtoon2/Tags.module.scss";
+import styles from "../../styles/Webtoon/Tags.module.scss";
 
 const Tags: NextPage<webtoonP> = ({ webtoon }) => {
   return (

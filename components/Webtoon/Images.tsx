@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
-import styles from "../../styles/Webtoon2/Images.module.scss";
+import styles from "../../styles/Webtoon/Images.module.scss";
 
 type ImageProps = {
   image: string;
