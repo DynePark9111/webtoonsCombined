@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { IoMailOutline } from "react-icons/io5";
-import styles from "../../styles/Pages/auth/Login.module.scss";
+import styles from "../../styles/Pages/authPage/Login.module.scss";
 
 const Login: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
