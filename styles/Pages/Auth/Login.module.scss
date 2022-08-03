@@ -1,9 +1,8 @@
-@use "../global" as *;
+@use "../../global" as *;
 
-$purple: #816bff;
 .Login {
+  $purple: #816bff;
   color: #ffffff;
-
   width: 100%;
   min-height: 100%;
   display: flex;
