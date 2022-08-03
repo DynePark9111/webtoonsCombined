@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import styles from "../../styles/Layout/Layout.module.scss";
 import Notification from "./Notification";
 import { darkmodeContext } from "../../context/darkmodeContext";
+import RemoteBtn from "./RemoteBtn";
 
 type T = {
   children: ReactNode;
@@ -22,6 +23,7 @@ const Layout: NextPage<T> = ({ children }) => {
         {children}
       </div>
       <Notification />
+      <RemoteBtn />
     </div>
   );
 };
