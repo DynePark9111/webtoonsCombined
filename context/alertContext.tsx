@@ -21,7 +21,7 @@ type AlertAction = AddAction | DeleteAction;
 
 const defaultValue: alertType[] = [];
 
-function alertReducer(state: alertType[], action: AlertAction): alertType[] {
+function alertReducer(state: alertType[], action: AlertAction) {
   const randomID = Math.random().toString();
   switch (action.type) {
     case "ADD_ALERT": {

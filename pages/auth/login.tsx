@@ -8,10 +8,13 @@ import { loginArray } from "../../data/arrays";
 import { AlertContext } from "../../context/alertContext";
 import { useRouter } from "next/router";
 import { validateEmail, validatePassword } from "../../lib/functions";
+import { UserContext } from "../../context/userContext";
 
 const Login: NextPage = () => {
   const URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3001";
   const { addAlert } = useContext(AlertContext);
+  const { login } = useContext(UserContext);
+
   const router = useRouter();
   const [values, setValues] = useState({
     email: "",
@@ -22,13 +25,15 @@ const Login: NextPage = () => {
     return !(validateEmail(values.email) && validatePassword(values.password));
   };
 
-  const login = async () => {
+  const handleSubmit = async () => {
     try {
       const res = await axios.post(`${URL}/login`, values, {
         withCredentials: true,
       });
       if (res.status === 200) {
-        addAlert("로그인 성공!", "success");
+        const { userId, username, email, bookmark } = res.data;
+        addAlert(`안녕하세요 ${username}님`, "success");
+        login(userId, username, email, bookmark);
         router.push("/");
       }
     } catch (err) {
@@ -58,7 +63,11 @@ const Login: NextPage = () => {
           />
         ))}
         <Link href="/auth/findpw">비밀번호 찾기</Link>
-        <button type="submit" onClick={() => login()} disabled={disabled()}>
+        <button
+          type="submit"
+          onClick={() => handleSubmit()}
+          disabled={disabled()}
+        >
           로그인
         </button>
       </form>

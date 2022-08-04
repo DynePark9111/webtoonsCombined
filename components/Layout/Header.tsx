@@ -10,11 +10,13 @@ import { useContext } from "react";
 import { NavContext } from "../../context/navContext";
 import Searchbox from "./Searchbox";
 import Link from "next/link";
+import { UserContext } from "../../context/userContext";
+import LogoutBtn from "./LogoutBtn";
 
 const Header: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
   const { toggleNav } = useContext(NavContext);
-
+  const { user } = useContext(UserContext);
   return (
     <div className={styles.Header}>
       <div className={styles.left}>
@@ -36,7 +38,7 @@ const Header: NextPage = () => {
           <IoEllipsisVerticalSharp />
         </li>
         <li className={styles.login}>
-          <LoginBtn />
+          {user.userId === "" ? <LoginBtn /> : <LogoutBtn />}
         </li>
       </ul>
     </div>

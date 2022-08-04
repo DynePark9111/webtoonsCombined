@@ -1,11 +1,15 @@
 import axios from "axios";
 import type { GetStaticProps, NextPage } from "next";
+import { useContext } from "react";
 import Ribbon from "../components/Commons/Ribbon";
 import CardRow from "../components/New/CardRow";
+import { UserContext } from "../context/userContext";
 import styles from "../styles/Pages/Home.module.scss";
 import { HomeProps } from "../types/types";
 
 const Home: NextPage<HomeProps> = ({ webtoons }) => {
+  const { user } = useContext(UserContext);
+  console.log(user);
   return (
     <div className={styles.Home}>
       <Ribbon
