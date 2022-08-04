@@ -38,7 +38,7 @@ const Header: NextPage = () => {
           <IoEllipsisVerticalSharp />
         </li>
         <li className={styles.login}>
-          {user.userId === "" ? <LoginBtn /> : <LogoutBtn />}
+          {user.username === undefined ? <LoginBtn /> : <LogoutBtn />}
         </li>
       </ul>
     </div>

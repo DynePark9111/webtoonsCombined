@@ -4,7 +4,6 @@ import { IoMailOutline } from "react-icons/io5";
 import styles from "../../styles/Pages/auth/AuthPage.module.scss";
 
 const AuthPage: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "Webtoons Combined";
   return (
     <div className={styles.AuthPage}>
       <div className={styles.text}>

@@ -31,9 +31,9 @@ const Login: NextPage = () => {
         withCredentials: true,
       });
       if (res.status === 200) {
-        const { userId, username, email, bookmark } = res.data;
+        const { _id, username, email, bookmark } = res.data;
         addAlert(`안녕하세요 ${username}님`, "success");
-        login(userId, username, email, bookmark);
+        login(_id, username, email, bookmark);
         router.push("/");
       }
     } catch (err) {

@@ -49,7 +49,6 @@ const NavbarSmall: NextPage = () => {
 const NavbarBig: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
   const { user } = useContext(UserContext);
-
   return (
     <div className={styles.NavbarBig}>
       <div className={styles.wrapper}>
@@ -79,7 +78,7 @@ const NavbarBig: NextPage = () => {
             text="좋아요 표시한 웹툰"
           />
         </ul>
-        {user.userId === "" && (
+        {user.username === undefined && (
           <div className={styles.promo}>
             <div>
               로그인하면 웹툰에 좋아요를 표시하고 댓글을 달거나 구독할 수
