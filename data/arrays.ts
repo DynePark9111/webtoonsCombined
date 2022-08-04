@@ -401,3 +401,27 @@ export const adsArray = [
     link: "https://www.youtube.com/user/toptoonkr",
   },
 ];
+
+// Auth
+export const loginArray = [
+  {
+    id: 0,
+    name: "email",
+    type: "email",
+    placeholder: "email@gmail.com",
+    errorMessage: "올바른 이메일을 입력해 주세요.",
+    label: "이메일",
+    required: true,
+  },
+  {
+    id: 1,
+    name: "password",
+    type: "password",
+    placeholder: "********",
+    errorMessage:
+      "비밀번호 길이는 8~20, 문자, 숫자, 특수문자가 포함되어야 합니다.",
+    label: "비밀번호",
+    pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+    required: true,
+  },
+];

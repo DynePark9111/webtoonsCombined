@@ -5,7 +5,7 @@ import styles from "../../styles/Layout/LoginBtn.module.scss";
 
 const LoginBtn: NextPage = () => {
   return (
-    <Link href="/login">
+    <Link href="/auth">
       <button className={styles.LoginBtn}>
         <IoPersonCircleOutline />
         <span>로그인</span>

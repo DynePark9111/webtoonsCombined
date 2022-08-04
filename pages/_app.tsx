@@ -5,13 +5,26 @@ import { NavContextProvider } from "../context/navContext";
 import AlertContextProvider from "../context/alertContext";
 import { DarkmodeContextProvider } from "../context/darkmodeContext";
 import { useRouter } from "next/router";
+import AuthLayout from "../components/Layout/AuthLayout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const noLayout = ["/auth/login", "auth/register"];
+  const noLayout = [
+    "/auth",
+    "/auth/login",
+    "/auth/signup",
+    "/auth/social",
+    "/auth/findpw",
+  ];
 
   if (noLayout.includes(router.asPath)) {
-    return <Component {...pageProps} />;
+    return (
+      <AlertContextProvider>
+        <AuthLayout>
+          <Component {...pageProps} />
+        </AuthLayout>
+      </AlertContextProvider>
+    );
   }
   return (
     <NavContextProvider>
