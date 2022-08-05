@@ -3,4 +3,10 @@
 .Bookmark {
   background-color: var(--bg_dark);
   @include section;
+  section {
+    text-align: left;
+    h1 {
+      padding: 0 1rem;
+    }
+  }
 }

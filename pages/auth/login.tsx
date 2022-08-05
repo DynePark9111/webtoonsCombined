@@ -27,7 +27,7 @@ const Login: NextPage = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post(`${URL}/login`, values, {
+      const res = await axios.post(`${URL}/auth/login`, values, {
         withCredentials: true,
       });
       if (res.status === 200) {

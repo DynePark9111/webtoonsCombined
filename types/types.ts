@@ -89,6 +89,10 @@ export type FilterSlideStyleProps = {
   setSelected: any;
 };
 
+export type EllipsisButtonP = {
+  webtoon_id: string;
+};
+
 //new
 export type SampleWebtoon = {
   title: string;

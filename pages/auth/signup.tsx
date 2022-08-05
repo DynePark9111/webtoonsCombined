@@ -67,7 +67,7 @@ const Signup: NextPage = () => {
   ];
 
   const signup = async () => {
-    const res = await axios.post(`${URL}/signup`, values);
+    const res = await axios.post(`${URL}/auth/signup`, values);
     if (res.status === 201) {
       addAlert("가입 성공!", "success");
       router.push("/auth/login");

@@ -1,17 +1,20 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext";
 import styles from "../../styles/New/Card.module.scss";
 import { NewtoonProps } from "../../types/types";
 import EllipsisButton from "../Commons/EllipsisButton";
 
 const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
-  const bookmark = ["해귀", "구주"];
+  const { user } = useContext(UserContext);
+  const bookmark = user.bookmark;
   const trash = ["이별학", "필생기"];
   return (
     <div
       className={styles.Card}
-      id={`${bookmark.includes(webtoon.title) ? styles.bookmark : ""}${
-        trash.includes(webtoon.title) ? styles.trash : ""
+      id={`${bookmark?.includes(webtoon._id) ? styles.bookmark : ""}${
+        trash.includes(webtoon._id) ? styles.trash : ""
       }`}
       title="보러가기"
     >
@@ -30,7 +33,7 @@ const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
           <div className={styles.title} title={webtoon.title}>
             {webtoon.title}
           </div>
-          <EllipsisButton />
+          <EllipsisButton webtoon_id={webtoon._id} />
         </div>
         <div className={styles.episode} title={webtoon.episodeTitle}>
           {webtoon.episodeTitle}

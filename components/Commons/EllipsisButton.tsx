@@ -3,9 +3,10 @@ import { useRef, useState } from "react";
 import { IoEllipsisVerticalSharp } from "react-icons/io5";
 import useClickOutside from "../../Hooks/useClickOutside";
 import styles from "../../styles/Commons/EllipsisButton.module.scss";
+import { EllipsisButtonP } from "../../types/types";
 import EllipsisPopup from "./EllipsisPopup";
 
-const EllipsisButton: NextPage = () => {
+const EllipsisButton: NextPage<EllipsisButtonP> = ({ webtoon_id }) => {
   const [show, setShow] = useState(false);
   const ellipsisRef = useRef<HTMLDivElement>(null);
   const clickOutsidehandler = () => {
@@ -19,7 +20,9 @@ const EllipsisButton: NextPage = () => {
       ref={ellipsisRef}
     >
       <IoEllipsisVerticalSharp title="더보기" />
-      <div className={styles.popup}>{show && <EllipsisPopup />}</div>
+      <div className={styles.popup}>
+        {show && <EllipsisPopup webtoon_id={webtoon_id} />}
+      </div>
     </div>
   );
 };
