@@ -7,7 +7,7 @@ import Card from "./Card";
 const CardRow: NextPage<HomeProps> = ({ webtoons }) => {
   return (
     <div className={styles.CardRow}>
-      {webtoons
+      {webtoons?.length > 0
         ? webtoons.map((webtoon) => (
             <Card webtoon={webtoon} key={webtoon.title} />
           ))

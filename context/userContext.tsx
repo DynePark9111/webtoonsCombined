@@ -119,7 +119,7 @@ const UserContextProvider: NextPage<childrenProps> = ({ children }) => {
   const handleWatchLater = async (watchLater: string) => {
     try {
       const res = await axios.patch(
-        `${URL}/user/watchLater`,
+        `${URL}/user/watchlater`,
         { watchLater },
         { withCredentials: true }
       );
@@ -136,7 +136,7 @@ const UserContextProvider: NextPage<childrenProps> = ({ children }) => {
   const handleLikedWebtoon = async (likedWebtoon: string) => {
     try {
       const res = await axios.patch(
-        `${URL}/user/bookmark`,
+        `${URL}/user/liked`,
         { likedWebtoon },
         { withCredentials: true }
       );

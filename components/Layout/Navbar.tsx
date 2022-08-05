@@ -7,6 +7,7 @@ import {
   IoChatbubbleEllipsesOutline,
   IoCogSharp,
   IoCompassOutline,
+  IoEyeOffOutline,
   IoFlagOutline,
   IoHeartOutline,
   IoHelpCircleOutline,
@@ -76,6 +77,11 @@ const NavbarBig: NextPage = () => {
             href="/watchlist?list=LL"
             icon={<IoHeartOutline />}
             text="좋아요 표시한 웹툰"
+          />
+          <NavbarItem
+            href="/hidden"
+            icon={<IoEyeOffOutline />}
+            text="숨긴 웹툰"
           />
         </ul>
         {user.username === undefined && (

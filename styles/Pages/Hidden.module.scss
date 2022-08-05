@@ -1,6 +1,6 @@
 @use "../global" as *;
 
-.Watchlist {
+.Hidden {
   padding: 0 1rem;
   background-color: var(--bg_dark);
   @include section;

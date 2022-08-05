@@ -8,14 +8,15 @@ import EllipsisButton from "../Commons/EllipsisButton";
 
 const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
   const { user } = useContext(UserContext);
-  const bookmark = user.bookmark;
-  const trash = ["이별학", "필생기"];
+  const bookmark = user.bookmark?.includes(webtoon._id);
+  const later = user.watchLater?.includes(webtoon._id);
+  const trash = user.likedWebtoon?.includes(webtoon._id);
   return (
     <div
       className={styles.Card}
-      id={`${bookmark?.includes(webtoon._id) ? styles.bookmark : ""}${
-        trash.includes(webtoon._id) ? styles.trash : ""
-      }`}
+      id={`${bookmark && !later ? styles.bookmark : ""}${
+        !bookmark && later ? styles.later : ""
+      }${bookmark && later ? styles.both : ""}${trash ? styles.trash : ""}`}
       title="보러가기"
     >
       <a
@@ -25,7 +26,7 @@ const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
       >
         <div className={styles.image}>
           <Image src={webtoon.image} layout="fill" alt={webtoon.title} />
-          {trash.includes(webtoon.title) && <div className={styles.trash} />}
+          {trash && <div className={styles.trash} />}
         </div>
       </a>
       <div className={styles.content}>

@@ -17,6 +17,7 @@ const Header: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
   const { toggleNav } = useContext(NavContext);
   const { user } = useContext(UserContext);
+
   return (
     <div className={styles.Header}>
       <div className={styles.left}>

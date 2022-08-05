@@ -1,35 +1,27 @@
 import axios from "axios";
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useContext } from "react";
 import useSWR from "swr";
 import Introduction from "../components/Commons/Introduction";
 import CardRow from "../components/New/CardRow";
 import { UserContext } from "../context/userContext";
-import styles from "../styles/Pages/Watchlist.module.scss";
+import styles from "../styles/Pages/Hidden.module.scss";
 
-const Watchlist: NextPage = () => {
-  const route = useRouter();
+const Hidden: NextPage = () => {
   const { user } = useContext(UserContext);
-  const { list } = route.query;
   const URL = process.env.NEXT_PUBLIC_URL;
-  const isWL = list === "WL";
-  const path = isWL ? "watchlater" : "liked";
   const fetcher = async () => {
-    const res = await axios.get(`${URL}/new/${path}`, {
+    const res = await axios.get(`${URL}/new/liked`, {
       withCredentials: true,
     });
     return res.data;
   };
-  const { data, error } = useSWR(`/new/${path}`, fetcher);
   const isGuest = user.username === undefined;
+  const { data, error } = useSWR("/new/liked", fetcher);
 
   return (
-    <div className={styles.Watchlist}>
-      <Introduction
-        title={isWL ? "나중에 볼 웹툰" : "좋아요 표시한 웹툰"}
-        src={isWL ? "/images/account2.svg" : "/images/account.svg"}
-      />
+    <div className={styles.Hidden}>
+      <Introduction title="북마크" src="/images/explore.svg" />
       <section>
         {isGuest && <h1>로그인이 필요합니다.</h1>}
         {!isGuest && data?.length === 0 && (
@@ -46,4 +38,4 @@ const Watchlist: NextPage = () => {
   );
 };
 
-export default Watchlist;
+export default Hidden;
