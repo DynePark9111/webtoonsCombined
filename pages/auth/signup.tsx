@@ -9,7 +9,7 @@ import {
   validatePassword,
   validateUsername,
 } from "../../lib/functions";
-import styles from "../../styles/Pages/authpage/Signup.module.scss";
+import styles from "../../styles/Pages/authpages/Signup.module.scss";
 
 const Signup: NextPage = () => {
   const URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3001";

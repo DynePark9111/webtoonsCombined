@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Pages/authpage/FindPassword.module.scss";
+import styles from "../../styles/Pages/authpages/FindPassword.module.scss";
 
 const FindPassword: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "Webtoons Combined";
