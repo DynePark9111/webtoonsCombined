@@ -34,7 +34,7 @@ const CardKaKao: NextPage<SampleCardProps> = ({ webtoon }) => {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.new}>new</div>
-          <EllipsisButton />
+          <EllipsisButton webtoon_id={webtoon.title} />
         </div>
         <div className={styles.title} title={webtoon.title}>
           {webtoon.title}

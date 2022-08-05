@@ -7,14 +7,13 @@ import Card from "./Card";
 const CardRow: NextPage<HomeProps> = ({ webtoons }) => {
   return (
     <div className={styles.CardRow}>
-      {webtoons.map((webtoon) => (
-        <Card webtoon={webtoon} key={webtoon.title} />
-      ))}
-      {/* {Array(24)
-        .fill(null)
-        .map((_, i) => (
-          <SkeletonCard key={i} />
-        ))} */}
+      {webtoons?.length > 0
+        ? webtoons.map((webtoon) => (
+            <Card webtoon={webtoon} key={webtoon.title} />
+          ))
+        : Array(24)
+            .fill(null)
+            .map((_, i) => <SkeletonCard key={i} />)}
     </div>
   );
 };

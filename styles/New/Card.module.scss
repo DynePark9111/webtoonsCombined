@@ -1,17 +1,32 @@
 @use "../global" as *;
 
+@mixin imageShadow($color) {
+  .image {
+    box-shadow: 0 0 2px 2px $color;
+  }
+}
+
 .Card {
   width: 100%;
   min-width: 180px;
   display: flex;
   flex-direction: column;
   &#bookmark {
-    box-shadow: 0 0 0.5rem $blue;
+    @include imageShadow($blue);
   }
-  &#trash {
-    display: none;
+  &#later {
+    @include imageShadow($red);
+  }
+  &#both {
+    @include imageShadow($purple);
   }
 
+  &#trash {
+    .image {
+      filter: grayscale(1);
+      opacity: 0.25;
+    }
+  }
   .image {
     cursor: pointer;
     overflow: hidden;
@@ -25,7 +40,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 0.5rem;
     .top {
       margin-top: 0.5rem;
       width: 100%;

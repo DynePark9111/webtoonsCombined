@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--hover);
+  word-break: keep-all;
   .texts {
     padding-bottom: 1.5rem;
     h3 {

@@ -4,25 +4,32 @@ import Layout from "../components/Layout/Layout";
 import { NavContextProvider } from "../context/navContext";
 import AlertContextProvider from "../context/alertContext";
 import { DarkmodeContextProvider } from "../context/darkmodeContext";
-import { useRouter } from "next/router";
+import AuthLayout from "../components/Layout/AuthLayout";
+import UserContextProvider from "../context/userContext";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  const noLayout = ["/auth/login", "auth/register"];
+function MyApp({ Component, pageProps, ...appProps }: AppProps) {
+  const authPath = [
+    "/auth",
+    "/auth/login",
+    "/auth/signup",
+    "/auth/social",
+    "/auth/findpw",
+  ];
+  const isAuthPath = authPath.includes(appProps.router.pathname);
+  const LayoutComponent = isAuthPath ? AuthLayout : Layout;
 
-  if (noLayout.includes(router.asPath)) {
-    return <Component {...pageProps} />;
-  }
   return (
-    <NavContextProvider>
-      <AlertContextProvider>
-        <DarkmodeContextProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </DarkmodeContextProvider>
-      </AlertContextProvider>
-    </NavContextProvider>
+    <UserContextProvider>
+      <NavContextProvider>
+        <AlertContextProvider>
+          <DarkmodeContextProvider>
+            <LayoutComponent>
+              <Component {...pageProps} />
+            </LayoutComponent>
+          </DarkmodeContextProvider>
+        </AlertContextProvider>
+      </NavContextProvider>
+    </UserContextProvider>
   );
 }
 

@@ -13,12 +13,13 @@ const Home: NextPage<HomeProps> = ({ webtoons }) => {
         line2="공식 페이지로"
         href="/explore"
       />
-
       <CardRow webtoons={webtoons} />
       {/* <NewToons webtoons={webtoons} title="방금 업로드된 웹툰" />
       <NewToons webtoons={webtoons} title="연재중 웹툰" />
       <NewToons webtoons={webtoons} title="추천하는 웹툰" />
       <NewToons webtoons={webtoons} title="지금 인기 웹툰" /> */}
+      <footer>불러올 웹툰이 없습니다.</footer>
+      <Ribbon line1="광고 없는 웹툰 사이트" />
     </div>
   );
 };

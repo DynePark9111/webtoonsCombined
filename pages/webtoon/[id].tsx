@@ -25,7 +25,7 @@ const Webtoon: NextPage<webtoonP> = ({ webtoon }) => {
       <div className={styles.wrapper}>
         <div className={styles.top}>
           <Images image={webtoon?.image} />
-          <Icons />
+          <Icons webtoon_id={webtoon._id} />
           <div className={styles.about}>
             <Header webtoon={webtoon} />
             <Detail webtoon={webtoon} />

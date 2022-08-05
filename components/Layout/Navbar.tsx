@@ -7,6 +7,7 @@ import {
   IoChatbubbleEllipsesOutline,
   IoCogSharp,
   IoCompassOutline,
+  IoEyeOffOutline,
   IoFlagOutline,
   IoHeartOutline,
   IoHelpCircleOutline,
@@ -15,6 +16,7 @@ import {
   IoTimerOutline,
 } from "react-icons/io5";
 import { NavContext } from "../../context/navContext";
+import { UserContext } from "../../context/userContext";
 import styles from "../../styles/Layout/Navbar.module.scss";
 import LoginBtn from "./LoginBtn";
 
@@ -47,7 +49,7 @@ const NavbarSmall: NextPage = () => {
 
 const NavbarBig: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
-
+  const { user } = useContext(UserContext);
   return (
     <div className={styles.NavbarBig}>
       <div className={styles.wrapper}>
@@ -76,14 +78,21 @@ const NavbarBig: NextPage = () => {
             icon={<IoHeartOutline />}
             text="좋아요 표시한 웹툰"
           />
+          <NavbarItem
+            href="/hidden"
+            icon={<IoEyeOffOutline />}
+            text="숨긴 웹툰"
+          />
         </ul>
-        <div className={styles.promo}>
-          <div>
-            로그인하면 웹툰에 좋아요를 표시하고 댓글을 달거나 구독할 수
-            있습니다.
+        {user.username === undefined && (
+          <div className={styles.promo}>
+            <div>
+              로그인하면 웹툰에 좋아요를 표시하고 댓글을 달거나 구독할 수
+              있습니다.
+            </div>
+            <LoginBtn />
           </div>
-          <LoginBtn />
-        </div>
+        )}
         <h4 className={styles.genre}>웹툰</h4>
         <ul>
           <NavbarItem href="/new" text="최신웹툰" />

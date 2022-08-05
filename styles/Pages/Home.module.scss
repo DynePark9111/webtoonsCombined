@@ -3,4 +3,11 @@
 .Home {
   width: 100%;
   background-color: var(--bg_dark);
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--tx);
+    height: 10rem;
+  }
 }
