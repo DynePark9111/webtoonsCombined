@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { IoMailOutline } from "react-icons/io5";
-import styles from "../../styles/Pages/auth/AuthPage.module.scss";
+import styles from "../../styles/Pages/authpage/AuthPage.module.scss";
 
 const AuthPage: NextPage = () => {
   return (

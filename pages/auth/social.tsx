@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import styles from "../../styles/Pages/auth/Social.module.scss";
+import styles from "../../styles/Pages/authpage/Social.module.scss";
 import Image from "next/image";
 
 const Social: NextPage = () => {

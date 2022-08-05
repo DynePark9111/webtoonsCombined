@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useContext, useState } from "react";
 import FormInput from "../../components/Commons/FormInput";
-import styles from "../../styles/Pages/auth/Login.module.scss";
+import styles from "../../styles/Pages/authpage/Login.module.scss";
 import { loginArray } from "../../data/arrays";
 import { AlertContext } from "../../context/alertContext";
 import { useRouter } from "next/router";
