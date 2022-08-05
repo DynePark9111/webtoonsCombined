@@ -31,9 +31,10 @@ const Login: NextPage = () => {
         withCredentials: true,
       });
       if (res.status === 200) {
-        const { _id, username, email, bookmark } = res.data;
+        const { _id, username, email, bookmark, watchLater, likedWebtoon } =
+          res.data;
         addAlert(`안녕하세요 ${username}님`, "success");
-        login(_id, username, email, bookmark);
+        login(_id, username, email, bookmark, watchLater, likedWebtoon);
         router.push("/");
       }
     } catch (err) {
