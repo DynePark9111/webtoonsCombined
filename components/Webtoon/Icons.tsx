@@ -4,12 +4,16 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import styles from "../../styles/Webtoon/Icons.module.scss";
 import EllipsisButton from "../Commons/EllipsisButton";
 
-const Icons: NextPage = () => {
+type IconsP = {
+  webtoon_id: string;
+};
+
+const Icons: NextPage<IconsP> = ({ webtoon_id }) => {
   const router = useRouter();
 
   return (
     <nav className={styles.Icons}>
-      <EllipsisButton />
+      <EllipsisButton webtoon_id={webtoon_id} />
       <div
         className={styles.backArrow}
         title="돌아가기"
