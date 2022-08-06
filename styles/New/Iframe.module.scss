@@ -1,0 +1,73 @@
+@use "../global" as *;
+
+.Iframe {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: $clear_dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms;
+  .wrapper {
+    width: clamp(300px, 100%, 1080px);
+    height: 100vh;
+    overflow: hidden;
+    iframe {
+      width: 102%;
+      height: 100%;
+      overflow-y: hidden;
+    }
+  }
+  .close {
+    position: fixed;
+    background-color: var(--bg_darkest);
+    color: white;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 10;
+    &:hover ~ .rainbow {
+      animation-play-state: running;
+    }
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  .rainbow {
+    position: fixed;
+    background-color: var(--bg);
+    color: white;
+    top: calc(1rem - 2px);
+    right: calc(1rem - 2px);
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 9;
+    background: linear-gradient(#b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    animation: rotate 1s linear infinite;
+    animation-play-state: paused;
+  }
+}
+
+@keyframes rotate {
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
