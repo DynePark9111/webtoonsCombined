@@ -1,5 +1,8 @@
 @use "../global" as *;
 
+$btn: 2rem;
+$btn_bd: 2px;
+
 .Iframe {
   position: fixed;
   top: 0;
@@ -12,14 +15,17 @@
   justify-content: center;
   align-items: center;
   transition: all 300ms;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .wrapper {
     width: clamp(300px, 100%, 1080px);
     height: 100vh;
     overflow: hidden;
     iframe {
+      //scorll hidden
       width: 102%;
       height: 100%;
-      overflow-y: hidden;
     }
   }
   .close {
@@ -28,8 +34,8 @@
     color: white;
     top: 1rem;
     right: 1rem;
-    width: 2rem;
-    height: 2rem;
+    width: $btn;
+    height: $btn;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,14 +55,14 @@
     position: fixed;
     background-color: var(--bg);
     color: white;
-    top: calc(1rem - 2px);
-    right: calc(1rem - 2px);
-    width: 2.25rem;
-    height: 2.25rem;
+    top: calc(1rem - $btn_bd);
+    right: calc(1rem - $btn_bd);
+    width: calc($btn + $btn_bd * 2);
+    height: calc($btn + $btn_bd * 2);
     border-radius: 100%;
     cursor: pointer;
     z-index: 9;
-    background: linear-gradient(#b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    background: conic-gradient(#b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
     animation: rotate 1s linear infinite;
     animation-play-state: paused;
   }
@@ -70,4 +76,41 @@
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+$mediaMaxWidth: 992px;
+$mediaWidth: 98px;
+@mixin iframe($scale) {
+  .Iframe {
+    .wrapper {
+      iframe {
+        width: 102% * calc(1 / $scale);
+        height: 100% * calc(1 / $scale);
+        transform: scale($scale);
+        transform-origin: 0 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: calc( $mediaMaxWidth - $mediaWidth * 0)) {
+  @include iframe(0.9);
+}
+@media screen and (max-width: calc( $mediaMaxWidth - $mediaWidth * 1)) {
+  @include iframe(0.8);
+}
+@media screen and (max-width: calc( $mediaMaxWidth - $mediaWidth * 2)) {
+  @include iframe(0.7);
+}
+@media screen and (max-width: calc( $mediaMaxWidth - $mediaWidth * 3)) {
+  @include iframe(0.6);
+}
+@media screen and (max-width: calc( $mediaMaxWidth - $mediaWidth * 4)) {
+  @include iframe(0.5);
+}
+@media screen and (max-width: calc( $mediaMaxWidth - $mediaWidth * 5)) {
+  @include iframe(0.4);
+}
+@media screen and (max-width: calc( $mediaMaxWidth - $mediaWidth * 6)) {
+  @include iframe(0.3);
 }
