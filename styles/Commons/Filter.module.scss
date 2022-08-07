@@ -13,6 +13,7 @@ $hv: #4d4d4d;
   align-items: center;
   gap: 12px;
   border-top: 1px solid var(--hover);
+  border-bottom: 1px solid var(--hover);
   li {
     display: flex;
     justify-content: center;

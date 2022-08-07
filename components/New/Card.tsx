@@ -21,16 +21,15 @@ const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
       }${bookmark && later ? styles.both : ""}${trash ? styles.trash : ""}`}
       title="보러가기"
     >
-      {/* <a
-        href={`https://comic.naver.com${webtoon.episodeLink}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      > */}
       <div className={styles.image} onClick={() => setIsIframeOpen(true)}>
-        <Image src={webtoon.image} layout="fill" alt={webtoon.title} />
+        <Image
+          src={webtoon.image}
+          layout="fill"
+          objectFit="contain"
+          alt={webtoon.title}
+        />
         {trash && <div className={styles.trash} />}
       </div>
-      {/* </a> */}
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.title} title={webtoon.title}>

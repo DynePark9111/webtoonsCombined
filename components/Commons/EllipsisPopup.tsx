@@ -6,7 +6,6 @@ import {
   IoFlagOutline,
   IoShareSocialOutline,
   IoTimeOutline,
-  IoTrashOutline,
 } from "react-icons/io5";
 import { AlertContext } from "../../context/alertContext";
 import { UserContext } from "../../context/userContext";
@@ -17,40 +16,44 @@ const EllipsisPopup: NextPage<EllipsisButtonP> = ({ webtoon_id }) => {
   const { addAlert } = useContext(AlertContext);
   const { user, handleBookmark, handleWatchLater, handleLikedWebtoon } =
     useContext(UserContext);
-  const includeBookmark = user.bookmark?.includes(webtoon_id);
-  const includeWatchlater = user.watchLater?.includes(webtoon_id);
-  const includeLikedWebtoon = user.likedWebtoon?.includes(webtoon_id);
-
+  const isBookmark = user.bookmark?.includes(webtoon_id);
+  const isWatchlater = user.watchLater?.includes(webtoon_id);
+  const isLikedWebtoon = user.likedWebtoon?.includes(webtoon_id);
+  const isGuest = user._id === undefined;
   const needLogin = () => {
-    if (user._id === undefined) {
+    if (isGuest) {
       addAlert("로그인이 필요합니다", "error");
     }
   };
 
   const onClickBookmark = () => {
     needLogin();
-    if (includeBookmark) {
+    if (isBookmark && !isGuest) {
       handleBookmark(webtoon_id);
       addAlert("북마크에서 지웠습니다.", "success");
-    } else {
+    }
+    if (!isBookmark && !isGuest) {
       handleBookmark(webtoon_id);
       addAlert("저장되었습니다.", "success");
     }
   };
   const onClickWatchlater = () => {
     needLogin();
-    if (includeWatchlater) {
+    if (isWatchlater && !isGuest) {
       handleWatchLater(webtoon_id);
       addAlert("나중에 볼 리스트에서 지웠습니다.", "success");
-    } else {
+    }
+    if (!isWatchlater && !isGuest) {
       handleWatchLater(webtoon_id);
       addAlert("저장되었습니다.", "success");
     }
   };
   const onClickHide = () => {
     needLogin();
-    handleLikedWebtoon(webtoon_id);
-    addAlert("웹툰을 숨깁니다.", "success");
+    if (!isGuest) {
+      handleLikedWebtoon(webtoon_id);
+      addAlert("웹툰을 숨깁니다.", "success");
+    }
   };
   const onClickAlert = () => {
     addAlert("🚩 under development", "normal");
@@ -59,11 +62,11 @@ const EllipsisPopup: NextPage<EllipsisButtonP> = ({ webtoon_id }) => {
     <ul className={styles.EllipsisPopup}>
       <li onClick={() => onClickBookmark()} title="북마크">
         <IoBookmarkOutline />
-        <span>북마크{includeBookmark ? " 지우기" : "에 추가"}</span>
+        <span>북마크{isBookmark ? " 지우기" : "에 추가"}</span>
       </li>
       <li onClick={() => onClickWatchlater()} title="나중에 보기">
         <IoTimeOutline />
-        <span>나중에 볼 웹툰에{includeWatchlater ? "서 지우기" : " 저장"}</span>
+        <span>나중에 볼 웹툰에{isWatchlater ? "서 지우기" : " 저장"}</span>
       </li>
       <li onClick={() => onClickAlert()} title="공유">
         <IoShareSocialOutline />
@@ -72,7 +75,7 @@ const EllipsisPopup: NextPage<EllipsisButtonP> = ({ webtoon_id }) => {
       <hr />
       <li onClick={() => onClickHide()} title="숨기기">
         <IoEyeOffOutline />
-        <span>웹툰 숨기기{includeLikedWebtoon && " 취소"}</span>
+        <span>웹툰 숨기기{isLikedWebtoon && " 취소"}</span>
       </li>
       <li onClick={() => onClickAlert()} title="신고">
         <IoFlagOutline />

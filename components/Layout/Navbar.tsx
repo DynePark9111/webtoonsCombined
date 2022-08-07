@@ -73,11 +73,11 @@ const NavbarBig: NextPage = () => {
             icon={<IoTimeOutline />}
             text="나중에 볼 웹툰"
           />
-          <NavbarItem
+          {/* <NavbarItem
             href="/watchlist?list=LL"
             icon={<IoHeartOutline />}
             text="좋아요 표시한 웹툰"
-          />
+          /> */}
           <NavbarItem
             href="/hidden"
             icon={<IoEyeOffOutline />}
