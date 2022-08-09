@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { platformFilter } from "../data/arrays";
 import styles from "../styles/Pages/New.module.scss";
-import CardRow from "../components/New/CardRow";
+import Cards from "../components/New/Cards";
 import axios from "axios";
 import Filter from "../components/Commons/Filter";
 import useSWRInfinite from "swr/infinite";
@@ -44,13 +44,13 @@ const New: NextPage = () => {
         setSelected={setPlatform}
       />
       <div className={styles.wrapper}>
-        <CardRow webtoons={webtoons} />
+        <Cards webtoons={webtoons} />
         <section>
           {isLast ? (
             <div className={styles.noMore}>결과가 더 이상 없습니다.</div>
           ) : (
             <button className={styles.more} onClick={onNextBtn}>
-              +8개 더보기
+              + 더보기
             </button>
           )}
           {error && <div>에러가 발생했습니다</div>}

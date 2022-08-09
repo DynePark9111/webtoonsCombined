@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import useSWR from "swr";
 import Introduction from "../components/Commons/Introduction";
-import CardRow from "../components/New/CardRow";
+import Cards from "../components/New/Cards";
 import { UserContext } from "../context/userContext";
 import styles from "../styles/Pages/Watchlist.module.scss";
 
@@ -31,14 +31,14 @@ const Watchlist: NextPage = () => {
         src={isWL ? "/images/account2.svg" : "/images/account.svg"}
       />
       <section>
-        {isGuest && <h1>로그인이 필요합니다.</h1>}
+        {isGuest && <h1>로그인이 필요한 서비스 입니다.</h1>}
         {!isGuest && data?.length === 0 && (
           <h1>아직 목록에 웹툰이 없습니다.</h1>
         )}
         {!isGuest && data?.length !== 0 && (
           <>
             <h1>최신웹툰</h1>
-            <CardRow webtoons={data} />
+            <Cards webtoons={data} />
           </>
         )}
       </section>

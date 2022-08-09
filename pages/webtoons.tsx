@@ -1,11 +1,17 @@
+import axios from "axios";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import useSWR from "swr";
 import FilterYoutubeStyle from "../components/Commons/FilterYoutubeStyle";
+import Cards from "../components/New/Cards";
 import { capitalize } from "../lib/functions";
 import styles from "../styles/Pages/Webtoons.module.scss";
 
 const Webtoons: NextPage = () => {
+  const router = useRouter();
+  const { category } = router.query;
+  const [isOpen, setIsOpen] = useState(false);
   const [filterCategory, setFilterCategory] = useState({
     uploaded: "전체",
     platform: "전체",
@@ -14,20 +20,13 @@ const Webtoons: NextPage = () => {
     orderBy: "관련성",
     page: 1,
   });
-  const router = useRouter();
-  const { category } = router.query;
-  const [isOpen, setIsOpen] = useState(false);
-
-  // const [data, loading, error] = useFetchWebtoon(
-  //   category,
-  //   page,
-  //   platform,
-  //   genre
-  // );
-  // useEffect(() => {
-  //   setPage(1);
-  // }, [category, platform, genre]);
-
+  const URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3001";
+  const fullURL = `${URL}/webtoon?category=${category}&genre=${filterCategory.genre}&platform=${filterCategory.platform}`;
+  const fetcher = async () => {
+    const res = await axios.get(fullURL);
+    return res.data;
+  };
+  const { data, error } = useSWR(fullURL, fetcher);
   return (
     <div className={styles.Webtoons}>
       <h2>{capitalize(category)} Webtoons</h2>
@@ -38,8 +37,9 @@ const Webtoons: NextPage = () => {
         setFilterCategory={setFilterCategory}
       />
       <section id={isOpen ? styles.open : ""}>
+        <Cards webtoons={data?.webtoons} />
         <div className={styles.noMore}>결과가 더 이상 없습니다.</div>
-        <button>+8개 더보기</button>
+        <button>+ 더보기</button>
       </section>
     </div>
   );

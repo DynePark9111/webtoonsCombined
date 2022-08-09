@@ -29,7 +29,7 @@ const Result: NextPage = () => {
       <section id={isOpen ? styles.open : ""}>
         <div>hi</div>
         <div className={styles.noMore}>결과가 더 이상 없습니다.</div>
-        <button>+8개 더보기</button>
+        <button>+ 더보기</button>
       </section>
     </div>
   );

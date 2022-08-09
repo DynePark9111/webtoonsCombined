@@ -71,6 +71,13 @@ export type RibbonProps = {
 };
 
 export type HomeProps = {
+  data: {
+    meta: any;
+    webtoons: webtoon[];
+  };
+};
+
+export type CardsProps = {
   webtoons: webtoon[];
 };
 
