@@ -1,7 +1,10 @@
+import axios from "axios";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import useSWR from "swr";
 import FilterYoutubeStyle from "../components/Commons/FilterYoutubeStyle";
+import CardsLink from "../components/New/CardsLink";
 import styles from "../styles/Pages/Result.module.scss";
 
 const Result: NextPage = () => {
@@ -16,10 +19,15 @@ const Result: NextPage = () => {
   const router = useRouter();
   const { search_query } = router.query;
   const [isOpen, setIsOpen] = useState(false);
-
+  const URL = process.env.NEXT_PUBLIC_URL;
+  const fetcher = async () => {
+    const res = await axios.get(`${URL}/webtoon/search/${search_query}`);
+    return res.data;
+  };
+  const { data } = useSWR(`/result?search_query=${search_query}`, fetcher);
   return (
     <div className={styles.Result}>
-      <h2>{search_query}에 대한 검색 결과.</h2>
+      <h2>&quot;{search_query}&quot;에 대한 검색 결과.</h2>
       <FilterYoutubeStyle
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -27,9 +35,12 @@ const Result: NextPage = () => {
         setFilterCategory={setFilterCategory}
       />
       <section id={isOpen ? styles.open : ""}>
-        <div>hi</div>
-        <div className={styles.noMore}>결과가 더 이상 없습니다.</div>
-        <button>+ 더보기</button>
+        <h1>연재웹툰</h1>
+        <CardsLink webtoons={data?.webtoon} />
+        {data?.webtoon.length === 0 && (
+          <div className={styles.noMore}>찾으시는 결과가 없습니다.</div>
+        )}
+        {/* <button className={styles.more}>+ 더보기</button> */}
       </section>
     </div>
   );

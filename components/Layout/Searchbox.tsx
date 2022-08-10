@@ -1,32 +1,48 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { FormEvent, useState } from "react";
 import { IoCloseSharp, IoSearchOutline } from "react-icons/io5";
 import styles from "../../styles/Layout/Searchbox.module.scss";
 
 const Searchbox: NextPage = () => {
-  const [value, setValue] = useState("");
-
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push(
+      {
+        pathname: "/result",
+        query: { search_query: search },
+      },
+      `/result?search_query=${search}`
+    );
+  };
   return (
     <div className={styles.Searchbox}>
-      <form>
+      <form onSubmit={handleSubmit} id="search">
         <div className={styles.searchIcon}>
           <IoSearchOutline />
         </div>
         <input
           type="text"
           placeholder="검색"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
         <div
           className={styles.closeIcon}
-          onClick={() => setValue("")}
+          onClick={() => setSearch("")}
           title="지우기"
         >
           <IoCloseSharp />
         </div>
       </form>
-      <button className={styles.searchBtn} title="검색">
+      <button
+        className={styles.searchBtn}
+        title="검색"
+        type="submit"
+        form="search"
+      >
         <IoSearchOutline />
       </button>
     </div>

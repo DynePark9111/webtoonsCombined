@@ -7,7 +7,7 @@ import CardLink from "./CardLink";
 const CardsLink: NextPage<CardsProps> = ({ webtoons }) => {
   return (
     <div className={styles.CardsLink}>
-      {webtoons?.length > 0
+      {webtoons !== undefined
         ? webtoons.map((webtoon) => (
             <CardLink webtoon={webtoon} key={webtoon.title} />
           ))
