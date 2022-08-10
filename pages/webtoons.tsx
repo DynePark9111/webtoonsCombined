@@ -5,6 +5,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import FilterYoutubeStyle from "../components/Commons/FilterYoutubeStyle";
 import Cards from "../components/New/Cards";
+import CardsLink from "../components/New/CardsLink";
 import { capitalize } from "../lib/functions";
 import styles from "../styles/Pages/Webtoons.module.scss";
 
@@ -37,7 +38,7 @@ const Webtoons: NextPage = () => {
         setFilterCategory={setFilterCategory}
       />
       <section id={isOpen ? styles.open : ""}>
-        <Cards webtoons={data?.webtoons} />
+        <CardsLink webtoons={data?.webtoons} />
         <div className={styles.noMore}>결과가 더 이상 없습니다.</div>
         <button>+ 더보기</button>
       </section>

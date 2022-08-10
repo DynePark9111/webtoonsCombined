@@ -7,8 +7,8 @@ const SkeletonCard: NextPage = () => {
   return (
     <div className={styles.skeletonWrapper}>
       <div className={styles.SkeletonCard}>
-        <Shimmer />
         <div className={styles.image}>
+          <Shimmer />
           <SkeletonElement type={styles.box} />
         </div>
         <div className={styles.content}>
