@@ -1,23 +1,8 @@
 import type { NextPage } from "next";
 import { IoFilterOutline } from "react-icons/io5";
-import { Filter2Array } from "../../data/arrays";
+import { FilterArray } from "../../data/arrays";
 import styles from "../../styles/Commons/FilterYoutubeStyle.module.scss";
-
-type filterCategoryT = {
-  uploaded: string;
-  platform: string;
-  genre: string;
-  day: string;
-  orderBy: string;
-  page: number;
-};
-
-type FilterYoutubeStyleProps = {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-  filterCategory: filterCategoryT;
-  setFilterCategory: (arg: filterCategoryT) => void;
-};
+import { FilterGroupProps, FilterYoutubeStyleProps } from "../../types/types";
 
 const FilterYoutubeStyle: NextPage<FilterYoutubeStyleProps> = ({
   isOpen,
@@ -35,7 +20,7 @@ const FilterYoutubeStyle: NextPage<FilterYoutubeStyleProps> = ({
         <span>필터</span>
       </button>
       <div className={styles.filterGroups}>
-        {Filter2Array.map((item) => (
+        {FilterArray.map((item) => (
           <FilterGroup
             key={item.id}
             title={item.title}
@@ -51,14 +36,6 @@ const FilterYoutubeStyle: NextPage<FilterYoutubeStyleProps> = ({
 };
 
 export default FilterYoutubeStyle;
-
-type FilterGroupProps = {
-  title: string;
-  category: string;
-  options: string[];
-  filterCategory: any;
-  setFilterCategory: (arg: filterCategoryT) => void;
-};
 
 const FilterGroup: NextPage<FilterGroupProps> = ({
   title,

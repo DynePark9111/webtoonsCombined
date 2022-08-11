@@ -9,13 +9,17 @@ const Searchbox: NextPage = () => {
   const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(
-      {
-        pathname: "/result",
-        query: { search_query: search },
-      },
-      `/result?search_query=${search}`
-    );
+    if (search.length >= 2) {
+      router.push(
+        {
+          pathname: "/result",
+          query: { search_query: search },
+        },
+        `/result?search_query=${search}`
+      );
+    } else {
+      alert("2자 이상을 입력해 주세요");
+    }
   };
   return (
     <div className={styles.Searchbox}>

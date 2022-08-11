@@ -35,7 +35,6 @@ const Result: NextPage = () => {
         setFilterCategory={setFilterCategory}
       />
       <section id={isOpen ? styles.open : ""}>
-        <h1>연재웹툰</h1>
         <CardsLink webtoons={data?.webtoon} />
         {data?.webtoon.length === 0 && (
           <div className={styles.noMore}>찾으시는 결과가 없습니다.</div>

@@ -100,6 +100,30 @@ export type EllipsisButtonP = {
   webtoon_id: string;
 };
 
+export type filterCategoryT = {
+  uploaded: string;
+  platform: string;
+  genre: string;
+  day: string;
+  orderBy: string;
+  page: number;
+};
+
+export type FilterYoutubeStyleProps = {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  filterCategory: filterCategoryT;
+  setFilterCategory: (arg: filterCategoryT) => void;
+};
+
+export type FilterGroupProps = {
+  title: string;
+  category: string;
+  options: string[];
+  filterCategory: any;
+  setFilterCategory: (arg: filterCategoryT) => void;
+};
+
 //new
 export type SampleWebtoon = {
   title: string;
