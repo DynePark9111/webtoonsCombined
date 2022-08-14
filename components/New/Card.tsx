@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/userContext";
 import styles from "../../styles/New/Card.module.scss";
-import { NewtoonProps } from "../../types/types";
+import { CardProps } from "../../types/types";
 import EllipsisButton from "../Commons/EllipsisButton";
 import Iframe from "./Iframe";
 
-const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
+const Card: NextPage<CardProps> = ({ webtoon }) => {
   const { user } = useContext(UserContext);
   const [isIframeOpen, setIsIframeOpen] = useState(false);
   const bookmark = user.bookmark?.includes(webtoon._id);

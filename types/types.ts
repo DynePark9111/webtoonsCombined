@@ -55,13 +55,16 @@ export type FilterProps = {
   setSelected: any;
 };
 
+export type CardsLinkProps = {
+  webtoons: webtoonDetail[];
+};
+
 export type CardLinkProps = {
   webtoon: webtoonDetail;
 };
 
-export type NewToonsProps = {
-  title: string;
-  webtoons: any;
+export type CardProps = {
+  webtoon: webtoon;
 };
 
 export type RibbonProps = {
@@ -77,11 +80,7 @@ export type HomeProps = {
   };
 };
 
-export type CardsLinkProps = {
-  webtoons: webtoonDetail[];
-};
-
-export type CardProps = {
+export type CardExploreProps = {
   card: {
     id: number;
     title: string;
