@@ -56,7 +56,7 @@ export const UserContext = createContext<UserContextType>({
 
 const UserContextProvider: NextPage<childrenProps> = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, defaultUser);
-  const URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3001";
+  const URL = process.env.NEXT_PUBLIC_URL;
 
   const login = (
     _id: string,

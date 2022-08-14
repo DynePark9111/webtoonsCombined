@@ -1,3 +1,6 @@
+import axios from "axios";
+const URL = process.env.NEXT_PUBLIC_URL;
+
 export const capitalize = (word: string | undefined | string[]) => {
   if (typeof word === "string") {
     return word[0].toUpperCase() + word.slice(1);
@@ -22,4 +25,9 @@ export const validatePassword = (password: string) => {
   return /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/.test(
     password
   );
+};
+
+export const fetcherInfinite = async (url: string) => {
+  const res = await axios.get(url);
+  return res.data;
 };

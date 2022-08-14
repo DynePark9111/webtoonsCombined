@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import styles from "../../styles/New/CardsLink.module.scss";
-import { CardsProps } from "../../types/types";
+import { CardsLinkProps } from "../../types/types";
 import SkeletonCardLink from "../Skeletons/SkeletonCardLink";
 import CardLink from "./CardLink";
 
-const CardsLink: NextPage<CardsProps> = ({ webtoons }) => {
+const CardsLink: NextPage<CardsLinkProps> = ({ webtoons }) => {
   return (
     <div className={styles.CardsLink}>
       {webtoons !== undefined

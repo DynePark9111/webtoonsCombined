@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { platformFilter } from "../data/arrays";
 import styles from "../styles/Pages/New.module.scss";
 import Cards from "../components/New/Cards";
-import axios from "axios";
 import Filter from "../components/Commons/Filter";
 import useSWRInfinite from "swr/infinite";
+import { fetcherInfinite } from "../lib/functions";
 
 const New: NextPage = () => {
   const [platform, setPlatform] = useState(["전체"]);
@@ -16,10 +16,10 @@ const New: NextPage = () => {
     if (pageIndex + 1 > previousPageData.pages) return null;
     return `${URL}/new?&page=${pageIndex + 1}&platform=${platform}`;
   };
-  const fetcher = (url: string) => axios.get(url).then((res) => res.data);
-  const { data, setSize, size, error } = useSWRInfinite(getKey, fetcher);
+
+  const { data, setSize, error } = useSWRInfinite(getKey, fetcherInfinite);
   const webtoons = data ? data.map((item) => item.webtoons).flat() : [];
-  const isLast = webtoons && webtoons[webtoons.length - 1]?.length < 1;
+  const isLast = data && data[data.length - 1].meta?.nextPage === undefined;
   const onNextBtn = () => {
     setSize((prev) => prev + 1);
   };
@@ -61,14 +61,3 @@ const New: NextPage = () => {
 };
 
 export default New;
-
-// const fetcher = async () => {
-//   const res = await axios.get(fullURL, {
-//     withCredentials: true,
-//   });
-//   return res.data;
-// };
-
-// const addPage = () => setPage((prev) => prev + 1);
-
-// const { data, error } = useSWR(fullURL, fetcher);

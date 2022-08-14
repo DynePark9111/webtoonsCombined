@@ -33,12 +33,9 @@
     margin: 2px 0 0 0;
     color: var(--tx2);
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--hover);
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 100%;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
   }
 }

@@ -14,10 +14,6 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         href="/explore"
       />
       <Cards webtoons={data.webtoons} />
-      {/* <NewToons webtoons={webtoons} title="방금 업로드된 웹툰" />
-      <NewToons webtoons={webtoons} title="연재중 웹툰" />
-      <NewToons webtoons={webtoons} title="추천하는 웹툰" />
-      <NewToons webtoons={webtoons} title="지금 인기 웹툰" /> */}
       <footer></footer>
       <Ribbon line1="광고 없는 웹툰 사이트" />
     </div>

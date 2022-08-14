@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import styles from "../../styles/New/CardLink.module.scss";
-import { NewtoonProps } from "../../types/types";
+import { CardLinkProps } from "../../types/types";
 import EllipsisButton from "../Commons/EllipsisButton";
 
-const CardLink: NextPage<NewtoonProps> = ({ webtoon }) => {
+const CardLink: NextPage<CardLinkProps> = ({ webtoon }) => {
   const { user } = useContext(UserContext);
   const bookmark = user.bookmark?.includes(webtoon._id);
   const later = user.watchLater?.includes(webtoon._id);

@@ -13,6 +13,7 @@ const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
   const bookmark = user.bookmark?.includes(webtoon._id);
   const later = user.watchLater?.includes(webtoon._id);
   const trash = user.likedWebtoon?.includes(webtoon._id);
+  const kakaoImage = `https://dn-img-page.kakao.com/download/resource?kid=nqIyw/hyle1cqQmF/XAtxCKCex7GIN3lK2E1Usk&filename=th2`;
   return (
     <div
       className={styles.Card}
@@ -23,7 +24,7 @@ const Card: NextPage<NewtoonProps> = ({ webtoon }) => {
     >
       <div className={styles.image} onClick={() => setIsIframeOpen(true)}>
         <Image
-          src={webtoon.image}
+          src={webtoon.platform !== "카카오페이지" ? webtoon.image : kakaoImage}
           layout="fill"
           objectFit="contain"
           alt={webtoon.title}
