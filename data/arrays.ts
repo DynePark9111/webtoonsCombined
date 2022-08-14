@@ -1,4 +1,4 @@
-const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
 
 export const platformFilter = [
   {
@@ -109,18 +109,18 @@ export const oAuthArray = [
     text: "페이스북으로",
     platform: "facebook",
   },
-  {
-    id: 3,
-    icon: "twitter.svg",
-    text: "트위터로",
-    platform: "twitter",
-  },
-  {
-    id: 4,
-    icon: "kakao.svg",
-    text: "카카오로",
-    platform: "kakao",
-  },
+  // {
+  //   id: 3,
+  //   icon: "twitter.svg",
+  //   text: "트위터로",
+  //   platform: "twitter",
+  // },
+  // {
+  //   id: 4,
+  //   icon: "kakao.svg",
+  //   text: "카카오로",
+  //   platform: "kakao",
+  // },
 ];
 
 export const sampleWebtoons = [

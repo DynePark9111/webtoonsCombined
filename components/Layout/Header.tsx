@@ -12,11 +12,16 @@ import Searchbox from "./Searchbox";
 import Link from "next/link";
 import { UserContext } from "../../context/userContext";
 import LogoutBtn from "./LogoutBtn";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { emptyUser } from "../../data/const";
 
 const Header: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
+  const { data: session, status } = useSession();
   const { toggleNav } = useContext(NavContext);
   const { user } = useContext(UserContext);
+  const isGuest = user.username === undefined && status !== "authenticated";
 
   return (
     <div className={styles.Header}>
@@ -38,8 +43,19 @@ const Header: NextPage = () => {
         <li className={styles.icon}>
           <IoEllipsisVerticalSharp />
         </li>
+        {session?.user?.image && (
+          <li className={styles.userImage}>
+            <Image
+              layout="fill"
+              width={32}
+              height={32}
+              src={session.user?.image || emptyUser}
+              alt="user image"
+            />
+          </li>
+        )}
         <li className={styles.login}>
-          {user.username === undefined ? <LoginBtn /> : <LogoutBtn />}
+          {isGuest ? <LoginBtn /> : <LogoutBtn />}
         </li>
       </ul>
     </div>

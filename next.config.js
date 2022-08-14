@@ -8,6 +8,9 @@ const nextConfig = {
       "static-page.kakao.com",
       "dn-img-page.kakao.com",
       "buffimgs.plaync.com",
+      "ssl.pstatic.net",
+      "platform-lookaside.fbsbx.com",
+      "lh3.googleusercontent.com",
     ],
   },
 };

@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode, useContext } from "react";
@@ -9,7 +10,6 @@ import {
   IoCompassOutline,
   IoEyeOffOutline,
   IoFlagOutline,
-  IoHeartOutline,
   IoHelpCircleOutline,
   IoHomeOutline,
   IoTimeOutline,
@@ -48,8 +48,10 @@ const NavbarSmall: NextPage = () => {
 };
 
 const NavbarBig: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
+  const { status } = useSession();
   const { user } = useContext(UserContext);
+  const isGuest = user.username === undefined && status !== "authenticated";
   return (
     <div className={styles.NavbarBig}>
       <div className={styles.wrapper}>
@@ -84,7 +86,7 @@ const NavbarBig: NextPage = () => {
             text="숨긴 웹툰"
           />
         </ul>
-        {user.username === undefined && (
+        {isGuest && (
           <div className={styles.promo}>
             <div>
               로그인하면 웹툰에 좋아요를 표시하고 댓글을 달거나 구독할 수
@@ -139,7 +141,7 @@ const NavbarBig: NextPage = () => {
           <Link href="/policy/teenager">청소년보호정책</Link>
         </div>
         <div className={styles.copyright}>
-          <div>© 2022 {COMPANY} LLC</div>
+          <div>© 2022 {COMPANY}</div>
           <div>CEO : Muhammad Bean Salmon Al Thaad</div>
           <div>
             주소 : 1234 Conch St. Bikini Bottom, Mountain View, San Pedro 1234,

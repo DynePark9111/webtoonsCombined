@@ -15,7 +15,9 @@ const Social: NextPage = () => {
           key={i.id}
           icon={`/platform/oAuth/${i.icon}`}
           platform={i.text}
-          onClick={() => signIn(i.platform)}
+          onClick={() =>
+            signIn(i.platform, { callbackUrl: "http://localhost:3000" })
+          }
         />
       ))}
       <Link href="/auth">
