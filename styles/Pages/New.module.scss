@@ -3,14 +3,13 @@
 .New {
   background-color: var;
   .wrapper {
-    padding: 1rem;
     background-color: var(--bg_dark);
     margin: auto;
     color: var(--tx);
     max-width: $max-width;
     section {
       margin-top: 3rem;
-      button {
+      .more {
         font-size: 0.875rem;
         align-items: center;
         color: var(--tx2);
@@ -23,6 +22,9 @@
       .noMore {
         text-align: center;
         margin: 1rem auto;
+      }
+      div {
+        text-align: center;
       }
     }
   }

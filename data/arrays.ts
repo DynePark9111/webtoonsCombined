@@ -197,7 +197,7 @@ export const sampleWebtoonDetail = {
   _id: "999",
 };
 
-export const Filter2Array = [
+export const FilterArray = [
   {
     id: 0,
     title: "업로드 날짜",

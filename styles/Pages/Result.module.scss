@@ -7,9 +7,8 @@
   color: var(--tx);
   max-width: $max-width;
   section {
-    border: 1px solid var(--hover);
-    border-left: none;
-    border-right: none;
+    border-top: 1px solid var(--hover);
+    border-bottom: 1px solid var(--hover);
     padding: 1rem 0;
     background-color: var(--bg_dark);
     min-height: 320px;
@@ -18,7 +17,7 @@
     &#open {
       transform: translateY(0);
     }
-    button {
+    .more {
       font-size: 0.75rem;
       align-items: center;
       color: var(--tx2);

@@ -55,13 +55,19 @@ export type FilterProps = {
   setSelected: any;
 };
 
-export type NewtoonProps = {
-  webtoon: webtoon;
+export type CardsLinkProps = {
+  webtoons: webtoonDetail[];
 };
 
-export type NewToonsProps = {
-  title: string;
-  webtoons: any;
+export type CardLinkProps = {
+  webtoon: webtoonDetail;
+};
+
+export type CardsProps = {
+  webtoons: webtoon[];
+};
+export type CardProps = {
+  webtoon: webtoon;
 };
 
 export type RibbonProps = {
@@ -71,10 +77,13 @@ export type RibbonProps = {
 };
 
 export type HomeProps = {
-  webtoons: webtoon[];
+  data: {
+    meta: any;
+    webtoons: webtoon[];
+  };
 };
 
-export type CardProps = {
+export type CardExploreProps = {
   card: {
     id: number;
     title: string;
@@ -91,6 +100,30 @@ export type FilterSlideStyleProps = {
 
 export type EllipsisButtonP = {
   webtoon_id: string;
+};
+
+export type filterCategoryT = {
+  uploaded: string;
+  platform: string;
+  genre: string;
+  day: string;
+  orderBy: string;
+  page: number;
+};
+
+export type FilterYoutubeStyleProps = {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  filterCategory: filterCategoryT;
+  setFilterCategory: (arg: filterCategoryT) => void;
+};
+
+export type FilterGroupProps = {
+  title: string;
+  category: string;
+  options: string[];
+  filterCategory: any;
+  setFilterCategory: (arg: filterCategoryT) => void;
 };
 
 //new

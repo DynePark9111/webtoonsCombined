@@ -258,11 +258,11 @@
 
 // Card
 .SkeletonCard {
-  position: relative;
   overflow: hidden;
   min-width: 180px;
   border-radius: $br;
   .image {
+    position: relative;
     border-radius: 0.75rem;
     overflow: hidden;
     aspect-ratio: 320/180;
@@ -281,5 +281,16 @@
     margin-top: 0.25rem;
     width: 50%;
     height: 1.25rem;
+  }
+}
+
+.SkeletonCardLink {
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+  .image {
+    overflow: hidden;
+    aspect-ratio: 320/180;
+    margin-bottom: 0.25rem;
   }
 }

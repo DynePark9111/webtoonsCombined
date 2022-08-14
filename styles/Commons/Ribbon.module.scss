@@ -20,6 +20,7 @@ $bg_ribbon: var(--bg_darkest);
       margin-bottom: 2px;
     }
     .link {
+      display: inline-block;
       cursor: pointer;
       animation: toBlue 1s 2s;
       animation-fill-mode: forwards;

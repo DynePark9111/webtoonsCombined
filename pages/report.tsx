@@ -66,7 +66,8 @@ const Report: NextPage = () => {
           required
         />
         <h5>
-          빠른시일 내로 답변드리겠습니다. 문의 접수시 확인 이메일이 보내집니다.
+          빠른시일 내로 답변드리겠습니다. 문의 접수시 접수 확인 이메일이 전송
+          됩니다.
         </h5>
         <div className={styles.check}>
           <input type="checkbox" id="checkbox" required />

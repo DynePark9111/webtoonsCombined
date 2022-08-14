@@ -1,14 +1,14 @@
 @use "../global" as *;
 
 @mixin mediaScreenGrid($n, $fr) {
-  .CardRow {
+  .CardsLink {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat($n, $fr);
   }
 }
 
-.CardRow {
+.CardsLink {
   max-width: $max-width;
   margin: auto;
   padding: 1rem;

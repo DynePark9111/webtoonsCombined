@@ -11,7 +11,7 @@ import { validateEmail, validatePassword } from "../../lib/functions";
 import { UserContext } from "../../context/userContext";
 
 const Login: NextPage = () => {
-  const URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3001";
+  const URL = process.env.NEXT_PUBLIC_URL;
   const { addAlert } = useContext(AlertContext);
   const { login } = useContext(UserContext);
 

@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import { useContext } from "react";
 import useSWR from "swr";
 import Introduction from "../components/Commons/Introduction";
-import CardRow from "../components/New/CardRow";
+import Cards from "../components/New/Cards";
 import { UserContext } from "../context/userContext";
 import styles from "../styles/Pages/Bookmark.module.scss";
 
@@ -24,7 +24,7 @@ const Bookmark: NextPage = () => {
       <Introduction title="북마크" src="/images/explore.svg" />
       {!loggedIn && (
         <section>
-          <h1>로그인이 필요합니다.</h1>
+          <h1>로그인이 필요한 서비스 입니다.</h1>
         </section>
       )}
       {loggedIn && data?.length === 0 && (
@@ -35,7 +35,7 @@ const Bookmark: NextPage = () => {
       {loggedIn && data?.length !== 0 && (
         <section>
           <h1>최신웹툰</h1>
-          <CardRow webtoons={data} />
+          <Cards webtoons={data} />
         </section>
       )}
     </div>

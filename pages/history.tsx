@@ -3,7 +3,7 @@ import Image from "next/image";
 import Introduction from "../components/Commons/Introduction";
 import { sampleWebtoons } from "../data/arrays";
 import styles from "../styles/Pages/History.module.scss";
-import { NewtoonProps } from "../types/types";
+import { CardProps } from "../types/types";
 
 const History: NextPage = () => {
   sampleWebtoons;
@@ -30,7 +30,7 @@ const History: NextPage = () => {
 
 export default History;
 
-const Watched: NextPage<NewtoonProps> = ({ webtoon }) => {
+const Watched: NextPage<CardProps> = ({ webtoon }) => {
   return (
     <div className={styles.Watched}>
       <Image width={83} height={90} src={webtoon.image} alt={webtoon.title} />

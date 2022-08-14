@@ -12,7 +12,7 @@ import {
 import styles from "../../styles/Pages/authpages/Signup.module.scss";
 
 const Signup: NextPage = () => {
-  const URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3001";
+  const URL = process.env.NEXT_PUBLIC_URL;
   const { addAlert } = useContext(AlertContext);
   const router = useRouter();
 

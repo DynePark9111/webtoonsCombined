@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExploreCards, OfficialPlatforms } from "../data/arrays";
 import styles from "../styles/Pages/Explore.module.scss";
-import { CardProps } from "../types/types";
+import { CardExploreProps } from "../types/types";
 
 const Explore: NextPage = () => {
   return (
@@ -28,7 +28,7 @@ const Cards: NextPage = () => {
   );
 };
 
-const Card: NextPage<CardProps> = ({ card }) => {
+const Card: NextPage<CardExploreProps> = ({ card }) => {
   return (
     <Link href={card.link}>
       <div className={styles.Card}>

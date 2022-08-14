@@ -7,6 +7,7 @@ const nextConfig = {
       "kr-a.kakaopagecdn.com",
       "static-page.kakao.com",
       "dn-img-page.kakao.com",
+      "buffimgs.plaync.com",
     ],
   },
 };
