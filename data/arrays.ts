@@ -90,6 +90,39 @@ export const FaqArray = [
   },
 ];
 
+export const oAuthArray = [
+  {
+    id: 0,
+    icon: "naver.webp",
+    text: "네이버로",
+    platform: "naver",
+  },
+  {
+    id: 1,
+    icon: "google.svg",
+    text: "구글로",
+    platform: "google",
+  },
+  {
+    id: 2,
+    icon: "facebook.svg",
+    text: "페이스북으로",
+    platform: "facebook",
+  },
+  {
+    id: 3,
+    icon: "twitter.svg",
+    text: "트위터로",
+    platform: "twitter",
+  },
+  {
+    id: 4,
+    icon: "kakao.svg",
+    text: "카카오로",
+    platform: "kakao",
+  },
+];
+
 export const sampleWebtoons = [
   {
     _id: "1",
