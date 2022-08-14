@@ -63,6 +63,9 @@ export type CardLinkProps = {
   webtoon: webtoonDetail;
 };
 
+export type CardsProps = {
+  webtoons: webtoon[];
+};
 export type CardProps = {
   webtoon: webtoon;
 };
