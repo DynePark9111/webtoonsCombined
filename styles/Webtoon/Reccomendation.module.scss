@@ -1,0 +1,26 @@
+@use "../global" as *;
+
+.Reccomendation {
+  margin-top: 1rem;
+  display: grid;
+  gap: 2rem 1rem;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  .webtoon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    .webtoonWrap {
+      position: relative;
+      aspect-ratio: 240 / 134;
+    }
+    .title {
+      max-width: 240px;
+      color: #121212;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

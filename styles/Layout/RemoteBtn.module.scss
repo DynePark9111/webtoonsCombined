@@ -1,0 +1,41 @@
+@use "../global" as *;
+
+.RemoteBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 300ms;
+    & #show {
+      opacity: 1;
+    }
+    &#hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  .plus {
+    transform: rotate(45deg);
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 200ms, background-color 200ms;
+    margin: 2px 0 0 0;
+    color: var(--tx2);
+    font-weight: bold;
+    background-color: var(--hover);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+  }
+}

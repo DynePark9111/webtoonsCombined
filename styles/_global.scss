@@ -1,12 +1,35 @@
-$max-width: 1284px;
+// $max-width: 1016px;
+$max-width: 1320px;
 
+$red: #cf1322;
 $blue: #3ea6ff;
+$yellow: #d4b206;
+$green: #389e0d;
+$purple: #816bff;
 $grey: #d0d0d0;
 $bg: #202020;
+$bg_dark: #181818;
+$bg_darkest: #060606;
 $bg_btn: #313131;
 $tx: #ffffff;
+$tx2: #aaaaaa;
 $hover: #383838;
 $active: #4c4c4c;
+$clear: #00000000;
+$clear_dark: #000000cc;
+
+//webtoon2
+$bg2: #191b2a;
+$br: 0.25rem;
+$mw: 630px;
+
+@mixin wrapper {
+  .wrapper {
+    margin: 4rem auto;
+    padding: 0 1rem;
+    max-width: $max-width;
+  }
+}
 
 @mixin svg {
   svg {
@@ -15,12 +38,34 @@ $active: #4c4c4c;
   }
 }
 
+@mixin section {
+  section {
+    margin: 3rem auto;
+    color: var(--tx);
+    max-width: $max-width;
+    text-align: center;
+  }
+}
+
+@mixin btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $blue;
+  border-radius: 2px;
+  color: $blue;
+  background: none;
+  padding: 5px 11px;
+  cursor: pointer;
+}
+
 @mixin hoverAndActive {
+  cursor: pointer;
   &:hover {
-    background-color: $hover;
+    background-color: var(--hover);
   }
   &:active {
-    background-color: $active;
+    background-color: var(--active);
   }
 }
 

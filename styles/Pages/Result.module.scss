@@ -1,0 +1,35 @@
+@use "../global" as *;
+
+.Result {
+  padding: 1rem;
+  background-color: var(--bg_dark);
+  margin: auto;
+  color: var(--tx);
+  max-width: $max-width;
+  section {
+    border-top: 1px solid var(--hover);
+    border-bottom: 1px solid var(--hover);
+    padding: 1rem 0;
+    background-color: var(--bg_dark);
+    min-height: 320px;
+    transition: transform 300ms;
+    transform: translateY(-320px);
+    &#open {
+      transform: translateY(0);
+    }
+    .more {
+      font-size: 0.75rem;
+      align-items: center;
+      color: var(--tx2);
+      background: none;
+      border: none;
+      margin: 1rem auto;
+      display: block;
+      cursor: pointer;
+    }
+    .noMore {
+      text-align: center;
+      margin: 1rem auto;
+    }
+  }
+}

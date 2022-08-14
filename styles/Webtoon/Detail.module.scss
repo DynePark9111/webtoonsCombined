@@ -1,0 +1,75 @@
+@use "../global" as *;
+
+.Detail {
+  position: relative;
+  z-index: 2;
+  .links {
+    display: flex;
+    gap: 6rem;
+    margin-bottom: 2rem;
+    .url {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 20px;
+      svg {
+        width: 70px;
+        height: 70px;
+      }
+    }
+    .firstEpisode {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.25rem;
+      color: #d0d0d0;
+      font-size: 0.75rem;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  .section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #e2e2e2;
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: $mw;
+      .synopsis {
+        font-size: 0.875rem;
+        height: 100%;
+      }
+    }
+    .aside {
+      width: 190px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          h6 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 0.875rem;
+            word-break: keep-all;
+          }
+          span {
+            font-size: 0.75rem;
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+  }
+}

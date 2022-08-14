@@ -1,0 +1,40 @@
+@use "../global" as *;
+
+.AuthLayout {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  background: url("/images/bg.jpg") repeat;
+  animation: slide 500s linear infinite;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 1rem;
+    padding: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    background-position-x: 1000%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .AuthLayout {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}

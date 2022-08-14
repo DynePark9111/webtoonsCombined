@@ -1,0 +1,10 @@
+@use "../global" as *;
+
+.Watchlist {
+  padding: 0 1rem;
+  background-color: var(--bg_dark);
+  @include section;
+  section {
+    text-align: left;
+  }
+}

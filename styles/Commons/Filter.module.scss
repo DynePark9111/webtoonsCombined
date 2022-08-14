@@ -1,0 +1,39 @@
+@use "../global" as *;
+
+$hv: #4d4d4d;
+
+.Filter {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 58px;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--hover);
+  border-bottom: 1px solid var(--hover);
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid $hv;
+    border-radius: 16px;
+    padding: 0 12px;
+    height: 32px;
+    color: #fff;
+    background-color: #373737;
+    transition: background-color 200ms, color 200ms;
+    &:hover {
+      background-color: $hv;
+    }
+    &#selected {
+      color: black;
+      background-color: #fff;
+    }
+  }
+}

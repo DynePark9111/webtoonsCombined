@@ -1,31 +1,39 @@
 import axios from "axios";
-import type { NextPage } from "next";
-import Cards from "../components/Cards";
-import Filter from "../components/Filter";
-import styles from "../styles/Home.module.scss";
-import { webtoons } from "../types/types";
+import type { GetStaticProps, NextPage } from "next";
+import Ribbon from "../components/Commons/Ribbon";
+import Cards from "../components/New/Cards";
+import styles from "../styles/Pages/Home.module.scss";
+import { HomeProps } from "../types/types";
 
-type newToonsT = {
-  newToons: webtoons[];
-};
-
-const Home: NextPage<newToonsT> = ({ newToons }) => {
+const Home: NextPage<HomeProps> = ({ data }) => {
   return (
     <div className={styles.Home}>
-      <Filter />
-      <Cards webtoons={newToons} title="지금 인기 웹툰" />
-      <Cards webtoons={newToons} title="지금 인기 웹툰" />
-      <Cards webtoons={newToons} title="지금 인기 웹툰" />
-      <Cards webtoons={newToons} title="지금 인기 웹툰" />
-      <Cards webtoons={newToons} title="지금 인기 웹툰" />
+      <Ribbon
+        line1="모든 웹툰은 공식 홈페이지와 연결되어 있습니다."
+        line2="공식 페이지로"
+        href="/explore"
+      />
+      <Cards webtoons={data.webtoons} />
+      <footer></footer>
+      <Ribbon line1="광고 없는 웹툰 사이트" />
     </div>
   );
 };
 
 export default Home;
 
-export async function getServerSideProps() {
-  const res = await axios.get("http://localhost:3000/api");
-  const newToons = res.data.data;
-  return { props: { newToons } };
-}
+export const getStaticProps: GetStaticProps = async () => {
+  const URL = process.env.NEXT_PUBLIC_URL;
+  const revalidateTime = 60 * 60;
+  try {
+    const { data } = await axios.get(`${URL}/new`);
+    return {
+      props: { data },
+      revalidate: revalidateTime,
+    };
+  } catch {
+    return {
+      notFound: true,
+    };
+  }
+};

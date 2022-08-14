@@ -1,0 +1,21 @@
+@use "../global" as *;
+
+.Tabs {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  word-break: keep-all;
+  font-weight: bold;
+  color: #8a8a8a;
+  .tab {
+    padding-bottom: 0.5rem;
+    border-bottom: 5px solid $clear;
+    transition: border-bottom 300ms, color 300ms;
+    cursor: pointer;
+    &#selected {
+      color: #816bff;
+      border-bottom: 5px solid #816bff;
+    }
+  }
+}

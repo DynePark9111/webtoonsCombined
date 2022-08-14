@@ -1,0 +1,24 @@
+@use "../global" as *;
+
+.ShowReply {
+  margin: 0 0 1rem 3.5rem;
+  margin-left: 3.5rem;
+  margin-bottom: 1rem;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ShowReplyButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: $blue;
+  gap: 0.5rem;
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}

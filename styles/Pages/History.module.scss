@@ -1,0 +1,23 @@
+@use "../global" as *;
+
+.History {
+  padding: 0 1rem;
+  background-color: var(--bg_dark);
+  @include section;
+  .Watched {
+    margin: 1rem;
+    display: flex;
+    gap: 1rem;
+    text-align: left;
+    .title {
+      font-size: 1.25rem;
+    }
+    .episodeTitle {
+      font-size: 1rem;
+    }
+    .platform {
+      font-size: 0.75rem;
+      color: $blue;
+    }
+  }
+}

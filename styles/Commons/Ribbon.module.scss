@@ -1,0 +1,55 @@
+@use "../global" as *;
+
+// $bg_ribbon: #f5f5f7;
+$bg_ribbon: var(--bg_darkest);
+
+.Ribbon {
+  width: 100%;
+  background-color: $bg_ribbon;
+  overflow: hidden;
+  .wrapper {
+    color: $tx;
+    background-color: $blue;
+    text-align: center;
+    padding: 16px 0;
+    animation: moveDown 1s, background 1s 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    font-size: 12px;
+    .title {
+      margin-bottom: 2px;
+    }
+    .link {
+      display: inline-block;
+      cursor: pointer;
+      animation: toBlue 1s 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      &::after {
+        font-size: 16px;
+        line-height: 12px;
+        content: "›";
+      }
+    }
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes background {
+  100% {
+    background-color: $bg_ribbon;
+    color: $tx;
+  }
+}
+@keyframes toBlue {
+  100% {
+    color: $blue;
+  }
+}

@@ -1,0 +1,42 @@
+@use "../global" as *;
+
+.Webtoons {
+  padding: 1rem;
+  background-color: var(--bg_dark);
+  margin: auto;
+  color: var(--tx);
+  max-width: $max-width;
+  .wrapper {
+    border: 1px solid var(--hover);
+    border-left: none;
+    border-right: none;
+    padding: 1rem 0;
+    background-color: var(--bg_dark);
+    min-height: 320px;
+    transition: transform 300ms;
+    transform: translateY(-320px);
+    &#open {
+      transform: translateY(0);
+    }
+    section {
+      margin-top: 3rem;
+      .more {
+        font-size: 0.875rem;
+        align-items: center;
+        color: var(--tx2);
+        background: none;
+        border: none;
+        margin: 1rem auto;
+        display: block;
+        cursor: pointer;
+      }
+      .noMore {
+        text-align: center;
+        margin: 1rem auto;
+      }
+      div {
+        text-align: center;
+      }
+    }
+  }
+}
