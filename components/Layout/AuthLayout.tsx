@@ -10,7 +10,7 @@ type T = {
 
 const AuthLayout: NextPage<T> = ({ children }) => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
-  const SITEKEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE2;
+  const SITEKEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE;
 
   return (
     <GoogleReCaptchaProvider reCaptchaKey={SITEKEY as string}>
