@@ -6,6 +6,7 @@ import AlertContextProvider from "../context/alertContext";
 import { DarkmodeContextProvider } from "../context/darkmodeContext";
 import AuthLayout from "../components/Layout/AuthLayout";
 import UserContextProvider from "../context/userContext";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 function MyApp({ Component, pageProps, ...appProps }: AppProps) {
   const authPath = [
@@ -17,7 +18,6 @@ function MyApp({ Component, pageProps, ...appProps }: AppProps) {
   ];
   const isAuthPath = authPath.includes(appProps.router.pathname);
   const LayoutComponent = isAuthPath ? AuthLayout : Layout;
-
   return (
     <UserContextProvider>
       <NavContextProvider>
