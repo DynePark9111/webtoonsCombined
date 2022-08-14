@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { useContext, useState } from "react";
+import { FormEvent, useCallback, useContext, useState } from "react";
 import FormInput from "../../components/Commons/FormInput";
 import { AlertContext } from "../../context/alertContext";
 import {
@@ -10,11 +10,13 @@ import {
   validateUsername,
 } from "../../lib/functions";
 import styles from "../../styles/Pages/authpages/Signup.module.scss";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const Signup: NextPage = () => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const { addAlert } = useContext(AlertContext);
   const router = useRouter();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [values, setValues] = useState({
     username: "",
@@ -28,7 +30,7 @@ const Signup: NextPage = () => {
       id: 0,
       name: "username",
       type: "text",
-      placeholder: "userid",
+      placeholder: "username",
       errorMessage: "아이디는 길이는 3~16, 특수문자를 포함할 수 없습니다.",
       label: "아이디",
       pattern: "^[A-Za-z0-9]{3,16}$",
@@ -38,7 +40,7 @@ const Signup: NextPage = () => {
       id: 1,
       name: "email",
       type: "email",
-      placeholder: "email@gmail.com",
+      placeholder: "username@gmail.com",
       errorMessage: "올바른 이메일을 입력해 주세요.",
       label: "이메일",
       required: true,
@@ -66,8 +68,21 @@ const Signup: NextPage = () => {
     },
   ];
 
-  const signup = async () => {
-    const res = await axios.post(`${URL}/auth/signup`, values);
+  const handleSumitForm = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!executeRecaptcha) {
+      return addAlert("recaptcha not yet available!", "error");
+    }
+    executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+      signup(gReCaptchaToken);
+    });
+  };
+
+  const signup = async (gRecaptchaToken: string) => {
+    const res = await axios.post(`${URL}/auth/signup`, {
+      ...values,
+      gRecaptchaToken,
+    });
     if (res.status === 201) {
       addAlert("가입 성공!", "success");
       router.push("/auth/login");
@@ -87,7 +102,7 @@ const Signup: NextPage = () => {
 
   return (
     <div className={styles.Signup}>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={handleSumitForm}>
         {signupArray.map((input) => (
           <FormInput
             key={input.id}
@@ -102,7 +117,8 @@ const Signup: NextPage = () => {
             setValues={setValues}
           />
         ))}
-        <button type="submit" onClick={() => signup()} disabled={disabled()}>
+
+        <button type="submit" disabled={disabled()}>
           가입
         </button>
       </form>
