@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Pages/About.module.scss";
 
 const About: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
 
   return (
     <div className={styles.About}>
