@@ -42,16 +42,12 @@ Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users
    - X_URI=`X_CLIENT_SECRET`
 
 ### .env file
-
-- NEXT_PUBLIC_COMPANY=WebtoonsCombined
-- NEXT_PUBLIC_URL=http://localhost:3001
-- URL=http://localhost:3001
-
+```
+- NEXT_PUBLIC_COMPANY=
+- NEXT_PUBLIC_URL=
 - MONGODB_URI=
-
 - NEXT_PUBLIC_RECAPTCHA_SITE=
 - RECAPTCHA_SECRET=
-
 - GOOGLE_CLIENT_ID=
 - GOOGLE_CLIENT_SECRET=
 - NAVER_CLIENT_ID=
@@ -62,3 +58,4 @@ Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users
 - TWITTER_CLIENT_SECRET=
 - KAKAO_CLIENT_ID=
 - KAKAO_CLIENT_SECRET=
+```
