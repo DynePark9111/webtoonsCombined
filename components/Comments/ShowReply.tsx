@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import styles from "../../styles/Comments/ShowReply.module.scss";
-import Comments from "./Comments";
+import NestedComments from "./NestedComments";
 
 type ShowReplyP = {
   commentId: string;
@@ -20,7 +20,7 @@ const ShowReply: NextPage<ShowReplyP> = ({ commentId, replyCount }) => {
         setShowReply={setShowReply}
         replyCount={replyCount}
       />
-      {showReply && <Comments isTopLevel={false} />}
+      {showReply && <NestedComments />}
     </div>
   );
 };

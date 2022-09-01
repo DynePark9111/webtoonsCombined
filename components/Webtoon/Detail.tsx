@@ -19,7 +19,11 @@ const Detail: NextPage<webtoonP> = ({ webtoon }) => {
       </div>
       <div className={styles.section}>
         <div className={styles.left}>
-          <div className={styles.synopsis}>{webtoon.synopsis}</div>
+          <div
+            className={styles.synopsis}
+            dangerouslySetInnerHTML={{ __html: webtoon.synopsis }}
+          />
+
           <Tags webtoon={webtoon} />
         </div>
         <aside className={styles.aside}>
