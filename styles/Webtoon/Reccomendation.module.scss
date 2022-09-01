@@ -5,7 +5,7 @@
   display: grid;
   gap: 2rem 1rem;
   width: 100%;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   .webtoon {
     cursor: pointer;
     display: flex;
@@ -17,7 +17,7 @@
     }
     .title {
       max-width: 240px;
-      color: #121212;
+      color: var(--tx);
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;

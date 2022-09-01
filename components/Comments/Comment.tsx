@@ -40,16 +40,19 @@ const Comment: NextPage<CommentP> = ({ c }) => {
     setShow(false);
   };
   useClickOutside(ellipsisRef, clickOutsidehandler);
+  const dummyImage =
+    "https://shared-comic.pstatic.net/thumb/webtoon/783054/thumbnail/thumbnail_IMAG10_6917f3d9-c5bb-4bfd-aa04-a288f7b252af.jpg";
+
   return (
     <div className={styles.Comment}>
       <div className={styles.profileImage}>
-        <Image src={c.image} width={40} height={40} alt={c.authorName} />
+        <Image src={dummyImage} width={40} height={40} alt={c.authorName} />
       </div>
       <div className={styles.commentBox}>
         <UserAndDate c={c} />
         <CommentText c={c} showMore={showMore} setShowMore={setShowMore} />
-        <Buttons c={c} setShowInput={setShowInput} />
-        {showInput && <ReplyForm parentId={c.id} isTopLevel={false} />}
+        {/* <Buttons c={c} setShowInput={setShowInput} />
+        {showInput && <ReplyForm postId={c.id} isTopLevel={false} />} */}
       </div>
       <div
         className={styles.ellipsis}
@@ -88,28 +91,16 @@ const CommentText: NextPage<CommentTextP> = ({ c, showMore, setShowMore }) => {
   return (
     <div className={styles.CommentText}>
       <div className={styles.message} id={showMore ? styles.showMore : ""}>
-        {c.comment} Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Minus, a? Neque iure sit autem possimus repudiandae explicabo nisi natus
-        perspiciatis vitae cumque laboriosam omnis ut temporibus animi, libero
-        repellat amet? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Minus, a? Neque iure sit autem possimus repudiandae explicabo nisi natus
-        perspiciatis vitae cumque Minus, a? Neque iure sit autem possimus
-        repudiandae explicabo nisi natus perspiciatis vitae cumque laboriosam
-        omnis ut temporibus animi, libero repellat amet? Lorem ipsum dolor sit
-        amet consectetur, adipisicing elit. Minus, a? Neque iure sit autem
-        possimus repudiandae explicabo nisi natus perspiciatis vitae cumque
-        Minus, a? Neque iure sit autem possimus repudiandae explicabo nisi natus
-        perspiciatis vitae cumque laboriosam omnis ut temporibus animi, libero
-        repellat amet? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Minus, a? Neque iure sit autem possimus repudiandae explicabo nisi natus
-        perspiciatis vitae cumque
+        {c.comment}
       </div>
-      <div
-        className={styles.more}
-        onClick={() => setShowMore((pre: boolean) => !pre)}
-      >
-        {showMore ? "간략히" : "자세히 보기"}
-      </div>
+      {c.comment.length > 100 && (
+        <div
+          className={styles.more}
+          onClick={() => setShowMore((pre: boolean) => !pre)}
+        >
+          {showMore ? "간략히" : "자세히 보기"}
+        </div>
+      )}
     </div>
   );
 };
@@ -121,21 +112,20 @@ type ButtonsP = {
 
 const Buttons: NextPage<ButtonsP> = ({ c, setShowInput }) => {
   const userId = "5d6ede6a0ba62570afcedd3a";
-
   return (
     <div className={styles.Buttons}>
       <div className={styles.likeIcon}>
-        {c.like.includes(userId) ? <IoThumbsUp /> : <IoThumbsUpOutline />}
+        {c.like?.includes(userId) ? <IoThumbsUp /> : <IoThumbsUpOutline />}
       </div>
-      <div className={styles.likeCount}>{c.like.length}</div>
+      <div className={styles.likeCount}>{c?.like?.length || 0}</div>
       <div className={styles.dislikeIcon}>
-        {c.dislike.includes(userId) ? (
+        {c.dislike?.includes(userId) ? (
           <IoThumbsDown />
         ) : (
           <IoThumbsDownOutline />
         )}
       </div>
-      <div className={styles.dislikeCount}>{c.dislike.length}</div>
+      <div className={styles.dislikeCount}>{c.dislike?.length || 0}</div>
       <div
         className={styles.reply}
         onClick={() => setShowInput((pre: boolean) => !pre)}
