@@ -4,7 +4,7 @@ import Introduction from "../components/Commons/Introduction";
 import styles from "../styles/Pages/Dev.module.scss";
 
 const Dev: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
 
   return (
     <div className={styles.Dev}>

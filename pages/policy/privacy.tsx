@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../../styles/Pages/policy/Privacy.module.scss";
 
 const Privacy: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
   return (
     <div className={styles.Privacy}>
       <div className={styles.wrapper}>

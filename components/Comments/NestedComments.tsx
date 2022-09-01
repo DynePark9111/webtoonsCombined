@@ -1,29 +1,9 @@
 import type { NextPage } from "next";
-import styles from "../../styles/Comments/Comments.module.scss";
 import SkeletonComment from "../Skeletons/SkeletonComment";
+import styles from "../../styles/Comments/NestedComments.module.scss";
 import Comment from "./Comment";
-import ShowReply from "./ShowReply";
 
-type c = {
-  id: string;
-  image: string;
-  authorId: string;
-  authorEmail: string;
-  authorName: string;
-  comment: string;
-  createdAt: string;
-  like: string[];
-  dislike: string[];
-  webtoonId?: number;
-  updatedAt?: string;
-  childrenId?: string[];
-};
-
-type CommentsP = {
-  isTopLevel: boolean;
-};
-
-const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
+const NestedComments: NextPage = () => {
   const data = [
     {
       id: "507f191e810c19729de860ea",
@@ -32,7 +12,7 @@ const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
       authorId: "5d6ede6a0ba62570afcedd3a",
       authorEmail: "test@gmail.com",
       authorName: "testName",
-      comment: "test comment here ~~",
+      comment: "nested comment 1",
       createdAt: "createdAt",
       like: ["5d6ede6a0ba62570afcedd3a"],
       dislike: ["570afcedd3a"],
@@ -48,7 +28,7 @@ const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
       authorId: "5d6ede6a0ba62570afcedd3a",
       authorEmail: "test2@gmail.com",
       authorName: "testName2222",
-      comment: "test co1231231 2312 3123mment here ~~",
+      comment: "nested comment 2",
       createdAt: "createdAt",
       like: ["5d6ede6a0ba625a", "asdfasdf"],
       dislike: ["570afcedd3a", "f", "ddas"],
@@ -56,31 +36,19 @@ const Comments: NextPage<CommentsP> = ({ isTopLevel }) => {
     },
   ];
 
-  const postFirstType = async () => {
-    console.log("post type 1");
-  };
-
-  const postSecondType = async () => {
-    console.log("post type 2");
-  };
-
   return (
-    <div className={styles.Comments}>
-      {data.map((comment) => (
+    <div className={styles.NestedComments}>
+      {data ? (
+        data.map((comment) => <Comment key={comment.id} c={comment} />)
+      ) : (
         <>
-          <Comment key={comment.id} c={comment} />
-          {isTopLevel && comment.childrenId?.length && (
-            <ShowReply
-              commentId={comment.id}
-              replyCount={comment.childrenId.length}
-            />
-          )}
+          <SkeletonComment />
+          <SkeletonComment />
+          <SkeletonComment />
         </>
-      ))}
-      <SkeletonComment />
-      <SkeletonComment />
+      )}
     </div>
   );
 };
 
-export default Comments;
+export default NestedComments;

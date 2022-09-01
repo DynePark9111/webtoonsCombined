@@ -8,7 +8,7 @@ import LocalStorage from "../lib/localStorage";
 import styles from "../styles/Pages/Settings.module.scss";
 
 const Settings: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
   const { addAlert } = useContext(AlertContext);
   const { isDark, toggleDarkmode } = useContext(darkmodeContext);
 

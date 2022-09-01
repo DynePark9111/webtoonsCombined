@@ -1,4 +1,4 @@
-const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
 
 export const platformFilter = [
   {
@@ -88,6 +88,39 @@ export const FaqArray = [
     answer:
       "지속적으로 업데이트 중 입니다. 새로운 기능에 대한 건의는 \u201c의견 보내기\u201d를 이용해 주시기 바랍니다.",
   },
+];
+
+export const oAuthArray = [
+  {
+    id: 0,
+    icon: "naver.webp",
+    text: "네이버로",
+    platform: "naver",
+  },
+  {
+    id: 1,
+    icon: "google.svg",
+    text: "구글로",
+    platform: "google",
+  },
+  {
+    id: 2,
+    icon: "facebook.svg",
+    text: "페이스북으로",
+    platform: "facebook",
+  },
+  // {
+  //   id: 3,
+  //   icon: "twitter.svg",
+  //   text: "트위터로",
+  //   platform: "twitter",
+  // },
+  // {
+  //   id: 4,
+  //   icon: "kakao.svg",
+  //   text: "카카오로",
+  //   platform: "kakao",
+  // },
 ];
 
 export const sampleWebtoons = [

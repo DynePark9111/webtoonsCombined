@@ -34,6 +34,3 @@ $mediaMaxWidth: 2100px;
 @media screen and (min-width: calc($mediaMaxWidth - $mediaWidth *1)) {
   @include mediaScreenGrid(6, 1fr);
 }
-@media screen and (min-width: $mediaMaxWidth) {
-  @include mediaScreenGrid(8, 1fr);
-}

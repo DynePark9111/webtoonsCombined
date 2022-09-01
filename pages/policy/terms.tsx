@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import styles from "../../styles/Pages/policy/Terms.module.scss";
 
 const Terms: NextPage = () => {
-  const COMPANY = process.env.NEXT_PUBLIC_COMPANY || "WebtoonsCombined";
+  const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
   return (
     <div className={styles.Terms}>
       <div className={styles.wrapper}>
