@@ -58,11 +58,6 @@ const NavbarBig: NextPage = () => {
         <ul>
           <NavbarItem href="/" icon={<IoHomeOutline />} text="홈" />
           <NavbarItem href="/explore" icon={<IoCompassOutline />} text="탐색" />
-          <NavbarItem
-            href="/bookmark"
-            icon={<IoBookmarkOutline />}
-            text="북마크"
-          />
         </ul>
         <ul>
           {/* <NavbarItem
@@ -70,6 +65,11 @@ const NavbarBig: NextPage = () => {
             icon={<IoTimerOutline />}
             text="시청 기록"
           /> */}
+          <NavbarItem
+            href="/bookmark"
+            icon={<IoBookmarkOutline />}
+            text="북마크"
+          />
           <NavbarItem
             href="/watchlist?list=WL"
             icon={<IoTimeOutline />}

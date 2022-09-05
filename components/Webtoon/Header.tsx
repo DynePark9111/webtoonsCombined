@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { IoStarSharp } from "react-icons/io5";
 import { webtoonP } from "../../types/types";
 import styles from "../../styles/Webtoon/Header.module.scss";
+import { capitalize } from "../../lib/functions";
 
 const Header: NextPage<webtoonP> = ({ webtoon }) => {
   return (
@@ -17,7 +18,7 @@ const Header: NextPage<webtoonP> = ({ webtoon }) => {
       <div className={styles.tags}>
         <div className={styles.genre}>{webtoon.genre.join(" · ")}</div>
         <div>|</div>
-        <div className={styles.genre}>{webtoon.platform}</div>
+        <div className={styles.genre}>{capitalize(webtoon.platform)}</div>
       </div>
     </header>
   );

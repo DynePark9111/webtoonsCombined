@@ -1,27 +1,50 @@
 # Webtoons Combined
 
+## About
+
 Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users to search and compare webtoon rates in one search. It also provides an aggregated summary of webtoon reviews and ratings from external sites.
-
-## stack
-
-![plot](./public/diagram/type2.png)
 
 ## Features
 
 - Crawl webtoons from websites
 - Filter by genre, platform, age, updated date, etc
 - Search by title and author
-- Every webtoons linked to Official website
+- Every Webtoon is linked to its official website
 - Signup, Login with DB & oAuth
-- Comment, Like, dislike, bookmark, watchHistory
+- Comment, Like, dislike, bookmark, watchHistory, etc
+
+## Stack
+
+- Nextjs (FE)
+- Nodejs (BE)
+- MongoDB (DB)
+
+## Diagrams
+
+|                      Version 1                       |                  Version 2(Current)                  |
+| :--------------------------------------------------: | :--------------------------------------------------: |
+| ![Diagram 1](./public/diagram/type1.png "Diagram 1") | ![Diagram 1](./public/diagram/type2.png "Diagram 2") |
+
+## Website Images
+
+|                    Homepage                     |                      Register                       |
+| :---------------------------------------------: | :-------------------------------------------------: |
+| ![Homepage](./public/demo/home.giff "Homepage") | ![Register](./public/demo/register.giff "Register") |
+
+|                    Ads                    |                    Fitler                    |
+| :---------------------------------------: | :------------------------------------------: |
+| ![Detail](./public/demo/ads.png "Detail") | ![Search](./public/demo/filter.png "Search") |
 
 ## Get started
 
+### frontend
+
 1. git clone
 2. yarn install
-3. touch .env
-4. Connect to Backend[webtoonsCombinedBE](https://github.com/DynePark9111/webtoonsBE)
-5. yarn dev
+3. create .env file
+4. start BE server [webtoonsCombinedBE](https://github.com/DynePark9111/webtoonsBE)
+5. Crawl Webtoons from websites [crawling](https://github.com/DynePark9111/crawling)
+6. yarn dev
 
 ## .env
 
@@ -43,22 +66,20 @@ Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users
 
 ### .env file
 
-- NEXT_PUBLIC_COMPANY=WebtoonsCombined
-- NEXT_PUBLIC_URL=http://localhost:3001
-- URL=http://localhost:3001
-
-- MONGODB_URI=
-
-- NEXT_PUBLIC_RECAPTCHA_SITE=
-- RECAPTCHA_SECRET=
-
-- GOOGLE_CLIENT_ID=
-- GOOGLE_CLIENT_SECRET=
-- NAVER_CLIENT_ID=
-- NAVER_CLIENT_SECRET=
-- FACEBOOK_CLIENT_ID=
-- FACEBOOK_CLIENT_SECRET=
-- TWITTER_CLIENT_ID=
-- TWITTER_CLIENT_SECRET=
-- KAKAO_CLIENT_ID=
-- KAKAO_CLIENT_SECRET=
+```
+NEXT_PUBLIC_COMPANY=
+NEXT_PUBLIC_URL=
+MONGODB_URI=
+NEXT_PUBLIC_RECAPTCHA_SITE=
+RECAPTCHA_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+NAVER_CLIENT_ID=
+NAVER_CLIENT_SECRET=
+FACEBOOK_CLIENT_ID=
+FACEBOOK_CLIENT_SECRET=
+TWITTER_CLIENT_ID=
+TWITTER_CLIENT_SECRET=
+KAKAO_CLIENT_ID=
+KAKAO_CLIENT_SECRET=
+```

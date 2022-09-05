@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { capitalize } from "../../lib/functions";
 import styles from "../../styles/Commons/Filter.module.scss";
 import { FilterProps } from "../../types/types";
 
@@ -24,7 +25,7 @@ const Filter: NextPage<FilterProps> = ({ array, selected, setSelected }) => {
           id={selected.includes(item.name) ? styles.selected : ""}
           onClick={() => toggleButton(item.name)}
         >
-          {item.name}
+          {capitalize(item.name)}
         </li>
       ))}
     </ul>

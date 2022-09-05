@@ -15,14 +15,18 @@ import LogoutBtn from "./LogoutBtn";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { emptyUser } from "../../data/const";
+import { AlertContext } from "../../context/alertContext";
 
 const Header: NextPage = () => {
   const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
   const { data: session, status } = useSession();
   const { toggleNav } = useContext(NavContext);
   const { user } = useContext(UserContext);
+  const { addAlert } = useContext(AlertContext);
   const isGuest = user.username === undefined && status !== "authenticated";
-
+  const onClickAlert = () => {
+    addAlert("🚩 under development", "normal");
+  };
   return (
     <div className={styles.Header}>
       <div className={styles.left}>
@@ -37,10 +41,10 @@ const Header: NextPage = () => {
       </div>
       <Searchbox />
       <ul className={styles.right}>
-        <li className={styles.icon}>
+        <li className={styles.icon} onClick={onClickAlert}>
           <IoAppsOutline />
         </li>
-        <li className={styles.icon}>
+        <li className={styles.icon} onClick={onClickAlert}>
           <IoEllipsisVerticalSharp />
         </li>
         {session?.user?.image && (
