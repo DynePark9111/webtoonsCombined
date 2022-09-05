@@ -27,13 +27,13 @@ Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users
 
 ## Website Images
 
-|                    Homepage                     |                      Register                       |
-| :---------------------------------------------: | :-------------------------------------------------: |
-| ![Homepage](./public/demo/home.giff "Homepage") | ![Register](./public/demo/register.giff "Register") |
+|                    Homepage                    |                      Register                      |
+| :--------------------------------------------: | :------------------------------------------------: |
+| ![Homepage](./public/demo/home.gif "Homepage") | ![Register](./public/demo/register.gif "Register") |
 
 |                    Ads                    |                    Fitler                    |
 | :---------------------------------------: | :------------------------------------------: |
-| ![Detail](./public/demo/ads.png "Detail") | ![Search](./public/demo/filter.png "Search") |
+| ![Detail](./public/demo/ads.gif "Detail") | ![Search](./public/demo/filter.gif "Search") |
 
 ## Get started
 
