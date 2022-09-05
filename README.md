@@ -19,21 +19,19 @@ Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users
 - Nodejs (BE)
 - MongoDB (DB)
 
-## Diagrams
+## Images
 
-|                      Version 1                       |                  Version 2(Current)                  |
-| :--------------------------------------------------: | :--------------------------------------------------: |
-| ![Diagram 1](./public/diagram/type1.png "Diagram 1") | ![Diagram 1](./public/diagram/type2.png "Diagram 2") |
-
-## Website Images
-
-|                    Homepage                     |                      Register                       |
-| :---------------------------------------------: | :-------------------------------------------------: |
-| ![Homepage](./public/demo/home.giff "Homepage") | ![Register](./public/demo/register.giff "Register") |
-
-|                    Ads                    |                    Fitler                    |
-| :---------------------------------------: | :------------------------------------------: |
-| ![Detail](./public/demo/ads.png "Detail") | ![Search](./public/demo/filter.png "Search") |
+|                      Homepage                      |
+| :------------------------------------------------: |
+|   ![Homepage](./public/demo/home.gif "Homepage")   |
+|                      Register                      |
+| ![Register](./public/demo/register.gif "Register") |
+|                        Ads                         |
+|   ![Ads](./public/demo/advertisement.gif "Ads")    |
+|                       Fitler                       |
+|    ![Filter](./public/demo/filter.gif "Filter")    |
+|                      Diagram                       |
+|  ![Diagram](./public/diagram/type2.png "Diagram")  |
 
 ## Get started
 
