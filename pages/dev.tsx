@@ -11,7 +11,7 @@ const Dev: NextPage = () => {
       <Introduction
         title="개발자"
         subtitle={`${COMPANY} Dev Log`}
-        subtitle2="last updated: 2022-07-22"
+        subtitle2="last updated: 2022-09-06"
       />
       <section>
         <h2>Prototype</h2>

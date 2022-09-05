@@ -14,8 +14,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         href="/explore"
       />
       <Cards webtoons={data.webtoons} />
-      <footer></footer>
-      <Ribbon line1="광고 없는 웹툰 사이트" />
+      {/* <Ribbon line1="광고 없는 웹툰 사이트" /> */}
     </div>
   );
 };
@@ -23,7 +22,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const URL = process.env.NEXT_PUBLIC_URL;
+  const URL = process.env.URL;
   const revalidateTime = 60 * 60;
   try {
     const { data } = await axios.get(`${URL}/new`);

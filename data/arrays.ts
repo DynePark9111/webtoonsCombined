@@ -3,15 +3,15 @@ const COMPANY = process.env.NEXT_PUBLIC_COMPANY;
 export const platformFilter = [
   {
     id: 1,
-    name: "네이버",
+    name: "naver",
   },
   {
     id: 2,
-    name: "카카오",
+    name: "kakao",
   },
   {
     id: 3,
-    name: "카카오페이지",
+    name: "kakaopage",
   },
 ];
 
@@ -121,6 +121,79 @@ export const oAuthArray = [
   //   text: "카카오로",
   //   platform: "kakao",
   // },
+];
+
+export const promoBoxData = [
+  {
+    title: "도굴왕",
+    genre: "1위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=bxvkFu/hzwBqFE3EY/lz9RpEgVkPOy3DvIcw8vxK&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=53190884",
+  },
+  {
+    title: "용사의 어머니가 되겠습니다",
+    genre: "2위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=NYU0E/hzHNzLvl4U/kqxjlbruIJyglsM08z4i01&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=59787998",
+  },
+  {
+    title: "다시 한번, 빛 속으로",
+    genre: "3위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=XEd1y/hzHNyMAXKd/keOfDQ9j23rTH1WUYEK0t0&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=57770713",
+  },
+  {
+    title: "화홍",
+    genre: "4위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=rXsr4/hy41LCCbZh/fBVAe3YWcZVU3fOL0tJxPk&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=50108424",
+  },
+  {
+    title: "프로야구생존기",
+    genre: "5위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=mLxer/hyZ8xiGrsa/lo9hJND6wYN5T51AklU2V0&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=54407499",
+  },
+  {
+    title: "두 번 사는 랭커",
+    genre: "6위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=nq3eO/hyQ9NfYbtE/zVrCOIyyMDvN7EATDufrA1&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=52697368",
+  },
+  {
+    title: "비뢰도",
+    genre: "7위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=cyq0ma/hzb7yDg2ke/bIzebxQnLC3RJj7mkrwcUK&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=54015654",
+  },
+  {
+    title: "악역의 엔딩은 죽음뿐",
+    genre: "8위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=Cp2vj/hzwBnB1qPt/rcfKUbFdmI4TdiaMIEQCaK&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=54845189",
+  },
+  {
+    title: "베아트리체",
+    genre: "9위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=ciYf3R/hzace8fMwD/S6eYKLvsmRlX6VlGo7vG7K&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=53150006",
+  },
+  {
+    title: "사생아 공주로 살아남기",
+    genre: "10위",
+    image:
+      "https://dn-img-page.kakao.com/download/resource?kid=2Pd7Z/hzCs9deFKN/mKPFzT7ArkKob12Xu8Rgd0&filename=th2",
+    link: "https://page.kakao.com/home?seriesId=59761866",
+  },
 ];
 
 export const sampleWebtoons = [
@@ -242,7 +315,7 @@ export const FilterArray = [
     id: 1,
     title: "플랫폼",
     category: "platform",
-    options: ["전체", "네이버", "카카오", "카카오페이지", "기타"],
+    options: ["전체", "naver", "kakao", "kakaopage", "bufftoon"],
     initial: "전체",
   },
   {

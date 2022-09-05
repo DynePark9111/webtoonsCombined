@@ -1,6 +1,8 @@
+import axios from "axios";
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { promoBoxData } from "../../data/arrays";
 import styles from "../../styles/Ad/PromoBox.module.scss";
 import PlayBtn from "./PlayBtn";
 
@@ -13,29 +15,7 @@ type SlideProps = {
 };
 
 const PromoBox: NextPage = () => {
-  let rec = [
-    {
-      title: "Title 1",
-      genre: "genre1",
-    },
-    {
-      title: "Title 2",
-      genre: "genre2",
-    },
-    {
-      title: "Title 3",
-      genre: "genre3",
-    },
-    {
-      title: "Title 4",
-      genre: "genre4",
-    },
-    {
-      title: "Title 5",
-      genre: "genre5",
-    },
-  ];
-  const [recc, setRecc] = useState(rec);
+  const [recc, setRecc] = useState(promoBoxData);
   const [isActive, setIsActive] = useState(true);
   const [center, setCenter] = useState(1);
 
@@ -64,11 +44,16 @@ const PromoBox: NextPage = () => {
     <div className={styles.PromoBox}>
       <div className={styles.wrapper}>
         <div className={styles.title}>
-          <h3>iCloud</h3>
-          <p>The best place for all your photos, files, and more.</p>
+          <h3>iWatch!</h3>
+          <p>Top 10 Kakaopage webtoons Click to Watch</p>
           <ul className={styles.links}>
-            <li>Try it free x</li>
-            <li>Learn more +</li>
+            <a
+              href="https://page.kakao.com/main?categoryUid=10&subCategoryUid=1002"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <li>Watch More Webtoons!</li>
+            </a>
           </ul>
         </div>
         <div className={styles.content}>
@@ -100,23 +85,21 @@ export default PromoBox;
 
 const Slide: NextPage<SlideProps> = ({ webtoon, center }: any) => {
   return (
-    <div className={styles.Slide} id={center ? styles.center : ""}>
-      <div className={styles.imageWrapper}>
-        <Image
-          src={"/sample/sample_kp.png"}
-          layout="fill"
-          alt={webtoon.title}
-        />
-      </div>
-      <div className={styles.textWrapper}>
-        <div className={styles.genre}>Genre</div>
-        <div className={styles.title} title={webtoon.title}>
-          {webtoon.title}
+    <a href={webtoon.link} target="_blank" rel="noreferrer noopener">
+      <div className={styles.Slide} id={center ? styles.center : ""}>
+        <div className={styles.imageWrapper}>
+          <Image src={webtoon.image} layout="fill" alt={webtoon.title} />
+        </div>
+        <div className={styles.textWrapper}>
+          <div className={styles.genre}>{webtoon.genre}</div>
+          <div className={styles.title} title={webtoon.title}>
+            {webtoon.title}
+          </div>
+        </div>
+        <div className={styles.slideHover}>
+          <div className={styles.textHover}>Click to watch</div>
         </div>
       </div>
-      <div className={styles.slideHover}>
-        <div className={styles.textHover}>Click to watch</div>
-      </div>
-    </div>
+    </a>
   );
 };
