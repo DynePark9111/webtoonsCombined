@@ -1,5 +1,4 @@
 import axios from "axios";
-const URL = process.env.NEXT_PUBLIC_URL;
 
 export const capitalize = (word: string | undefined | string[]) => {
   if (typeof word === "string") {

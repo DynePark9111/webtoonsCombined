@@ -51,8 +51,8 @@ const Comment: NextPage<CommentP> = ({ c }) => {
       <div className={styles.commentBox}>
         <UserAndDate c={c} />
         <CommentText c={c} showMore={showMore} setShowMore={setShowMore} />
-        {/* <Buttons c={c} setShowInput={setShowInput} />
-        {showInput && <ReplyForm postId={c.id} isTopLevel={false} />} */}
+        <Buttons c={c} setShowInput={setShowInput} />
+        {showInput && <ReplyForm postId={c.id} isTopLevel={false} />}
       </div>
       <div
         className={styles.ellipsis}
