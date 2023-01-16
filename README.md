@@ -63,10 +63,6 @@ Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users
    - X_URI=`X_CLIENT_SECRET`
 
 ### .env file
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
 ```
 NEXT_PUBLIC_COMPANY=
 NEXT_PUBLIC_URL=
