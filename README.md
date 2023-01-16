@@ -38,8 +38,8 @@ Webtoons Combined is a webtoon metasearch engine. Webtoons Combined allows users
 ### frontend
 
 1. git clone
-2. yarn install
-3. create .env file
+2. yarn
+3. touch .env
 4. start BE server [webtoonsCombinedBE](https://github.com/DynePark9111/webtoonsBE)
 5. Crawl Webtoons from websites [crawling](https://github.com/DynePark9111/crawling)
 6. yarn dev
